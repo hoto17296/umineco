@@ -15,3 +15,6 @@
 /vendor/bundle
 
 /.env
+
+/frontend/node_modules
+/public/bundle.js*
