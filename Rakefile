@@ -4,6 +4,3 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
-
-frontend_task = './frontend/task.rb'
-require frontend_task if File.file? frontend_task
