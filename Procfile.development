@@ -1,2 +1,2 @@
-rails: bundle exec rails server -p $RAILS_PORT
+rails: bundle exec rails server -p $RAILS_SERVER_PORT
 webpack: cd frontend && $(npm bin)/webpack-dev-server --port $WEBPACK_DEV_SERVER_PORT
