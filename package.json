@@ -8,5 +8,8 @@
   },
   "scripts": {
     "postinstall": "cd frontend && npm install && npm run build"
-  }
+  },
+  "cacheDirectories": [
+    "frontend/node_modules"
+  ]
 }
