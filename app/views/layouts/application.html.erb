@@ -2,7 +2,13 @@
 <html>
 <head>
   <title>Umineco</title>
-  <script src='/bundle.js' defer></script>
+  <% if Rails.env.development? %>
+    <% webpack_host = 'http://localhost:' + ( ENV['WEBPACK_DEV_SERVER_PORT'] || 8080 ) %>
+    <script src='<%= webpack_host %>/webpack-dev-server.js'></script>
+    <script src='<%= webpack_host %>/bundle.js' defer></script>
+  <% else %>
+    <script src='/bundle.js' defer></script>
+  <% end %>
   <%= csrf_meta_tags %>
 </head>
 <body>
