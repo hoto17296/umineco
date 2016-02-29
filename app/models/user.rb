@@ -19,4 +19,11 @@ class User < ActiveRecord::Base
     end
     return user
   end
+
+  # type: enum { small, normal, album, large, square }
+  # see: https://developers.facebook.com/docs/graph-api/reference/user/picture/
+  def picture(type = :small)
+    "https://graph.facebook.com/v2.5/#{uid}/picture?type=#{type.to_s}"
+  end
+
 end
