@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
   root 'root#index'
 
   devise_for :users,
@@ -13,6 +10,8 @@ Rails.application.routes.draw do
     get 'signin',  to: 'user#login',              as: :new_user_session
     get 'signout', to: 'devise/sessions#destroy', as: :destroy_user_session
   end
+
+  resources :sailing, as: :sailings, controller: :sailings
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

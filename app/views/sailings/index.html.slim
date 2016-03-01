@@ -1,0 +1,19 @@
+h1 Listing sailings
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @sailings.each do |sailing|
+      tr
+        td = link_to 'Show', sailing
+        td = link_to 'Edit', edit_sailing_path(sailing)
+        td = link_to 'Destroy', sailing, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Sailing', new_sailing_path

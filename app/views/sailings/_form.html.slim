@@ -1,0 +1,9 @@
+= form_for @sailing do |f|
+  - if @sailing.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@sailing.errors.count, "error")} prohibited this sailing from being saved:"
+      ul
+        - @sailing.errors.full_messages.each do |message|
+          li = message
+
+  .actions = f.submit
