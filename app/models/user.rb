@@ -1,4 +1,12 @@
 class User < ActiveRecord::Base
+  has_many :members
+  has_many :communities, through: :members
+  has_many :messages
+  has_many :ships
+  has_many :participants
+  has_many :sailings, through: :participants
+  has_many :comments
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

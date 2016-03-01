@@ -11,10 +11,89 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160228085304) do
+ActiveRecord::Schema.define(version: 20160301121458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "body",       null: false
+    t.integer  "sailing_id", null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["sailing_id"], name: "index_comments_on_sailing_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "communities", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "marinas", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.integer  "user_id",      null: false
+    t.integer  "community_id", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "members", ["community_id"], name: "index_members_on_community_id", using: :btree
+  add_index "members", ["user_id"], name: "index_members_on_user_id", using: :btree
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "body",         null: false
+    t.integer  "community_id", null: false
+    t.integer  "user_id",      null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "messages", ["community_id"], name: "index_messages_on_community_id", using: :btree
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
+
+  create_table "participants", force: :cascade do |t|
+    t.integer  "sailing_id", null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "participants", ["sailing_id"], name: "index_participants_on_sailing_id", using: :btree
+  add_index "participants", ["user_id"], name: "index_participants_on_user_id", using: :btree
+
+  create_table "sailings", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "date"
+    t.integer  "community_id"
+    t.integer  "ship_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "sailings", ["community_id"], name: "index_sailings_on_community_id", using: :btree
+  add_index "sailings", ["ship_id"], name: "index_sailings_on_ship_id", using: :btree
+
+  create_table "ships", force: :cascade do |t|
+    t.string   "name",         null: false
+    t.integer  "user_id"
+    t.integer  "community_id"
+    t.integer  "marina_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "ships", ["community_id"], name: "index_ships_on_community_id", using: :btree
+  add_index "ships", ["marina_id"], name: "index_ships_on_marina_id", using: :btree
+  add_index "ships", ["user_id"], name: "index_ships_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -38,4 +117,17 @@ ActiveRecord::Schema.define(version: 20160228085304) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "comments", "sailings"
+  add_foreign_key "comments", "users"
+  add_foreign_key "members", "communities"
+  add_foreign_key "members", "users"
+  add_foreign_key "messages", "communities"
+  add_foreign_key "messages", "users"
+  add_foreign_key "participants", "sailings"
+  add_foreign_key "participants", "users"
+  add_foreign_key "sailings", "communities"
+  add_foreign_key "sailings", "ships"
+  add_foreign_key "ships", "communities"
+  add_foreign_key "ships", "marinas"
+  add_foreign_key "ships", "users"
 end
