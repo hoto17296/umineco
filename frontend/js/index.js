@@ -1,3 +1,5 @@
-import 'jquery';
+import 'jquery'
+import Router from './router'
 
-console.log('foo!');
+var router = new Router( window.Rails.request );
+router.route( window.Rails.params );
