@@ -16,6 +16,8 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+gem 'jpmobile'
+
 gem 'rails_12factor', group: :production
 
 group :development, :test do
