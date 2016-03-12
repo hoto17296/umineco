@@ -71,7 +71,7 @@
 }
 
 
-
+// メンバー
 .memberList {
   padding-left: 20px;
   li {
@@ -101,10 +101,107 @@
   }
 }
 
+// レビュー
+.reviewSter {
+  margin-bottom: 30px;
+  border-bottom: 1px dotted #e5e5e5;
+  text-align: center;
+  font-size: 24px;
 
+  .number {
+    margin-right: 5px;
+  }
+  .icon-icn_star, .icon-icn_star_white {
+    margin-right: 3px;
+  }
+}
+.reviewBox {
+  @extend %clearfix;
+  margin-bottom: 30px;
+  border-bottom: 1px dotted #e5e5e5;
 
+  &__left {
+    float: left;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    overflow: hidden;
 
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__right {
+    float: right;
+    width: 535px;
+  }
+  .reviewBody {
+    &__ttl {
+      font-size: 20px;
+      margin-bottom: 10px;
 
+      .icon-icn_star, .icon-icn_star_white {
+        margin-right: 3px;
+        font-size: 16px;
+      }
+    }
+    &__body {
+    }
+    &__info {
+      font-size: 14px;
+      text-align: right;
+    }
+  }
+}
+
+// サイド 日程
+.reservationBox {
+  @extend %clearfix;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #a0d9f6;
+
+  &__left {
+    float: left;
+    width: 190px;
+    border-right: 1px solid #a0d9f6;
+
+    .date {
+      font-size: 20px;
+      text-align: center;
+      line-height: 1.2;
+    }
+    .time {
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+  &__right {
+    float: right;
+    width: 110px;
+    text-align: center;
+
+    .ttl {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    .participant {
+      color: #397fd6;
+
+      &__number {
+        font-size: 23px;
+      }
+    }
+  }
+}
+// ご相談
+.consultationBox {
+
+  &__ttl {
+    font-size: 20px;
+  }
+}
 
 
 

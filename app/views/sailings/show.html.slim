@@ -214,42 +214,176 @@ main
 
 
         // --------------レビュー
-        section.c-box.review
+        section.c-box
           h3.c-title-1
             |レビュー
 
+          .reviewSter
+            span.number
+              |17件
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star_white
+              span.path1
+              span.path2
 
+          .reviewBox
+            .reviewBox__left
+              =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+            .reviewBox__right.reviewBody
+              .reviewBody__ttl
+                span.icon-icn_star
+                  span.path1
+                  span.path2
+                span.icon-icn_star
+                  span.path1
+                  span.path2
+                span.icon-icn_star
+                  span.path1
+                  span.path2
+                span.icon-icn_star
+                  span.path1
+                  span.path2
+                span.icon-icn_star_white
+                  span.path1
+                  span.path2
+                span.ttl
+                  |はじめてヨットに乗った
+                p.reviewBody__body
+                  |はじめてヨットに乗ったのですが、とても楽しかったです！風の力だけで船を動かすなんてすごいなと感じました。
+                  br
+                  |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
 
+                p.reviewBody__info
+                  |2016年２月 / 山田太郎
 
+          .reviewBox
+            .reviewBox__left
+              =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+            .reviewBox__right.reviewBody
+              .reviewBody__ttl
+                span.icon-icn_star
+                  span.path1
+                  span.path2
+                span.icon-icn_star
+                  span.path1
+                  span.path2
+                span.icon-icn_star
+                  span.path1
+                  span.path2
+                span.icon-icn_star
+                  span.path1
+                  span.path2
+                span.icon-icn_star_white
+                  span.path1
+                  span.path2
+                span.ttl
+                  |はじめてヨットに乗った
+                p.reviewBody__body
+                  |はじめてヨットに乗ったのですが、とても楽しかったです！風の力だけで船を動かすなんてすごいなと感じました。
+                  br
+                  |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
 
+                p.reviewBody__info
+                  |2016年２月 / 山田太郎
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          .c-btn.c-btn--Style1
+            = link_to "#"
+              span.icon-icn_arrow.icn_arrow--white
+              |他のレビューを見る
 
 
 
 
       // --------------event side
       .eventBody__right
-        h2.c-title-3
+        h2.c-title-4
           |日程・ご予約
+
+        // 日程1
+        .reservationBox
+          .reservationBox__left
+            p.date
+              |2016/02/20(土)
+            p.time
+              |09:00-17:00
+
+            .c-btn.c-btn--Style3
+              = link_to "#"
+                span.icon-icn_arrow.icn_arrow--white
+                |一緒に遊ぶ
+          .reservationBox__right
+            p.ttl
+              |参加者
+            p.participant
+              span.participant__number
+                |8
+              |/10人
+
+        // 日程2
+        .reservationBox
+          .reservationBox__left
+            p.date
+              |2016/02/20(土)
+            p.time
+              |09:00-17:00
+
+            .c-btn.c-btn--Style3
+              = link_to "#"
+                span.icon-icn_arrow.icn_arrow--white
+                |一緒に遊ぶ
+          .reservationBox__right
+            p.ttl
+              |参加者
+            p.participant
+              span.participant__number
+                |8
+              |/10人
+
+        // 日程3
+        .reservationBox
+          .reservationBox__left
+            p.date
+              |2016/02/20(土)
+            p.time
+              |09:00-17:00
+
+            .c-btn.c-btn--Style3
+              = link_to "#"
+                span.icon-icn_arrow.icn_arrow--white
+                |一緒に遊ぶ
+          .reservationBox__right
+            p.ttl
+              |参加者
+            p.participant
+              span.participant__number
+                |8
+              |/10人
+
+        // ご相談
+        .consultationBox
+          p.consultationBox__ttl
+            |ご相談
+
+          .c-btn.c-btn--Style4
+            = link_to "#"
+              span.icon-icn_arrow.icn_arrow--white
+              |一緒に遊ぶ
+
+          .c-btn.c-btn--Style4
+            = link_to "#"
+              span.icon-icn_arrow.icn_arrow--white
+              |別日程なら参加したい
 
 
 
