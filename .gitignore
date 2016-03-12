@@ -17,4 +17,5 @@
 /.env
 
 /node_modules
-/public/bundle.js*
+/public/pc.js*
+/public/sp.js*

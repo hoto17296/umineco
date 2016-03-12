@@ -3,10 +3,13 @@ var CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   context: __dirname + '/frontend',
-  entry: './js/entry.js',
+  entry: {
+    pc: './pc.js',
+    sp: './sp.js',
+  },
   output: {
     path: 'public',
-    filename: 'bundle.js',
+    filename: '[name].js',
   },
   module: {
     loaders: [
