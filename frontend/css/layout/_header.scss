@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+.l-header {
+  @extend %clearfix;
+  padding: 10px 0;
+  border-bottom: 1px solid #a0d9f6;
+
+  &__left {
+    float: left;
+    img {
+      width: 267px;
+      height: auto;
+    }
+  }
+  &__right {
+    float: right;
+
+    .navi {
+      margin-top: 30px;
+      li {
+        display: inline-block;
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+
+
+@media only screen and (max-width: 1240px) {
+}
+
+@media only screen and (max-width: 1030px) {
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 481px) {
+}
+
+
+

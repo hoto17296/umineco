@@ -20,6 +20,8 @@ html
       p.notice= notice
       p.alert= alert
 
+    = render "layouts/header"
+
     = yield
 
-    footer
+    = render "layouts/footer"

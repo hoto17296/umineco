@@ -1,0 +1,122 @@
+@charset "utf-8";
+
+
+// ==========================================================================
+// color
+// ==========================================================================
+$text-color:        #333;
+$border-color:      #ad988a;
+
+$link-color:        #333;
+
+$red:              #db4f57;
+$cream-white:      #fffff8;
+$cream:            #fff6df;
+$brown:            #6e5849;
+
+
+
+// WP-PageNavi用
+
+$current-border-color: #d6e4d0;
+$border-color: #d6e4d0;
+$border-bottom-color: #bfd3b7;
+
+$background-color: #d6e4d0;
+$nv-font-color: #6f5b10;
+$hover-color: #bfd3b7;
+
+
+
+// ==========================================================================
+// mixin
+// ==========================================================================
+@mixin inline_block {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+
+// ==========================================================================
+// extend Placeholder Selector
+// ==========================================================================
+%clearfix {
+	zoom:1;
+
+  &:after {
+    content:" ";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+  }
+}
+
+%font-12 {
+  font-size: 1.2rem;
+}
+%font-14 {
+  font-size: 1.4rem;
+}
+%font-16 {
+  font-size: 1.6rem;
+}
+%font-18 {
+  font-size: 1.8rem;
+}
+%font-20 {
+  font-size: 2.0rem;
+}
+%font-24 {
+  font-size: 2.4rem;
+}
+%font-32 {
+  font-size: 3.2rem;
+}
+%font-40 {
+  font-size: 4.0rem;
+}
+
+// @media only screen and (max-width: 800px) {
+//   %font-24 {
+//     font-size: 2.2rem;
+//   }
+// }
+
+
+
+%font {
+  font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+%layout {
+  width: 1080px;
+  margin: 0 auto;
+}
+
+%text-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+
+%arrow {
+
+  &:before {
+    content: '';
+    height: 0;
+    width: 0;
+    display: inline-block;
+    border: 5px transparent solid;
+    border-top: 3px transparent solid;
+    border-bottom: 3px transparent solid;
+    border-right-width: 2px;
+    border-left-color: $brown;
+    padding: 0 5px 0 0;
+  }
+}
