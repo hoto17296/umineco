@@ -1,0 +1,22 @@
+/! partial header
+
+header#header.l-header
+  .l-inner
+    h1.l-header__left
+      = link_to root_path
+        =image_tag "common/logo.png", alt:"umineco"
+
+    navi.l-header__right
+      ul.navi
+        li
+          span.icon-icn_arrow.icn_arrow--blue
+          = link_to "#"
+            |ログイン
+        li
+          span.icon-icn_arrow.icn_arrow--blue
+          = link_to "#"
+            |uminecoとは
+
+
+/! /partial header
+

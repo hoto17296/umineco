@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+.l-footer {
+  margin-top: 100px;
+  padding: 40px 0;
+  background: #f0f7fa;
+  border-top: 1px solid #a0d9f6;
+
+  &__left {
+    .logo {
+      margin-bottom: 20px;
+      img {
+        width: 267px;
+        height: auto;
+      }
+    }
+    .footerLink {
+      li {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  &__right {
+  }
+}
+
+
+
+@media only screen and (max-width: 768px) {
+}
+@media only screen and (max-width: 481px) {
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,170 @@
+@charset "utf-8";
+
+// メインスライダー
+#main_slider {
+  margin-bottom: 50px;
+
+  img {
+    width: 1000px;
+    height: auto;
+  }
+}
+
+// uminecoの遊び方
+.aboutBox {
+  padding: 40px 0 40px 0;
+  border-radius: 10px;
+  background: #f0f7fa;
+
+  &__ttl {
+    margin-bottom: 20px;
+    text-align: center;
+    img {
+      width: 285px;
+      height: auto;
+    }
+  }
+  &__point {
+    margin-bottom: 20px;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      margin-right: 55px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+      img {
+        width: 150px;
+        height: auto;
+      }
+    }
+  }
+}
+
+// 画像リスト
+.c-imglistBox {
+  @extend %clearfix;
+  margin-bottom: 30px;
+
+  // 画像
+  &__left {
+    float: left;
+    width: 470px;
+    height: 320px;
+    border-radius: 10px;
+    overflow: hidden;
+    img {
+      width: 470px;
+      height: auto;
+    }
+  }
+  // 詳細
+  &__right {
+    position: relative;
+    min-height: 320px;
+    float: right;
+    width: 470px;
+
+    .ttl {
+      font-size: 26px;
+      line-height: 1.4;
+    }
+
+    .infoBox {
+      @extend %clearfix;
+      position: absolute;
+      bottom: 50px;
+
+      &__left {
+        float: left;
+        width: 350px;
+        padding-top: 30px;
+
+        .text {
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+        .icn_arrow--blue {
+          display: inline-block;
+          width: 30px;
+          vertical-align: middle;
+          text-align: center;
+          font-size: 24px;
+        }
+      }
+      &__right {
+        position: relative;
+        float: right;
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        border-radius: 50%;
+        border: 2px solid #3da6d0;
+        vertical-align: middle;
+
+        img {
+          position: absolute;
+          top: -5px;
+          left: -5px;
+          width: 105px;
+          height: 105px;
+        }
+      }
+    }
+    .dateBox {
+      position: absolute;
+      bottom: 0;
+      padding: 10px;
+      background: #f0f7fa;
+      border-bottom: 3px solid #a0d9f6;
+
+      &__ttl {
+        display: inline-block;
+
+        span {
+          margin-right: 10px;
+          padding: 5px 8px;
+          background: #3da6d0;
+          font-size: 14px;
+          letter-spacing: 1px;
+          color: #ffffff;
+        }
+      }
+      &__date {
+        display: inline-block;
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
