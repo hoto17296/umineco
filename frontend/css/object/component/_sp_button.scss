@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+
+a {
+  text-decoration: none;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all  0.5s ease;
+}
+
+.c-btn {
+  a {
+    display: inline-block;
+    font-size: 16px;
+    padding: 10px;
+  }
+}
+// 黄 ボタン
+.c-btn--Style1 {
+  text-align: center;
+
+  a {
+    width: 220px;
+    background: #ffde52;
+    border-radius: 30px;
+    border: 1px solid #e3c12e;
+    border-bottom: 3px solid #e3c12e;
+  }
+}
+
+// 青 ボタン
+.c-btn--Style2 {
+  text-align: center;
+
+  a {
+    width: 260px;
+    // padding: 5px 10px;
+    background: #397fd6;
+    border-radius: 30px;
+    border: 1px solid #3667a4;
+    border-bottom: 3px solid #3667a4;
+    font-size: 16px;
+    color: #ffffff;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
