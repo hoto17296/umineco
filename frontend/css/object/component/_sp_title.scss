@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+// 青い背景
+.c-title-1 {
+  margin-bottom: 20px;
+  padding: 5px 15px;
+  background: #c2e7f9;
+  border-top: 3px solid #a0d9f6;
+  font-size: 26px;
+}
+
+// 青い文字・上に線あり
+.c-title-2 {
+  padding: 10px 0;
+  color: #6dc9ee;
+  border-top: 1px solid #a0d9f6;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+// 青い文字
+.c-title-3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #6dc9ee;
+}
+
+// 青い文字・下に線あり
+.c-title-4 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #6dc9ee;
+  border-bottom: 1px solid #a0d9f6;
+}
+
+// メンバー
+.c-title-5 {
+  padding: 10px 0;
+  color: #6dc9ee;
+  font-size: 20px;
+
+  span {
+    margin-right: 10px;
+    padding: 5px 10px;
+    background: #3da6d0;
+    color: #ffffff;
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+
+
