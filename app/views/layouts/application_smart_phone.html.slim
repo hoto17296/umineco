@@ -3,6 +3,7 @@ html
   head
     meta content="width=device-width; initial-scale=1.0; user-scalable=no;" name="viewport"
     title umineco
+    = Gon::Base.render_data namespace: 'Rails'
     - if Rails.env.development?
       - webpack_host = 'http://localhost:' + ( ENV['WEBPACK_DEV_SERVER_PORT'] || 8080 )
       script src="#{webpack_host}/webpack-dev-server.js"
