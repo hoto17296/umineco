@@ -45,6 +45,33 @@ a {
   }
 }
 
+// 青 ペタッとボタン
+.c-btn--Style3 {
+
+  a {
+    width: 180px;
+    padding: 5px 0;
+    background: #397fd6;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    color: #ffffff;
+  }
+}
+// 水色 ペタッとボタン
+.c-btn--Style4 {
+  display: inline-block;
+
+  a {
+    padding: 5px 12px;
+    background: #62bcea;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    color: #ffffff;
+  }
+}
+
 
 
 
