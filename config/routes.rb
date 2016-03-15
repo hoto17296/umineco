@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'user/signin'
+
   root 'root#index'
 
   devise_for :users,
@@ -7,11 +9,14 @@ Rails.application.routes.draw do
     skip: [ :sessions, :registrations, :password ]
 
   devise_scope :user do
-    get 'signin',  to: 'user#login',              as: :new_user_session
+    get 'signin',  to: 'user#signin',             as: :new_user_session
     get 'signout', to: 'devise/sessions#destroy', as: :destroy_user_session
   end
 
   resources :sailing, as: :sailings, controller: :sailings
+  resources :participant, as: :participants, path: 'sailing/:sailing_id/participants', controller: :participants
+  resources :community, as: :communities, controller: :communities
+  resources :member, as: :members, path: 'community/:community_id/members', controller: :members
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

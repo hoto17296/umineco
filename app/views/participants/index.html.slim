@@ -1,0 +1,15 @@
+h1 Listing participants
+
+table
+  thead
+    tr
+      th name
+
+  tbody
+    - @participants.each do |participant|
+      tr
+        td = participant.user.name
+
+br
+
+= link_to 'New Participant', new_participant_path
