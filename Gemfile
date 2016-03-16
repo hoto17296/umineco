@@ -18,6 +18,9 @@ gem 'omniauth-facebook'
 
 gem 'jpmobile'
 
+# Passing Data to JavaScript
+gem 'gon'
+
 gem 'rails_12factor', group: :production
 
 group :development, :test do
