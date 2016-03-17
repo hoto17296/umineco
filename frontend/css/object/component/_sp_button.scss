@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+
+a {
+  text-decoration: none;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all  0.5s ease;
+}
+
+.c-btn {
+  a {
+    display: inline-block;
+    font-size: 16px;
+    padding: 5px;
+  }
+}
+// 黄 ボタン
+.c-btn--Style1 {
+  text-align: center;
+
+  a {
+    width: 220px;
+    background: #ffde52;
+    border-radius: 30px;
+    border: 1px solid #e3c12e;
+    border-bottom: 3px solid #e3c12e;
+  }
+}
+
+// 青 ボタン
+.c-btn--Style2 {
+  text-align: center;
+
+  a {
+    width: 100%;
+    // padding: 5px 10px;
+    background: #397fd6;
+    border-radius: 20px;
+    border: 1px solid #3667a4;
+    border-bottom: 3px solid #3667a4;
+    font-size: 10px;
+    color: #ffffff;
+  }
+  .icon-icn_arrow {
+    font-size: 10px;
+  }
+}
+
+// 青 ペタッとボタン
+.c-btn--Style3 {
+
+  a {
+    width: 100%;
+    padding: 5px 0;
+    background: #397fd6;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    color: #ffffff;
+  }
+}
+// 水色 ペタッとボタン
+.c-btn--Style4 {
+  display: inline-block;
+
+  a {
+    width: 100%;
+    padding: 8px 0;
+    background: #62bcea;
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: center;
+    color: #ffffff;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
