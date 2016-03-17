@@ -1,12 +1,384 @@
 p#notice = notice
 
-p
-  strong Name:
-  = @community.name
+main
+  article.l-inner.event
 
-p
-  = link_to 'Members', members_path(@community)
+    // --------------event header
+    .eventHeader
+      h2.eventHeader__ttl
+        |ヨットを通し、海という大自然との対話、一期一会の海の仲間との繋がりを堪能しよう！
 
-= link_to 'Edit', edit_community_path(@community)
-'|
-= link_to 'Back', communities_path
+      .eventHeader__info
+        p.map
+          span.icon-icn_map.icn_arrow--blue
+          |神奈川県 三浦市 三崎町
+
+        .fbBtn
+          .c-btn.c-btn--Style2
+            = link_to "#"
+              span.icon-icn_arrow.icn_arrow--white
+              |Facebookでシェアする
+
+    .eventBody
+      // --------------event main
+      .eventBody__left
+        .main
+          =image_tag "article/umineco01/img_main.jpg", alt:""
+
+        // --------------遊び方
+        section.c-box
+          h3.c-title-1
+            |遊び方
+
+          .c-box
+            h4.c-title-2
+              |Point1.
+            .imgbox
+              =image_tag "article/umineco01/img_main.jpg", alt:""
+            p
+              |天気や風波の状態がよければ終日セーリングをしながら、キャビンでランチの調理を行い、セーリングしながら食事を楽しみます。
+
+          .c-box
+            h4.c-title-2
+              |Point2.
+            .imgbox
+              =image_tag "article/umineco01/img_main.jpg", alt:""
+            p
+              |初心者で来られた方にも操船の体験をしていただきます！
+              br
+              |天気や風波の状態が厳しい場合はシーボニアマリーナ横の入り江にアンカーを落とし、そこでランチを楽しみます。夏で泳ぎたい人はここで泳いでいただくことも可能です。
+
+          .c-box
+            h4.c-title-2
+              |Point3.
+            .imgbox
+              =image_tag "article/umineco01/img_main.jpg", alt:""
+            p
+              |ゲストの方々にご負担いただくのはランチ食材の割り勘分（何を買うかにもよりますが、だいたい1,000円前後）になります。シーボニアマリーナでの解散後に三崎港か佐島で地元の美味しい魚を食べながら飲む場合は別途です！
+
+
+        // --------------ヨットの魅力
+        section.c-box
+          h3.c-title-1
+            |ヨットの魅力
+
+          .imgbox
+            =image_tag "article/umineco01/img_main.jpg", alt:""
+          p
+            |ヨットは風の力を使って船を動かします。そのためには、風はもちろんのこと、天候や潮の流れなど自然の大きな流れを読む力が必要です。
+          p
+            |ヨットを操船するというのは、自然と対話するということです。
+          p
+            |街に住んでいるとなかなか自然と触れ合うことが出来ませんが、ヨットに乗ると大自然に囲まれるだけでなく、その自然と対話をします。
+            br
+            |この感覚を味わえるのがヨットの良さであり、海を好きになる理由です。
+
+
+        // --------------私たちについて
+        section.c-box
+          h3.c-title-1
+            |私たちについて
+
+          .c-box
+            .imgbox
+              =image_tag "article/umineco01/img_main.jpg", alt:""
+            p
+              |イルカ☆倶楽部（The Delphinus Club）は、三崎のシーボニアマリーナをベースにクルージングヨット「Delphinus」を共同運営するメンバーによって形成されています。
+            p
+              |メンバーは「Delphinus」の係留費や保守整備費、備品購入費などの維持費を共同で負担しながら、皆でセーリングを楽しみ、「人と海の関係性について、実際に体験しながら考える」様々なイベント、アクティビティを行っています。
+
+          .c-box
+            h4.c-title-2
+              |メンバー
+
+            ul.memberList
+              li
+                .memberList__img
+                  =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+                .memberList__name
+                  |鈴木一郎
+              li
+                .memberList__img
+                  =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+                .memberList__name
+                  |鈴木一郎
+              li
+                .memberList__img
+                  =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+                .memberList__name
+                  |鈴木一郎
+              li
+                .memberList__img
+                  =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+                .memberList__name
+                  |鈴木一郎
+              li
+                .memberList__img
+                  =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+                .memberList__name
+                  |鈴木一郎
+
+            .memberList__btn
+              span.icon-icn_arrow.icn_arrow--blue
+              = link_to "#"
+                |メンバーの一覧(12)
+
+            h4.c-title-5
+              span
+                |オーナー
+              |鈴木一郎
+
+            p
+              |ヨットは風の力を使って船を動かします。そのためには、風はもちろんのこと、天候や潮の流れなど自然の大きな流れを読む力が必要です。
+            p
+              |ヨットを操船するというのは、自然と対話するということです。
+            p
+              |街に住んでいるとなかなか自然と触れ合うことが出来ませんが、ヨットに乗ると大自然に囲まれるだけでなく、その自然と対話をします。
+
+
+        // --------------連絡事項
+        section.c-box
+          h3.c-title-1
+            |連絡事項
+
+          h4.c-title-3
+            |料金について
+
+          table.c-table
+            tr
+              th
+                |料金
+              td
+                |5,000円/人
+            tr
+              th
+                |お支払い方法
+              td
+                |現地支払い
+            tr
+              th
+                |キャンセル期日
+              td
+                |2日前の17:00まで
+
+          h4.c-title-3
+            |集合場所について
+
+          table.c-table
+            tr
+              th
+                |時間
+              td
+                |09:00 - 17:00
+            tr
+              th
+                |集合場所
+              td
+                |京急三崎口駅前
+
+          .map
+            iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.161974324885!2d139.63101931524506!3d35.17751528031473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60183c3c25da307b%3A0x3369fbefd391c3bf!2z5Lqs5rWc5oCl6KGM6Zu76YmE77yI5qCq77yJIOS4ieW0juWPo-mnhQ!5e0!3m2!1sja!2sjp!4v1457762860576" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen
+
+
+        .c-box
+          h4.c-title-4
+            |持ち物ついて
+          p
+            |・動きやすく、濡れてもよい服
+            br
+            |・デッキシューズもしくはスニーカー
+            br
+            |・サングラス
+            br
+            |・日焼け止め
+            br
+            |・タオル・雨合羽＆防寒着
+            br
+            |・泳ぐ方は水着、水中メガネ、フィン
+            br
+            |・船酔する方は酔い止め薬
+            br
+            |・入浴後の着替え
+
+        .c-box
+          h4.c-title-4
+            |備考
+          p
+            |なし
+
+
+        // --------------レビュー
+        section.c-box
+          h3.c-title-1
+            |レビュー
+
+          .reviewStar
+            span.number
+              |17件
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star_white
+              span.path1
+              span.path2
+
+          .reviewBox
+            .reviewBox__left
+              =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+            .reviewBox__right.reviewBody
+              .reviewBody__ttl
+                span.icon-icn_star
+                  span.path1
+                  span.path2
+                span.icon-icn_star
+                  span.path1
+                  span.path2
+                span.icon-icn_star
+                  span.path1
+                  span.path2
+                span.icon-icn_star
+                  span.path1
+                  span.path2
+                span.icon-icn_star_white
+                  span.path1
+                  span.path2
+                span.ttl
+                  |はじめてヨットに乗った
+                p.reviewBody__body
+                  |はじめてヨットに乗ったのですが、とても楽しかったです！風の力だけで船を動かすなんてすごいなと感じました。
+                  br
+                  |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
+
+                p.reviewBody__info
+                  |2016年２月 / 山田太郎
+
+          .reviewBox
+            .reviewBox__left
+              =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+            .reviewBox__right.reviewBody
+              .reviewBody__ttl
+                span.icon-icn_star
+                  span.path1
+                  span.path2
+                span.icon-icn_star
+                  span.path1
+                  span.path2
+                span.icon-icn_star
+                  span.path1
+                  span.path2
+                span.icon-icn_star
+                  span.path1
+                  span.path2
+                span.icon-icn_star_white
+                  span.path1
+                  span.path2
+                span.ttl
+                  |はじめてヨットに乗った
+                p.reviewBody__body
+                  |はじめてヨットに乗ったのですが、とても楽しかったです！風の力だけで船を動かすなんてすごいなと感じました。
+                  br
+                  |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
+
+                p.reviewBody__info
+                  |2016年２月 / 山田太郎
+
+          .c-btn.c-btn--Style1
+            = link_to "#"
+              span.icon-icn_arrow.icn_arrow--white
+              |他のレビューを見る
+
+
+
+
+      // --------------event side
+      .eventBody__right
+        h2.c-title-4
+          |日程・ご予約
+
+        // 日程1
+        .reservationBox
+          .reservationBox__left
+            p.date
+              |2016/02/20(土)
+            p.time
+              |09:00-17:00
+
+            .c-btn.c-btn--Style3
+              = link_to "#"
+                span.icon-icn_arrow.icn_arrow--white
+                |一緒に遊ぶ
+          .reservationBox__right
+            p.ttl
+              |参加者
+            p.participant
+              span.participant__number
+                |8
+              |/10人
+
+        // 日程2
+        .reservationBox
+          .reservationBox__left
+            p.date
+              |2016/02/20(土)
+            p.time
+              |09:00-17:00
+
+            .c-btn.c-btn--Style3
+              = link_to "#"
+                span.icon-icn_arrow.icn_arrow--white
+                |一緒に遊ぶ
+          .reservationBox__right
+            p.ttl
+              |参加者
+            p.participant
+              span.participant__number
+                |8
+              |/10人
+
+        // 日程3
+        .reservationBox
+          .reservationBox__left
+            p.date
+              |2016/02/20(土)
+            p.time
+              |09:00-17:00
+
+            .c-btn.c-btn--Style3
+              = link_to "#"
+                span.icon-icn_arrow.icn_arrow--white
+                |一緒に遊ぶ
+          .reservationBox__right
+            p.ttl
+              |参加者
+            p.participant
+              span.participant__number
+                |8
+              |/10人
+
+        // ご相談
+        .consultationBox
+          p.consultationBox__ttl
+            |ご相談
+
+          .c-btn.c-btn--Style4
+            = link_to "#"
+              span.icon-icn_arrow.icn_arrow--white
+              |一緒に遊ぶ
+
+          .c-btn.c-btn--Style4
+            = link_to "#"
+              span.icon-icn_arrow.icn_arrow--white
+              |別日程なら参加したい
+
+
+
+
