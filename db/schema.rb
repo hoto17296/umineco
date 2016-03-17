@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301121458) do
+ActiveRecord::Schema.define(version: 20160315141304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,13 +40,15 @@ ActiveRecord::Schema.define(version: 20160301121458) do
   end
 
   create_table "members", force: :cascade do |t|
-    t.integer  "user_id",      null: false
-    t.integer  "community_id", null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "user_id",                            null: false
+    t.integer  "community_id",                       null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.integer  "type",         limit: 2, default: 0, null: false
   end
 
   add_index "members", ["community_id"], name: "index_members_on_community_id", using: :btree
+  add_index "members", ["user_id", "community_id"], name: "index_members_on_user_id_and_community_id", unique: true, using: :btree
   add_index "members", ["user_id"], name: "index_members_on_user_id", using: :btree
 
   create_table "messages", force: :cascade do |t|
@@ -68,6 +70,7 @@ ActiveRecord::Schema.define(version: 20160301121458) do
   end
 
   add_index "participants", ["sailing_id"], name: "index_participants_on_sailing_id", using: :btree
+  add_index "participants", ["user_id", "sailing_id"], name: "index_participants_on_user_id_and_sailing_id", unique: true, using: :btree
   add_index "participants", ["user_id"], name: "index_participants_on_user_id", using: :btree
 
   create_table "sailings", force: :cascade do |t|

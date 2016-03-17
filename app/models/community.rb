@@ -4,4 +4,9 @@ class Community < ActiveRecord::Base
   has_many :ships
   has_many :sailings
   has_many :messages
+
+  def member?(user)
+    return false unless user.nil?
+    members.where(user: user).present?
+  end
 end

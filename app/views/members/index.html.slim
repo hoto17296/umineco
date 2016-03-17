@@ -1,0 +1,21 @@
+h1
+  = @community.name
+  |のメンバー一覧
+
+table
+  thead
+    tr
+      th Type
+      th
+      th
+      th
+
+  tbody
+    - @members.each do |member|
+      tr
+        td = member.user.name
+        td = member.type
+
+br
+
+= link_to 'New Member', new_member_path
