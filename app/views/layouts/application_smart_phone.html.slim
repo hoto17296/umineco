@@ -12,6 +12,8 @@ html
       script src='/sp.js' defer=true
     = csrf_meta_tags
   body
+    = render "layouts/facebook"
+
     header
       - if user_signed_in?
         = image_tag(current_user.picture)
@@ -26,4 +28,4 @@ html
 
     = yield
 
-    = render "layouts/footer"
+    = render "layouts/sp_footer"

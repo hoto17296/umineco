@@ -18,11 +18,10 @@
 // Layout
 // ==========================================================================
 
-@import "layout/_layout";
-@import "layout/_footer";
-@import "layout/_header";
+@import "layout/_sp_layout";
+@import "layout/_sp_footer";
+@import "layout/_sp_header";
 @import "layout/_main";
-// @import "layout/_sidebar";
 
 // ==========================================================================
 // Object
@@ -32,31 +31,16 @@
 // Component
 // -----------------------------------------------------------------
 
-@import "object/component/_common";
-@import "object/component/_button";
-@import "object/component/_title";
-// @import "object/component/_pagenavi";
-// @import "object/component/_breadcrumbs";
-// @import "object/component/_listbox";
-//
+@import "object/component/_sp_common";
+@import "object/component/_sp_button";
+@import "object/component/_sp_title";
+
 // -----------------------------------------------------------------
 // Project
 // -----------------------------------------------------------------
 
-@import "object/project/_top";
-@import "object/project/_event";
-
-
-// -----------------------------------------------------------------
-// Utility
-// -----------------------------------------------------------------
-
-// @import "object/utility/_align";
-// @import "object/utility/_clearfix";
-// @import "object/utility/_margin";
-// @import "object/utility/_position";
-// @import "object/utility/_size";
-// @import "object/utility/_text";
+@import "object/project/_sp_top";
+@import "object/project/_sp_event";
 
 // -----------------------------------------------------------------
 // vendor

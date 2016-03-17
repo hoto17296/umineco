@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+.l-header {
+  @extend %clearfix;
+  padding: 10px 0;
+  border-bottom: 1px solid #a0d9f6;
+
+  &__left {
+    float: left;
+    width: 40%;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__right {
+    float: right;
+    width: 60%;
+    text-align: right;
+
+    .navi {
+      margin-top: 10px;
+      li {
+        display: inline-block;
+        margin-left: 5px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+

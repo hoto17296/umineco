@@ -1,0 +1,158 @@
+@charset "utf-8";
+
+// メインスライダー
+#main_slider {
+  margin-bottom: 30px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+// uminecoの遊び方
+.aboutBox {
+  padding: 40px 0 40px 0;
+  background: #f0f7fa;
+
+  &__ttl {
+    margin-bottom: 20px;
+    text-align: center;
+    img {
+      width: 230px;
+      height: auto;
+    }
+  }
+  &__point {
+    margin-bottom: 20px;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      padding: 0 5px;
+      width: 30%;
+
+      &:last-child {
+        margin-right: 0;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+// 画像リスト
+.c-imglistBox {
+  @extend %clearfix;
+
+  // 画像
+  &__image {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__head {
+    position: relative;
+    margin-bottom: 5px;
+
+    .fbIcon {
+      top: -25px;
+      position: absolute;
+      left: 5px;
+      width: 55px;
+      height: 55px;
+      overflow: hidden;
+      border-radius: 50%;
+      border: 2px solid #3da6d0;
+      vertical-align: middle;
+
+      img {
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        width: 60px;
+        height: 60px;
+      }
+    }
+    .ttl {
+      line-height: 1.2;
+      margin: 5px 0 0 70px;
+    }
+  }
+
+  // 詳細
+  &__detail {
+    width: 100%;
+    padding: 3px 3px 5px 3px;
+    background: #f0f7fa;
+    border-bottom: 2px solid #1e7ba1;
+
+    .dateBox {
+
+      &__ttl {
+        display: inline-block;
+
+        span {
+          margin-right: 3px;
+          padding: 3px 5px;
+          background: #3da6d0;
+          font-size: 10px;
+          letter-spacing: 1px;
+          color: #ffffff;
+        }
+      }
+      &__date {
+        display: inline-block;
+        font-size: 12px;
+      }
+    }
+    .infoBox {
+      @extend %clearfix;
+
+      .text {
+        margin-right: 5px;
+        display: inline-block;
+        font-size: 12px;
+      }
+      .icn_arrow--blue {
+        display: inline-block;
+        width: 18px;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
