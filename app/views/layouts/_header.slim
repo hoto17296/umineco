@@ -8,10 +8,22 @@ header#header.l-header
 
     navi.l-header__right
       ul.navi
-        li
-          span.icon-icn_arrow.icn_arrow--blue
-          = link_to "#"
-            |ログイン
+        - if user_signed_in?
+          li
+            .fbIcon
+              = image_tag(current_user.picture)
+            = current_user.name
+
+          li
+            span.icon-icn_arrow.icn_arrow--blue
+            = link_to 'ログアウト', destroy_user_session_path, method: :delete
+        - else
+
+          li
+            span.icon-icn_arrow.icn_arrow--blue
+            = link_to 'ログイン', user_omniauth_authorize_path(:facebook)
+            /p.notice= notice
+            /p.alert= alert
         li
           span.icon-icn_arrow.icn_arrow--blue
           = link_to "/about"

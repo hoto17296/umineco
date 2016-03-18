@@ -20,6 +20,17 @@
       li {
         display: inline-block;
         margin-left: 20px;
+        }
+      .fbIcon {
+        display: inline-block;
+        width: 25px;
+        border-radius: 50%;
+        overflow: hidden;
+        vertical-align: middle;
+        img {
+          width: 100%;
+          height: auto;
+        }
       }
     }
   }
