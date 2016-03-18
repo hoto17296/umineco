@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+.aboutMainImage {
+  width: 100%;
+  margin-bottom: 30px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+.aboutPointBox {
+  width: 100%;
+  display: table;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background: #f0f7fa;
+
+  &__ttl {
+    padding: 50px 30px;
+    display: table-cell;
+    width: 220px;
+    vertical-align: middle;
+
+    img {
+      width: 220px;
+      height: auto;
+    }
+  }
+  &__text {
+    padding: 20px;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 20px;
+  }
+}
+
+.aboutTextBox {
+  width: 600px;
+  margin: 50px auto;
+  text-align: center;
+  font-size: 20px;
+}
+
+
+
