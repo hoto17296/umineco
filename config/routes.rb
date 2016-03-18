@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   root 'root#index'
 
+  [ :about ].each do |key|
+    get key, to: "root##{key}", as: key
+  end
+
   devise_for :users,
     controllers: { omniauth_callbacks: 'omniauth_callbacks' },
     skip: [ :sessions, :registrations, :password ]
