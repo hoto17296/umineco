@@ -7,5 +7,6 @@ ul
     - duration = tsrange2str sailing.duration
     li= link_to "#{duration[:date]} #{duration[:begin]} - #{duration[:end]}", edit_sailing_path(sailing)
 
+p= link_to 'セーリングを追加', new_sailing_path
 p= link_to 'コミュニティページを見る', @community
 p= link_to 'コミュニティ一覧', communities_path

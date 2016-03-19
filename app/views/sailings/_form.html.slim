@@ -5,5 +5,25 @@
       ul
         - @sailing.errors.full_messages.each do |message|
           li = message
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :community_id
+    = f.text_field :community_id
+  - if @sailing.duration
+    .field
+      | 開始日時
+      = datetime_local_field_tag 'sailing[duration_begin]', @sailing.duration.begin.strftime('%Y-%m-%dT%T')
+    .field
+      | 終了日時
+      = datetime_local_field_tag 'sailing[duration_end]', @sailing.duration.end.strftime('%Y-%m-%dT%T')
+  - else
+    .field
+      | 開始日時
+      = datetime_local_field_tag 'sailing[duration_begin]', DateTime.now.strftime('%Y-%m-%dT%T')
+    .field
+      | 終了日時
+      = datetime_local_field_tag 'sailing[duration_end]', DateTime.now.strftime('%Y-%m-%dT%T')
 
   .actions = f.submit

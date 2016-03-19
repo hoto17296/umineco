@@ -1,8 +1,5 @@
-h1 Editing sailing
+h1 セーリングの編集
 
 == render 'form'
 
-= link_to 'Show', @sailing
-'|
-= link_to 'Back', sailings_path
-
+= link_to 'コミュニティを見る', edit_community_path(@sailing.community)
