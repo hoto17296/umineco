@@ -1,59 +1,9 @@
 @charset "utf-8";
 
-// メインスライダー
-// #main_slider {
-//   margin-bottom: 50px;
-//
-//   img {
-//     width: 1000px;
-//     height: auto;
-//   }
-// }
-
-
-#mainSlider {
+#mainCarousel {
   width: 100%;
   min-width: 960px;
 }
-
-.mainSliderInner {
-  width: 300%;
-  transform: translateX(0);
-}
-.isTransition {
-  transition: transform 500ms ease-in;
-}
-.mainSliderItem {
-  float: left;
-  width: 33.3%;
-}
-
-.mainSliderItem:after {
-  content: "";
-  clear: both;
-}
-.mainSliderItem img {
-  width: 100%;
-  height: auto;
-}
-
-#sliderNavi {
-  text-align: center;
-
-  span {
-    display: inline-block;
-    width: 5px;
-    height: 5px;
-    margin: 0 10px;
-    border-radius: 50%;
-    background: #dcebf1;
-  }
-  .current {
-    background: #6dc9ee;
-  }
-}
-
-
 
 // uminecoの遊び方
 .aboutBox {
