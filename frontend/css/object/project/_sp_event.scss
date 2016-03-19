@@ -188,7 +188,9 @@
       font-size: 14px;
     }
     .participant {
-      color: #397fd6;
+      a {
+        color: #397fd6;
+      }
 
       &__number {
         font-size: 23px;

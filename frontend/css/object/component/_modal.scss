@@ -97,8 +97,32 @@
   }
 }
 
-// 興味あります
+// 参加者一覧
+.participantList {
 
+  li {
+    display: table;
+    width: 100%;
+    margin-bottom: 10px;
+    border-bottom: 1px dotted #e5e5e5;
+  }
+  &__img {
+    display: table-cell;
+    width: 50px;
+    padding-bottom: 10px;
+
+    img {
+      border-radius: 5px;
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__name {
+    display: table-cell;
+    padding: 15px 10px 10px;
+    vertical-align: top;
+  }
+}
 
 
 
