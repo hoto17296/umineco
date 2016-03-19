@@ -1,5 +1,8 @@
 - content_for :ogp do
-  meta property='og:title' content='ヨットを通し、海という大自然との対話、一期一会の海の仲間との繋がりを堪能しよう！'
+  meta property='og:title' content='ヨットを通し、海という大自然との対話、一期一会の海の仲間との繋がりを堪能しよう！ | umineco'
+  meta property="og:description" content="天気や風波の状態がよければ終日セーリングをしながら、キャビンでランチの調理を行い、セーリングしながら食事を楽しみます。"
+  meta property="og:url" content="#{community_url(@community)}"
+  meta property="og:image" content="#{root_url()}images/article/umineco01/img_main.jpg"
 
 p#notice = notice
 
@@ -18,7 +21,7 @@ main
 
         .fbBtn
           .c-btn.c-btn--Style2
-            = link_to "#"
+            a href="http://www.facebook.com/share.php?u=#{community_url(@community)}" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
               span.icon-icn_arrow.icn_arrow--white
               |Facebookでシェアする
 
