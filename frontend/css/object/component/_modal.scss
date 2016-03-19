@@ -10,16 +10,20 @@
   .container {
     position: absolute;
     margin: auto;
-    top: 0; bottom: 0; left: 0; right: 0; // centering
+    top: 10%;
+    left: 0;
+    right: 0;
     cursor: auto;
     background-color: white;
     width: 600px;
     max-width: 90%;
-    height: 500px; // 仮
-    overflow: scroll;
     border-radius: .5em;
 
     header {
+      position: absolute;
+      top: 0;
+      height: 50px;
+      width: 100%;
       padding: 10px 0;
       border-bottom: 1px solid #6dc9ee;
       text-align: center;
@@ -39,10 +43,13 @@
       }
     }
     .content {
+      margin-top: 50px;
       padding: 10px;
+      max-height: 430px;
+      overflow: scroll;
     }
     .message {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
     .messageSmall {
       font-size: 12px;
