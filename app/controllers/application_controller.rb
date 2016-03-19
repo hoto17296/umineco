@@ -17,4 +17,12 @@ class ApplicationController < ActionController::Base
     gon.params = {};
   end
 
+  # 管理ユーザーでなければ 403 を返す
+  def authenticate_admin_user!
+    authenticate_user!
+    unless current_user.admin?
+      redirect_to :root, status: :forbidden, alert: '権限がありません'
+    end
+  end
+
 end
