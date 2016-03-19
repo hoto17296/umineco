@@ -320,67 +320,71 @@ main
               span.path2
 
           .reviewBox
-            .reviewBox__left
-              =image_tag "article/umineco01/fb_thumb.jpg", alt:""
-            .reviewBox__right.reviewBody
-              .reviewBody__ttl
-                span.icon-icn_star
-                  span.path1
-                  span.path2
-                span.icon-icn_star
-                  span.path1
-                  span.path2
-                span.icon-icn_star
-                  span.path1
-                  span.path2
-                span.icon-icn_star
-                  span.path1
-                  span.path2
-                span.icon-icn_star_white
-                  span.path1
-                  span.path2
-                span.ttl
+            .reviewBox__header
+              .left
+                =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+              .right
+                .star
+                  span.icon-icn_star
+                    span.path1
+                    span.path2
+                  span.icon-icn_star
+                    span.path1
+                    span.path2
+                  span.icon-icn_star
+                    span.path1
+                    span.path2
+                  span.icon-icn_star
+                    span.path1
+                    span.path2
+                  span.icon-icn_star_white
+                    span.path1
+                    span.path2
+                h4.ttl
                   |はじめてヨットに乗った
-              p.reviewBody__body
+            .reviewBox__body
+              p
                 |はじめてヨットに乗ったのですが、とても楽しかったです！風の力だけで船を動かすなんてすごいなと感じました。
-                br
+              p
                 |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
 
-              p.reviewBody__info
-                |2016年２月 / 山田太郎
+            p.reviewBox__info
+              |2016年２月 / 山田太郎
 
           .reviewBox
-            .reviewBox__left
-              =image_tag "article/umineco01/fb_thumb.jpg", alt:""
-            .reviewBox__right.reviewBody
-              .reviewBody__ttl
-                span.icon-icn_star
-                  span.path1
-                  span.path2
-                span.icon-icn_star
-                  span.path1
-                  span.path2
-                span.icon-icn_star
-                  span.path1
-                  span.path2
-                span.icon-icn_star
-                  span.path1
-                  span.path2
-                span.icon-icn_star_white
-                  span.path1
-                  span.path2
-                span.ttl
+            .reviewBox__header
+              .left
+                =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+              .right
+                .star
+                  span.icon-icn_star
+                    span.path1
+                    span.path2
+                  span.icon-icn_star
+                    span.path1
+                    span.path2
+                  span.icon-icn_star
+                    span.path1
+                    span.path2
+                  span.icon-icn_star
+                    span.path1
+                    span.path2
+                  span.icon-icn_star_white
+                    span.path1
+                    span.path2
+                h4.ttl
                   |はじめてヨットに乗った
-              p.reviewBody__body
+            .reviewBox__body
+              p
                 |はじめてヨットに乗ったのですが、とても楽しかったです！風の力だけで船を動かすなんてすごいなと感じました。
-                br
+              p
                 |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
 
-              p.reviewBody__info
-                |2016年２月 / 山田太郎
+            p.reviewBox__info
+              |2016年２月 / 山田太郎
 
           .c-btn.c-btn--Style1
-            = link_to "#"
+            a href="#" onClick="Modal.open('reviewList')"
               span.icon-icn_arrow.icn_arrow--white
               |他のレビューを見る
 
@@ -444,4 +448,153 @@ main
           .text
             |テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
 
+#ModalList style="display:none"
+  #reviewList data-title='レビュー 一覧'
+    .reviewStar
+      span.number
+        |17件
+      span.icon-icn_star
+        span.path1
+        span.path2
+      span.icon-icn_star
+        span.path1
+        span.path2
+      span.icon-icn_star
+        span.path1
+        span.path2
+      span.icon-icn_star
+        span.path1
+        span.path2
+      span.icon-icn_star_white
+        span.path1
+        span.path2
+
+
+    .reviewBox
+      .reviewBox__header
+        .left
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .right
+          .star
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star_white
+              span.path1
+              span.path2
+          h4.ttl
+            |はじめてヨットに乗った
+      .reviewBox__body
+        p
+          |はじめてヨットに乗ったのですが、とても楽しかったです！風の力だけで船を動かすなんてすごいなと感じました。
+        p
+          |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
+
+      p.reviewBox__info
+        |2016年２月 / 山田太郎
+
+    .reviewBox
+      .reviewBox__header
+        .left
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .right
+          .star
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star_white
+              span.path1
+              span.path2
+          h4.ttl
+            |はじめてヨットに乗った
+      .reviewBox__body
+        p
+          |はじめてヨットに乗ったのですが、とても楽しかったです！風の力だけで船を動かすなんてすごいなと感じました。
+        p
+          |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
+
+      p.reviewBox__info
+        |2016年２月 / 山田太郎
+
+    .reviewBox
+      .reviewBox__header
+        .left
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .right
+          .star
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star_white
+              span.path1
+              span.path2
+          h4.ttl
+            |はじめてヨットに乗った
+      .reviewBox__body
+        p
+          |はじめてヨットに乗ったのですが、とても楽しかったです！風の力だけで船を動かすなんてすごいなと感じました。
+        p
+          |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
+
+      p.reviewBox__info
+        |2016年２月 / 山田太郎
+
+    .reviewBox
+      .reviewBox__header
+        .left
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .right
+          .star
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star_white
+              span.path1
+              span.path2
+          h4.ttl
+            |はじめてヨットに乗った
+      .reviewBox__body
+        p
+          |はじめてヨットに乗ったのですが、とても楽しかったです！風の力だけで船を動かすなんてすごいなと感じました。
+        p
+          |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
+
+      p.reviewBox__info
+        |2016年２月 / 山田太郎
 
