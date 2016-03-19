@@ -124,7 +124,7 @@ main
 
               .memberList__btn
                 span.icon-icn_arrow.icn_arrow--blue
-                = link_to "#"
+                a href="#" onClick="Modal.open('memberList')"
                   |メンバーの一覧(12)
 
               h4.c-title-5
@@ -384,8 +384,7 @@ main
               span.icon-icn_arrow.icn_arrow--white
               |他のレビューを見る
 
-
-
-
-
-
+#ModalList style="display:none"
+  #memberList data-title='メンバー一覧'
+    p A さん
+    p B さん
