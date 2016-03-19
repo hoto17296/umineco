@@ -155,56 +155,59 @@ main
                 |09:00-17:00
 
               .c-btn.c-btn--Style3
-                = link_to "#"
+                a href="#" onClick="Modal.open('reservationForm1')"
                   span.icon-icn_arrow.icn_arrow--white
                   |一緒に遊ぶ
             .reservationBox__right
               p.ttl
                 |参加者
               p.participant
-                span.participant__number
-                  |8
-                |/10人
+                a href="#" onClick="Modal.open('participantList1')"
+                  span.participant__number
+                    |8
+                  |/10人
 
           // 日程2
           .reservationBox
             .reservationBox__left
               p.date
-                |2016/02/20(土)
+                |2016/03/19(土)
               p.time
                 |09:00-17:00
 
               .c-btn.c-btn--Style3
-                = link_to "#"
+                a href="#" onClick="Modal.open('reservationForm2')"
                   span.icon-icn_arrow.icn_arrow--white
                   |一緒に遊ぶ
             .reservationBox__right
               p.ttl
                 |参加者
               p.participant
-                span.participant__number
-                  |8
-                |/10人
+                a href="#" onClick="Modal.open('participantList2')"
+                  span.participant__number
+                    |8
+                  |/10人
 
           // 日程3
           .reservationBox
             .reservationBox__left
               p.date
-                |2016/02/20(土)
+                |2016/03/26(土)
               p.time
                 |09:00-17:00
 
               .c-btn.c-btn--Style3
-                = link_to "#"
+                a href="#" onClick="Modal.open('reservationForm3')"
                   span.icon-icn_arrow.icn_arrow--white
                   |一緒に遊ぶ
             .reservationBox__right
               p.ttl
                 |参加者
               p.participant
-                span.participant__number
-                  |8
-                |/10人
+                a href="#" onClick="Modal.open('participantList3')"
+                  span.participant__number
+                    |8
+                  |/10人
 
           // ご相談
           .consultationBox
@@ -212,12 +215,12 @@ main
               |ご相談
 
             .c-btn.c-btn--Style4
-              = link_to "#"
+              a href="#" onClick="Modal.open('interestForm')"
                 span.icon-icn_arrow.icn_arrow--white
                 |興味あります
 
             .c-btn.c-btn--Style4
-              = link_to "#"
+              a href="#" onClick="Modal.open('anotherDateForm')"
                 span.icon-icn_arrow.icn_arrow--white
                 |別日程なら参加したい
 
@@ -320,71 +323,454 @@ main
               span.path2
 
           .reviewBox
-            .reviewBox__left
-              =image_tag "article/umineco01/fb_thumb.jpg", alt:""
-            .reviewBox__right.reviewBody
-              .reviewBody__ttl
-                span.icon-icn_star
-                  span.path1
-                  span.path2
-                span.icon-icn_star
-                  span.path1
-                  span.path2
-                span.icon-icn_star
-                  span.path1
-                  span.path2
-                span.icon-icn_star
-                  span.path1
-                  span.path2
-                span.icon-icn_star_white
-                  span.path1
-                  span.path2
-                span.ttl
+            .reviewBox__header
+              .left
+                =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+              .right
+                .star
+                  span.icon-icn_star
+                    span.path1
+                    span.path2
+                  span.icon-icn_star
+                    span.path1
+                    span.path2
+                  span.icon-icn_star
+                    span.path1
+                    span.path2
+                  span.icon-icn_star
+                    span.path1
+                    span.path2
+                  span.icon-icn_star_white
+                    span.path1
+                    span.path2
+                h4.ttl
                   |はじめてヨットに乗った
-              p.reviewBody__body
+            .reviewBox__body
+              p
                 |はじめてヨットに乗ったのですが、とても楽しかったです！風の力だけで船を動かすなんてすごいなと感じました。
-                br
+              p
                 |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
 
-              p.reviewBody__info
-                |2016年２月 / 山田太郎
+            p.reviewBox__info
+              |2016年２月 / 山田太郎
 
           .reviewBox
-            .reviewBox__left
-              =image_tag "article/umineco01/fb_thumb.jpg", alt:""
-            .reviewBox__right.reviewBody
-              .reviewBody__ttl
-                span.icon-icn_star
-                  span.path1
-                  span.path2
-                span.icon-icn_star
-                  span.path1
-                  span.path2
-                span.icon-icn_star
-                  span.path1
-                  span.path2
-                span.icon-icn_star
-                  span.path1
-                  span.path2
-                span.icon-icn_star_white
-                  span.path1
-                  span.path2
-                span.ttl
+            .reviewBox__header
+              .left
+                =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+              .right
+                .star
+                  span.icon-icn_star
+                    span.path1
+                    span.path2
+                  span.icon-icn_star
+                    span.path1
+                    span.path2
+                  span.icon-icn_star
+                    span.path1
+                    span.path2
+                  span.icon-icn_star
+                    span.path1
+                    span.path2
+                  span.icon-icn_star_white
+                    span.path1
+                    span.path2
+                h4.ttl
                   |はじめてヨットに乗った
-              p.reviewBody__body
+            .reviewBox__body
+              p
                 |はじめてヨットに乗ったのですが、とても楽しかったです！風の力だけで船を動かすなんてすごいなと感じました。
-                br
+              p
                 |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
 
-              p.reviewBody__info
-                |2016年２月 / 山田太郎
+            p.reviewBox__info
+              |2016年２月 / 山田太郎
 
           .c-btn.c-btn--Style1
-            = link_to "#"
+            a href="#" onClick="Modal.open('reviewList')"
               span.icon-icn_arrow.icn_arrow--white
               |他のレビューを見る
 
+
+// ----------------------------------------------------------------以下modal
+
+
+// --------------仮予約 1
+#ModalList style="display:none"
+  #reservationForm1 data-title='2016/02/20に仮予約'
+    p.message
+      |一緒に遊ぶボタンを押していただくと、仮予約が完了します。
+    p.messageSmall
+      |このイベントをあなたの友達にも知らせよう！
+    form
+      label
+        input.messageSmall type="checkbox" checked="checked"
+          |Facebookでシェアする
+      textarea placeholder="山田花子さんは2月20日にクルージングイベントに参加します。"
+
+    .c-btn.c-btn--Style3
+      = link_to "#"
+        span.icon-icn_arrow.icn_arrow--white
+        |送信
+
+// --------------仮予約 2
+#ModalList style="display:none"
+  #reservationForm2 data-title='2016/03/19に仮予約'
+    p.message
+      |一緒に遊ぶボタンを押していただくと、仮予約が完了します。
+    p.messageSmall
+      |このイベントをあなたの友達にも知らせよう！
+    form
+      label
+        input.messageSmall type="checkbox" checked="checked"
+          |Facebookでシェアする
+      textarea placeholder="山田花子さんは3月19日にクルージングイベントに参加します。"
+
+    .c-btn.c-btn--Style3
+      = link_to "#"
+        span.icon-icn_arrow.icn_arrow--white
+        |送信
+
+// --------------仮予約 1
+#ModalList style="display:none"
+  #reservationForm3 data-title='2016/03/26に仮予約'
+    p.message
+      |一緒に遊ぶボタンを押していただくと、仮予約が完了します。
+    p.messageSmall
+      |このイベントをあなたの友達にも知らせよう！
+    form
+      label
+        input.messageSmall type="checkbox" checked="checked"
+          |Facebookでシェアする
+      textarea placeholder="山田花子さんは3月26日にクルージングイベントに参加します。"
+
+    .c-btn.c-btn--Style3
+      = link_to "#"
+        span.icon-icn_arrow.icn_arrow--white
+        |送信
+
+// --------------興味あります
+#ModalList style="display:none"
+  #interestForm data-title='興味あります'
+    p.message
+      |オーナーに興味がある旨を伝えてよろしいですか？
+    form
+      textarea placeholder="オーナーに伝えたい事があれば記入してください。"
+
+    .c-btn.c-btn--Style3
+      = link_to "#"
+        span.icon-icn_arrow.icn_arrow--white
+        |送信
+
+// --------------別日程なら参加したい
+#ModalList style="display:none"
+  #anotherDateForm data-title='別日程なら参加したい'
+    p.message
+      |参加したい日程を入力してください。
+    form
+      input type="text"
+
+    .c-btn.c-btn--Style3
+      = link_to "#"
+        span.icon-icn_arrow.icn_arrow--white
+        |送信
+
+// --------------参加者一覧 1
+#ModalList style="display:none"
+  #participantList1 data-title='2016/02/20参加者一覧'
+    ul.participantList
+      li
+        .participantList__img
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .participantList__name
+          |鈴木一郎
+      li
+        .participantList__img
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .participantList__name
+          |鈴木一郎
+      li
+        .participantList__img
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .participantList__name
+          |鈴木一郎
+      li
+        .participantList__img
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .participantList__name
+          |鈴木一郎
+      li
+        .participantList__img
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .participantList__name
+          |鈴木一郎
+      li
+        .participantList__img
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .participantList__name
+          |鈴木一郎
+      li
+        .participantList__img
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .participantList__name
+          |鈴木一郎
+      li
+        .participantList__img
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .participantList__name
+          |鈴木一郎
+      li
+        .participantList__img
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .participantList__name
+          |鈴木一郎
+
+// --------------参加者一覧 2
+#ModalList style="display:none"
+  #participantList2 data-title='2016/03/19参加者一覧'
+    ul.participantList
+      li
+        .participantList__img
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .participantList__name
+          |鈴木一郎
+      li
+        .participantList__img
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .participantList__name
+          |鈴木一郎
+
+// --------------参加者一覧 3
+#ModalList style="display:none"
+  #participantList3 data-title='2016/03/26参加者一覧'
+    ul.participantList
+      li
+        .participantList__img
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .participantList__name
+          |鈴木一郎
+      li
+        .participantList__img
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .participantList__name
+          |鈴木一郎
+
+// --------------メンバー一覧
 #ModalList style="display:none"
   #memberList data-title='メンバー一覧'
-    p A さん
-    p B さん
+    ul.modalMemberList
+      li
+        .modalMemberList__img
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .modalMemberList__body
+          .name
+            |鈴木一郎
+          .text
+            |テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+      li
+        .modalMemberList__img
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .modalMemberList__body
+          .name
+            |鈴木一郎
+          .text
+            |テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+      li
+        .modalMemberList__img
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .modalMemberList__body
+          .name
+            |鈴木一郎
+          .text
+            |テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+      li
+        .modalMemberList__img
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .modalMemberList__body
+          .name
+            |鈴木一郎
+          .text
+            |テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+      li
+        .modalMemberList__img
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .modalMemberList__body
+          .name
+            |鈴木一郎
+          .text
+            |テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+      li
+        .modalMemberList__img
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .modalMemberList__body
+          .name
+            |鈴木一郎
+          .text
+            |テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+      li
+        .modalMemberList__img
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .modalMemberList__body
+          .name
+            |鈴木一郎
+          .text
+            |テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+
+// --------------レビュー一覧
+#ModalList style="display:none"
+  #reviewList data-title='レビュー 一覧'
+    .reviewStar
+      span.number
+        |17件
+      span.icon-icn_star
+        span.path1
+        span.path2
+      span.icon-icn_star
+        span.path1
+        span.path2
+      span.icon-icn_star
+        span.path1
+        span.path2
+      span.icon-icn_star
+        span.path1
+        span.path2
+      span.icon-icn_star_white
+        span.path1
+        span.path2
+
+
+    .reviewBox
+      .reviewBox__header
+        .left
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .right
+          .star
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star_white
+              span.path1
+              span.path2
+          h4.ttl
+            |はじめてヨットに乗った
+      .reviewBox__body
+        p
+          |はじめてヨットに乗ったのですが、とても楽しかったです！風の力だけで船を動かすなんてすごいなと感じました。
+        p
+          |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
+
+      p.reviewBox__info
+        |2016年２月 / 山田太郎
+
+    .reviewBox
+      .reviewBox__header
+        .left
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .right
+          .star
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star_white
+              span.path1
+              span.path2
+          h4.ttl
+            |はじめてヨットに乗った
+      .reviewBox__body
+        p
+          |はじめてヨットに乗ったのですが、とても楽しかったです！風の力だけで船を動かすなんてすごいなと感じました。
+        p
+          |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
+
+      p.reviewBox__info
+        |2016年２月 / 山田太郎
+
+    .reviewBox
+      .reviewBox__header
+        .left
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .right
+          .star
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star_white
+              span.path1
+              span.path2
+          h4.ttl
+            |はじめてヨットに乗った
+      .reviewBox__body
+        p
+          |はじめてヨットに乗ったのですが、とても楽しかったです！風の力だけで船を動かすなんてすごいなと感じました。
+        p
+          |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
+
+      p.reviewBox__info
+        |2016年２月 / 山田太郎
+
+    .reviewBox
+      .reviewBox__header
+        .left
+          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+        .right
+          .star
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star
+              span.path1
+              span.path2
+            span.icon-icn_star_white
+              span.path1
+              span.path2
+          h4.ttl
+            |はじめてヨットに乗った
+      .reviewBox__body
+        p
+          |はじめてヨットに乗ったのですが、とても楽しかったです！風の力だけで船を動かすなんてすごいなと感じました。
+        p
+          |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
+
+      p.reviewBox__info
+        |2016年２月 / 山田太郎
+
+// --------------送信しました
+#ModalList style="display:none"
+  #thanksMessage data-title='送信しました'
+    p.message
+      |ありがとうございました。
+      br
+      |オーナーからのご連絡をお待ち下さい。

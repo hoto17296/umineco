@@ -59,9 +59,10 @@
         height: auto;
       }
     }
-    p {
+    .text {
       margin-bottom: 10px;
       font-size: 16px;
+      letter-spacing: 1px;
     }
   }
   &__right {
@@ -120,38 +121,41 @@
   margin-bottom: 30px;
   border-bottom: 1px dotted #e5e5e5;
 
-  &__left {
-    float: left;
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
-    overflow: hidden;
+  &__header {
+    position: relative;
+    margin-bottom: 10px;
 
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-  &__right {
-    float: right;
-    width: 535px;
-  }
-  .reviewBody {
-    &__ttl {
-      font-size: 20px;
-      margin-bottom: 10px;
-
-      .icon-icn_star, .icon-icn_star_white {
-        margin-right: 3px;
-        font-size: 16px;
+    .left {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: auto;
       }
     }
-    &__body {
+    .right {
+      margin-left: 60px;
+      .icon-icn_star, .icon-icn_star_white {
+        margin-right: 3px;
+        font-size: 17px;
+      }
+      .ttl {
+        margin-bottom: 5px;
+        font-size: 18px;
+      }
     }
-    &__info {
-      font-size: 14px;
-      text-align: right;
+  }
+  &__body {
+    p {
+      margin-bottom: 10px;
     }
+  }
+  &__info {
+    font-size: 12px;
+    text-align: right;
   }
 }
 
@@ -187,7 +191,9 @@
       font-size: 14px;
     }
     .participant {
-      color: #397fd6;
+      a {
+        color: #397fd6;
+      }
 
       &__number {
         font-size: 23px;
