@@ -69,6 +69,12 @@ class SailingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sailing_params
-      params.fetch(:sailing, {})
+      sailing = params.require(:sailing).permit(:name, :community_id, :duration_begin, :duration_end)
+      if sailing[:duration_begin].present? and sailing[:duration_end].present?
+        sailing[:duration] = DateTime.parse(sailing[:duration_begin])..DateTime.parse(sailing[:duration_end])
+      end
+      sailing.delete :duration_begin
+      sailing.delete :duration_end
+      sailing
     end
 end
