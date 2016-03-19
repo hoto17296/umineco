@@ -149,68 +149,27 @@ main
 
         .l-inner
 
-          // 日程1
-          .reservationBox
-            .reservationBox__left
-              p.date
-                |2016/02/20(土)
-              p.time
-                |09:00-17:00
+          - @community.sailings.each do |sailing|
+            - duration = tsrange2str sailing.duration
+            .reservationBox
+              .reservationBox__left
+                p.date= duration[:date]
+                p.time
+                  = duration[:begin]
+                  | -
+                  = duration[:end]
 
-              .c-btn.c-btn--Style3
-                a href="#" onClick="Modal.open('reservationForm1')"
-                  span.icon-icn_arrow.icn_arrow--white
-                  |一緒に遊ぶ
-            .reservationBox__right
-              p.ttl
-                |参加者
-              p.participant
-                a href="#" onClick="Modal.open('participantList1')"
-                  span.participant__number
-                    |8
-                  |/10人
-
-          // 日程2
-          .reservationBox
-            .reservationBox__left
-              p.date
-                |2016/03/19(土)
-              p.time
-                |09:00-17:00
-
-              .c-btn.c-btn--Style3
-                a href="#" onClick="Modal.open('reservationForm2')"
-                  span.icon-icn_arrow.icn_arrow--white
-                  |一緒に遊ぶ
-            .reservationBox__right
-              p.ttl
-                |参加者
-              p.participant
-                a href="#" onClick="Modal.open('participantList2')"
-                  span.participant__number
-                    |8
-                  |/10人
-
-          // 日程3
-          .reservationBox
-            .reservationBox__left
-              p.date
-                |2016/03/26(土)
-              p.time
-                |09:00-17:00
-
-              .c-btn.c-btn--Style3
-                a href="#" onClick="Modal.open('reservationForm3')"
-                  span.icon-icn_arrow.icn_arrow--white
-                  |一緒に遊ぶ
-            .reservationBox__right
-              p.ttl
-                |参加者
-              p.participant
-                a href="#" onClick="Modal.open('participantList3')"
-                  span.participant__number
-                    |8
-                  |/10人
+                .c-btn.c-btn--Style3
+                  a href="#" onClick="Modal.open('reservationForm-#{sailing.id}')"
+                    span.icon-icn_arrow.icn_arrow--white
+                    |一緒に遊ぶ
+              .reservationBox__right
+                p.ttl
+                  |参加者
+                p.participant
+                  a href="#" onClick="Modal.open('participantList-#{sailing.id}')"
+                    span.participant__number= sailing.participants.size
+                    |/10人
 
           // ご相談
           .consultationBox
@@ -398,62 +357,41 @@ main
 // ----------------------------------------------------------------以下modal
 
 
-// --------------仮予約 1
 #ModalList style="display:none"
-  #reservationForm1 data-title='2016/02/20に仮予約'
-    p.message
-      |一緒に遊ぶボタンを押していただくと、仮予約が完了します。
-    p.messageSmall
-      |このイベントをあなたの友達にも知らせよう！
-    form
-      label
-        input.messageSmall type="checkbox" checked="checked"
-          |Facebookでシェアする
-      textarea placeholder="山田花子さんは2月20日にクルージングイベントに参加します。"
 
-    .c-btn.c-btn--Style3
-      = link_to "#"
-        span.icon-icn_arrow.icn_arrow--white
-        |送信
+  - @community.sailings.each do |sailing|
+    - duration = tsrange2str sailing.duration
 
-// --------------仮予約 2
-#ModalList style="display:none"
-  #reservationForm2 data-title='2016/03/19に仮予約'
-    p.message
-      |一緒に遊ぶボタンを押していただくと、仮予約が完了します。
-    p.messageSmall
-      |このイベントをあなたの友達にも知らせよう！
-    form
-      label
-        input.messageSmall type="checkbox" checked="checked"
-          |Facebookでシェアする
-      textarea placeholder="山田花子さんは3月19日にクルージングイベントに参加します。"
+    // --------------仮予約
+    div id="reservationForm-#{sailing.id}" data-title="#{duration[:date]}に仮予約"
+      p.message
+        |一緒に遊ぶボタンを押していただくと、仮予約が完了します。
+      p.messageSmall
+        |このイベントをあなたの友達にも知らせよう！
+      form
+        label
+          input.messageSmall type="checkbox" checked="checked"
+            |Facebookでシェアする
+        textarea
+          | #{current_user.name}さんは#{duration[:date]}にクルージングイベントに参加します。
 
-    .c-btn.c-btn--Style3
-      = link_to "#"
-        span.icon-icn_arrow.icn_arrow--white
-        |送信
+      .c-btn.c-btn--Style3
+        = link_to "#"
+          span.icon-icn_arrow.icn_arrow--white
+          |送信
 
-// --------------仮予約 1
-#ModalList style="display:none"
-  #reservationForm3 data-title='2016/03/26に仮予約'
-    p.message
-      |一緒に遊ぶボタンを押していただくと、仮予約が完了します。
-    p.messageSmall
-      |このイベントをあなたの友達にも知らせよう！
-    form
-      label
-        input.messageSmall type="checkbox" checked="checked"
-          |Facebookでシェアする
-      textarea placeholder="山田花子さんは3月26日にクルージングイベントに参加します。"
+    // --------------参加者一覧
+    div id="participantList-#{sailing.id}" data-title="#{duration[:date]}参加者一覧"
+      ul.participantList
+        - sailing.participants.each do |participant|
+          - user = participant.user
+          li
+            .participantList__img= image_tag user.picture
+            .participantList__name= user.name
+      - if sailing.participants.size === 0
+        | 参加者はまだいません。
 
-    .c-btn.c-btn--Style3
-      = link_to "#"
-        span.icon-icn_arrow.icn_arrow--white
-        |送信
-
-// --------------興味あります
-#ModalList style="display:none"
+  // --------------興味あります
   #interestForm data-title='興味あります'
     p.message
       |オーナーに興味がある旨を伝えてよろしいですか？
@@ -465,8 +403,7 @@ main
         span.icon-icn_arrow.icn_arrow--white
         |送信
 
-// --------------別日程なら参加したい
-#ModalList style="display:none"
+  // --------------別日程なら参加したい
   #anotherDateForm data-title='別日程なら参加したい'
     p.message
       |参加したい日程を入力してください。
@@ -478,88 +415,7 @@ main
         span.icon-icn_arrow.icn_arrow--white
         |送信
 
-// --------------参加者一覧 1
-#ModalList style="display:none"
-  #participantList1 data-title='2016/02/20参加者一覧'
-    ul.participantList
-      li
-        .participantList__img
-          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
-        .participantList__name
-          |鈴木一郎
-      li
-        .participantList__img
-          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
-        .participantList__name
-          |鈴木一郎
-      li
-        .participantList__img
-          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
-        .participantList__name
-          |鈴木一郎
-      li
-        .participantList__img
-          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
-        .participantList__name
-          |鈴木一郎
-      li
-        .participantList__img
-          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
-        .participantList__name
-          |鈴木一郎
-      li
-        .participantList__img
-          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
-        .participantList__name
-          |鈴木一郎
-      li
-        .participantList__img
-          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
-        .participantList__name
-          |鈴木一郎
-      li
-        .participantList__img
-          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
-        .participantList__name
-          |鈴木一郎
-      li
-        .participantList__img
-          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
-        .participantList__name
-          |鈴木一郎
-
-// --------------参加者一覧 2
-#ModalList style="display:none"
-  #participantList2 data-title='2016/03/19参加者一覧'
-    ul.participantList
-      li
-        .participantList__img
-          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
-        .participantList__name
-          |鈴木一郎
-      li
-        .participantList__img
-          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
-        .participantList__name
-          |鈴木一郎
-
-// --------------参加者一覧 3
-#ModalList style="display:none"
-  #participantList3 data-title='2016/03/26参加者一覧'
-    ul.participantList
-      li
-        .participantList__img
-          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
-        .participantList__name
-          |鈴木一郎
-      li
-        .participantList__img
-          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
-        .participantList__name
-          |鈴木一郎
-
-// --------------メンバー一覧
-#ModalList style="display:none"
+  // --------------メンバー一覧
   #memberList data-title='メンバー一覧'
     ul.modalMemberList
       li
@@ -619,8 +475,7 @@ main
           .text
             |テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
 
-// --------------レビュー一覧
-#ModalList style="display:none"
+  // --------------レビュー一覧
   #reviewList data-title='レビュー 一覧'
     .reviewStar
       span.number
@@ -770,8 +625,7 @@ main
       p.reviewBox__info
         |2016年２月 / 山田太郎
 
-// --------------送信しました
-#ModalList style="display:none"
+  // --------------送信しました
   #thanksMessage data-title='送信しました'
     p.message
       |ありがとうございました。
