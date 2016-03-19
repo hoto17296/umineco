@@ -2,9 +2,13 @@ import $ from 'jquery'
 
 const Modal = {
 
-  open: function(id, opts) {
+  open: function(id) {
     $('#modal').show();
-    // TODO 内容を入れる
+    var $container = $('#modal .container');
+    var content = $('#'+id).clone(true);
+    $container.find('.content').empty().append(content);
+    var title = content.data('title');
+    $container.find('header .title').empty().append(title);
   },
 
   close: function() {

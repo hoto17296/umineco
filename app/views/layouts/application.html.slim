@@ -29,9 +29,4 @@ html
 
     = render "layouts/footer"
 
-    #modal style='display:none' onClick='Modal.close()'
-      .container onClick='event.stopPropagation()'
-        header
-          a.close href='#' onClick='event.preventDefault();Modal.close()'
-        .content
-        footer
+    = render "layouts/modal"
