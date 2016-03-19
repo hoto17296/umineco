@@ -212,7 +212,7 @@ main
               |ご相談
 
             .c-btn.c-btn--Style4
-              = link_to "#"
+              a href="#" onClick="Modal.open('interestForm')"
                 span.icon-icn_arrow.icn_arrow--white
                 |興味あります
 
@@ -388,6 +388,24 @@ main
               span.icon-icn_arrow.icn_arrow--white
               |他のレビューを見る
 
+
+// ----------------------------------------------------------------以下modal
+
+
+// --------------興味あります
+#ModalList style="display:none"
+  #interestForm data-title='興味あります'
+    p
+      |オーナーに興味がある旨を伝えてよろしいですか？
+    form
+      textarea placeholder="オーナーに伝えたい事があれば記入してください。"
+
+    .c-btn.c-btn--Style3
+      = link_to "#"
+        span.icon-icn_arrow.icn_arrow--white
+        |送信
+
+// --------------メンバー一覧
 #ModalList style="display:none"
   #memberList data-title='メンバー一覧'
     ul.modalMemberList
@@ -448,6 +466,7 @@ main
           .text
             |テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
 
+// --------------レビュー一覧
 #ModalList style="display:none"
   #reviewList data-title='レビュー 一覧'
     .reviewStar
