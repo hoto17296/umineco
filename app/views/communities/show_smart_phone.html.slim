@@ -155,7 +155,7 @@ main
                 |09:00-17:00
 
               .c-btn.c-btn--Style3
-                = link_to "#"
+                a href="#" onClick="Modal.open('reservationForm1')"
                   span.icon-icn_arrow.icn_arrow--white
                   |一緒に遊ぶ
             .reservationBox__right
@@ -170,12 +170,12 @@ main
           .reservationBox
             .reservationBox__left
               p.date
-                |2016/02/20(土)
+                |2016/03/19(土)
               p.time
                 |09:00-17:00
 
               .c-btn.c-btn--Style3
-                = link_to "#"
+                a href="#" onClick="Modal.open('reservationForm2')"
                   span.icon-icn_arrow.icn_arrow--white
                   |一緒に遊ぶ
             .reservationBox__right
@@ -190,12 +190,12 @@ main
           .reservationBox
             .reservationBox__left
               p.date
-                |2016/02/20(土)
+                |2016/03/26(土)
               p.time
                 |09:00-17:00
 
               .c-btn.c-btn--Style3
-                = link_to "#"
+                a href="#" onClick="Modal.open('reservationForm3')"
                   span.icon-icn_arrow.icn_arrow--white
                   |一緒に遊ぶ
             .reservationBox__right
@@ -392,10 +392,64 @@ main
 // ----------------------------------------------------------------以下modal
 
 
+// --------------仮予約 1
+#ModalList style="display:none"
+  #reservationForm1 data-title='2016/02/20に仮予約'
+    p.message
+      |一緒に遊ぶボタンを押していただくと、仮予約が完了します。
+    p.messageSmall
+      |このイベントをあなたの友達にも知らせよう！
+    form
+      label
+        input.messageSmall type="checkbox" checked="checked"
+          |Facebookでシェアする
+      textarea placeholder="山田花子さんは2月20日にクルージングイベントに参加します。"
+
+    .c-btn.c-btn--Style3
+      = link_to "#"
+        span.icon-icn_arrow.icn_arrow--white
+        |送信
+
+// --------------仮予約 2
+#ModalList style="display:none"
+  #reservationForm2 data-title='2016/03/19に仮予約'
+    p.message
+      |一緒に遊ぶボタンを押していただくと、仮予約が完了します。
+    p.messageSmall
+      |このイベントをあなたの友達にも知らせよう！
+    form
+      label
+        input.messageSmall type="checkbox" checked="checked"
+          |Facebookでシェアする
+      textarea placeholder="山田花子さんは3月19日にクルージングイベントに参加します。"
+
+    .c-btn.c-btn--Style3
+      = link_to "#"
+        span.icon-icn_arrow.icn_arrow--white
+        |送信
+
+// --------------仮予約 1
+#ModalList style="display:none"
+  #reservationForm3 data-title='2016/03/26に仮予約'
+    p.message
+      |一緒に遊ぶボタンを押していただくと、仮予約が完了します。
+    p.messageSmall
+      |このイベントをあなたの友達にも知らせよう！
+    form
+      label
+        input.messageSmall type="checkbox" checked="checked"
+          |Facebookでシェアする
+      textarea placeholder="山田花子さんは3月26日にクルージングイベントに参加します。"
+
+    .c-btn.c-btn--Style3
+      = link_to "#"
+        span.icon-icn_arrow.icn_arrow--white
+        |送信
+
 // --------------興味あります
 #ModalList style="display:none"
   #interestForm data-title='興味あります'
-    p
+    p.message
       |オーナーに興味がある旨を伝えてよろしいですか？
     form
       textarea placeholder="オーナーに伝えたい事があれば記入してください。"
@@ -408,7 +462,7 @@ main
 // --------------別日程なら参加したい
 #ModalList style="display:none"
   #anotherDateForm data-title='別日程なら参加したい'
-    p
+    p.message
       |参加したい日程を入力してください。
     form
       input type="text"
