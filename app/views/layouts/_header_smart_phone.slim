@@ -28,6 +28,27 @@ header#header
         = link_to "/about"
           |uminecoとは
 
+a href="#" onClick="Modal.open('loginForm')"
+  span.icon-icn_arrow.icn_arrow--white
+  |ログイン
+
+// --------------login modal
+#ModalList style="display:none"
+  #loginForm data-title='ログイン / 新規登録'
+    p.message
+      |Facebookでログインして、uminecoで遊ぼう！
+
+    .c-btn.c-btn--Style5
+      = link_to "#"
+        span.icon-icn_fb.icn_arrow--white
+        |ログインまたは新規登録
+
+    p.messageSmall
+      |登録することで、
+      = link_to '利用規約', '#'
+      |、
+      = link_to 'プラバシーポリシー', '#'
+      |に同意したことになります
 
 /! /partial header
 

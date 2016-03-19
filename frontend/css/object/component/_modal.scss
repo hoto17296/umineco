@@ -46,9 +46,13 @@
     }
     .messageSmall {
       font-size: 12px;
+      a {
+        text-decoration: underline;
+        color: #7bceef;
+      }
     }
     .c-btn {
-      margin: 0 auto;
+      margin: 0 auto 10px auto;
       width: 230px;
     }
     textarea {
