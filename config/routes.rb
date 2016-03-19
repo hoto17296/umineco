@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'root#index'
 
-  [ :about ].each do |key|
+  [ :about, :company, :terms ].each do |key|
     get key, to: "root##{key}", as: key
   end
 

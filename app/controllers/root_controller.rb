@@ -6,4 +6,10 @@ class RootController < ApplicationController
   def about
   end
 
+  def company
+  end
+
+  def terms
+  end
+
 end
