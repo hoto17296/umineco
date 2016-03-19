@@ -5,32 +5,31 @@
   padding: 10px 0;
   border-bottom: 1px solid #a0d9f6;
 
-  &__left {
+  &__logo {
     float: left;
+    width: 267px;
     img {
-      width: 267px;
+      width: 100%;
       height: auto;
     }
   }
-  &__right {
+  &__navi {
     float: right;
+    margin-top: 30px;
 
-    .navi {
-      margin-top: 30px;
-      li {
-        display: inline-block;
-        margin-left: 20px;
-        }
-      .fbIcon {
-        display: inline-block;
-        width: 25px;
-        border-radius: 50%;
-        overflow: hidden;
-        vertical-align: middle;
-        img {
-          width: 100%;
-          height: auto;
-        }
+    li {
+      display: inline-block;
+      margin-left: 20px;
+      }
+    .fbIcon {
+      display: inline-block;
+      width: 25px;
+      border-radius: 50%;
+      overflow: hidden;
+      vertical-align: middle;
+      img {
+        width: 100%;
+        height: auto;
       }
     }
   }

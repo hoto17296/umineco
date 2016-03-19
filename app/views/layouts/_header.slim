@@ -2,12 +2,12 @@
 
 header#header.l-header
   .l-inner
-    h1.l-header__left
+    h1.l-header__logo
       = link_to root_path
         =image_tag "common/logo.png", alt:"umineco"
 
-    navi.l-header__right
-      ul.navi
+    navi
+      ul.l-header__navi
         - if user_signed_in?
           li
             .fbIcon

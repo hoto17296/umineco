@@ -3,27 +3,36 @@
 .l-header {
   @extend %clearfix;
   padding: 10px 0;
-  border-bottom: 1px solid #a0d9f6;
 
-  &__left {
-    float: left;
-    width: 40%;
+  &__logo {
+    width: 200px;
+    height: auto;
+    margin: 10px auto;
     img {
       width: 100%;
       height: auto;
     }
   }
-  &__right {
-    float: right;
-    width: 60%;
-    text-align: right;
+  &__navi {
+    padding: 5px 0;
+    border-top: 1px solid #a0d9f6;
+    border-bottom: 1px solid #a0d9f6;
+    text-align: center;
 
-    .navi {
-      margin-top: 10px;
-      li {
-        display: inline-block;
-        margin-left: 5px;
-        font-size: 12px;
+    li {
+      display: inline-block;
+      margin-left: 5px;
+      font-size: 12px;
+    }
+    .fbIcon {
+      display: inline-block;
+      width: 25px;
+      border-radius: 50%;
+      overflow: hidden;
+      vertical-align: middle;
+      img {
+        width: 100%;
+        height: auto;
       }
     }
   }

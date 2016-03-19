@@ -14,16 +14,6 @@ html
   body
     = render "layouts/facebook"
 
-    header
-      - if user_signed_in?
-        = image_tag(current_user.picture)
-        = current_user.name
-        = link_to 'Sign out', destroy_user_session_path, method: :delete
-      - else
-        = link_to 'Sign in with Facebook', user_omniauth_authorize_path(:facebook)
-      p.notice= notice
-      p.alert= alert
-
     = render "layouts/header"
 
     = yield
