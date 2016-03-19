@@ -4,8 +4,14 @@
   meta property="og:url" content="#{root_url()}"
   meta property="og:image" content="#{root_url()}images/common/img_umineco.jpg"
 
-#main_slider
-  =image_tag "top/img_main.jpg", alt:""
+#mainSlider
+  ul.mainSliderInner.isTransition
+    li.mainSliderItem.box1
+      =image_tag "top/img_main_1.jpg", alt:""
+    li.mainSliderItem.box2
+      =image_tag "top/img_main_2.jpg", alt:""
+    li.mainSliderItem.box3
+      =image_tag "top/img_main_3.jpg", alt:""
 
 main
   .l-inner
