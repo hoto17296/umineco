@@ -1,13 +1,8 @@
 @charset "utf-8";
 
-// メインスライダー
-#main_slider {
-  margin-bottom: 50px;
-
-  img {
-    width: 1000px;
-    height: auto;
-  }
+#mainCarousel {
+  width: 100%;
+  min-width: 960px;
 }
 
 // uminecoの遊び方

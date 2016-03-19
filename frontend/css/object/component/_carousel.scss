@@ -1,0 +1,44 @@
+.Carousel {
+  overflow: hidden;
+
+  .CarouselInner {
+    width: 300%;
+    transform: translateX(0);
+
+    &.isTransition {
+      transition: transform 500ms ease-in;
+    }
+
+    .CarouselItem {
+      float: left;
+      width: 33.3%;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &::after {
+      content: "";
+      clear: both;
+    }
+  }
+
+  .CarouselNavi {
+    text-align: center;
+
+    span {
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      margin: 0 10px;
+      border-radius: 50%;
+      background: #dcebf1;
+    }
+
+    .current {
+      background: #6dc9ee;
+    }
+  }
+}
