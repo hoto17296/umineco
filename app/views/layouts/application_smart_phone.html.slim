@@ -11,6 +11,7 @@ html
     - else
       script src='/sp.js' defer=true
     = csrf_meta_tags
+    == yield :ogp
   body
     = render "layouts/facebook"
 
