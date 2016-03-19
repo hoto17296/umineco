@@ -217,7 +217,7 @@ main
                 |興味あります
 
             .c-btn.c-btn--Style4
-              = link_to "#"
+              a href="#" onClick="Modal.open('anotherDateForm')"
                 span.icon-icn_arrow.icn_arrow--white
                 |別日程なら参加したい
 
@@ -399,6 +399,19 @@ main
       |オーナーに興味がある旨を伝えてよろしいですか？
     form
       textarea placeholder="オーナーに伝えたい事があれば記入してください。"
+
+    .c-btn.c-btn--Style3
+      = link_to "#"
+        span.icon-icn_arrow.icn_arrow--white
+        |送信
+
+// --------------別日程なら参加したい
+#ModalList style="display:none"
+  #anotherDateForm data-title='別日程なら参加したい'
+    p
+      |参加したい日程を入力してください。
+    form
+      input type="text"
 
     .c-btn.c-btn--Style3
       = link_to "#"
