@@ -15,19 +15,65 @@
     background-color: white;
     width: 600px;
     max-width: 90%;
-    height: 400px; // 仮
+    height: 500px; // 仮
+    overflow: scroll;
     border-radius: .5em;
 
     header {
+      padding: 10px 0;
+      border-bottom: 1px solid #6dc9ee;
+      text-align: center;
+      .title {
+        font-size: 18px;
+        color: #6dc9ee;
+      }
       .close {
         position: absolute;
-        top: .5em;
-        right: 1em;
+        top: .3em;
+        right: 0.8em;
         font-size: 1.5em;
         font-weight: bold;
+        color: #6dc9ee;
 
         &::before { content: '×'; }
       }
     }
+    .content {
+      padding: 10px;
+    }
   }
 }
+
+// メンバー一覧
+.modalMemberList {
+  @extend %clearfix;
+
+  li {
+    margin-bottom: 10px;
+    border-bottom: 1px dotted #e5e5e5;
+  }
+  &__img {
+    float: left;
+    width: 50px;
+    border-radius: 5px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__body {
+    margin-left: 60px;
+
+    .name {
+      margin-bottom: 5px;
+    }
+    .text {
+      font-size: 12px;
+    }
+  }
+}
+
+
+
+
