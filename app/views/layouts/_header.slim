@@ -20,15 +20,34 @@ header#header.l-header
         - else
 
           li
-            span.icon-icn_arrow.icn_arrow--blue
-            = link_to 'ログイン', user_omniauth_authorize_path(:facebook)
-            /p.notice= notice
-            /p.alert= alert
+            a href="#" onClick="Modal.open('loginForm')"
+              span.icon-icn_arrow.icn_arrow--blue
+              |ログイン
+
         li
           span.icon-icn_arrow.icn_arrow--blue
           = link_to "/about"
             |uminecoとは
 
+
+// --------------login modal
+#ModalList style="display:none"
+  - unless user_signed_in?
+    #loginForm data-title='ログイン / 新規登録'
+      p.message
+        |Facebookでログインして、uminecoで遊ぼう！
+
+      .c-btn.c-btn--Style5
+        = link_to user_omniauth_authorize_path(:facebook)
+          span.icon-icn_fb.icn_arrow--white
+          |ログインまたは新規登録
+
+      p.messageSmall
+        |登録することで、
+        = link_to '利用規約', '#'
+        |、
+        = link_to 'プラバシーポリシー', '#'
+        |に同意したことになります。
 
 /! /partial header
 
