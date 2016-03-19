@@ -159,46 +159,6 @@
   }
 }
 
-// .reviewBox {
-//   @extend %clearfix;
-//   margin-bottom: 30px;
-//   border-bottom: 1px dotted #e5e5e5;
-//
-//   &__left {
-//     float: left;
-//     width: 80px;
-//     height: 80px;
-//     border-radius: 10px;
-//     overflow: hidden;
-//
-//     img {
-//       width: 100%;
-//       height: auto;
-//     }
-//   }
-//   &__right {
-//     float: right;
-//     width: 535px;
-//   }
-//   .reviewBody {
-//     &__ttl {
-//       font-size: 20px;
-//       margin-bottom: 10px;
-//
-//       .icon-icn_star, .icon-icn_star_white {
-//         margin-right: 3px;
-//         font-size: 16px;
-//       }
-//     }
-//     &__body {
-//     }
-//     &__info {
-//       font-size: 14px;
-//       text-align: right;
-//     }
-//   }
-// }
-
 // サイド 日程
 .reservationBox {
   @extend %clearfix;
