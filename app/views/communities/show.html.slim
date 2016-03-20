@@ -308,90 +308,89 @@ main
               |他のレビューを見る
 
 
-
-
       // --------------event side
       .eventBody__right
-        h2.c-title-4
-          |日程・ご予約
+        section#eventAction
+          h2.c-title-4
+            |日程・ご予約
 
-        // 日程1
-        .reservationBox
-          .reservationBox__left
-            p.date
-              |2016/02/20(土)
-            p.time
-              |09:00-17:00
+          // 日程1
+          .reservationBox
+            .reservationBox__left
+              p.date
+                |2016/02/20(土)
+              p.time
+                |09:00-17:00
 
-            .c-btn.c-btn--Style3
-              a href="#" onClick="Modal.open('reservationForm1')"
+              .c-btn.c-btn--Style3
+                a href="#" onClick="Modal.open('reservationForm1')"
+                  span.icon-icn_arrow.icn_arrow--white
+                  |一緒に遊ぶ
+            .reservationBox__right
+              p.ttl
+                |参加者
+              p.participant
+                a href="#" onClick="Modal.open('participantList1')"
+                  span.participant__number
+                    |8
+                  |/10人
+
+          // 日程2
+          .reservationBox
+            .reservationBox__left
+              p.date
+                |2016/03/19(土)
+              p.time
+                |09:00-17:00
+
+              .c-btn.c-btn--Style3
+                a href="#" onClick="Modal.open('reservationForm2')"
+                  span.icon-icn_arrow.icn_arrow--white
+                  |一緒に遊ぶ
+            .reservationBox__right
+              p.ttl
+                |参加者
+              p.participant
+                a href="#" onClick="Modal.open('participantList2')"
+                  span.participant__number
+                    |8
+                  |/10人
+
+          // 日程3
+          .reservationBox
+            .reservationBox__left
+              p.date
+                |2016/03/26(土)
+              p.time
+                |09:00-17:00
+
+              .c-btn.c-btn--Style3
+                a href="#" onClick="Modal.open('reservationForm3')"
+                  span.icon-icn_arrow.icn_arrow--white
+                  |一緒に遊ぶ
+            .reservationBox__right
+              p.ttl
+                |参加者
+              p.participant
+                a href="#" onClick="Modal.open('participantList3')"
+                  span.participant__number
+                    |8
+                  |/10人
+
+          // ご相談
+          .consultationBox
+            p.consultationBox__ttl
+              |ご相談
+
+            .c-btn.c-btn--Style4
+              a href="#" onClick="Modal.open('interestForm')"
                 span.icon-icn_arrow.icn_arrow--white
-                |一緒に遊ぶ
-          .reservationBox__right
-            p.ttl
-              |参加者
-            p.participant
-              a href="#" onClick="Modal.open('participantList1')"
-                span.participant__number
-                  |8
-                |/10人
+                |興味あります
 
-        // 日程2
-        .reservationBox
-          .reservationBox__left
-            p.date
-              |2016/03/19(土)
-            p.time
-              |09:00-17:00
-
-            .c-btn.c-btn--Style3
-              a href="#" onClick="Modal.open('reservationForm2')"
+            .c-btn.c-btn--Style4
+              a href="#" onClick="Modal.open('anotherDateForm')"
                 span.icon-icn_arrow.icn_arrow--white
-                |一緒に遊ぶ
-          .reservationBox__right
-            p.ttl
-              |参加者
-            p.participant
-              a href="#" onClick="Modal.open('participantList2')"
-                span.participant__number
-                  |8
-                |/10人
-
-        // 日程3
-        .reservationBox
-          .reservationBox__left
-            p.date
-              |2016/03/26(土)
-            p.time
-              |09:00-17:00
-
-            .c-btn.c-btn--Style3
-              a href="#" onClick="Modal.open('reservationForm3')"
-                span.icon-icn_arrow.icn_arrow--white
-                |一緒に遊ぶ
-          .reservationBox__right
-            p.ttl
-              |参加者
-            p.participant
-              a href="#" onClick="Modal.open('participantList3')"
-                span.participant__number
-                  |8
-                |/10人
-
-        // ご相談
-        .consultationBox
-          p.consultationBox__ttl
-            |ご相談
-
-          .c-btn.c-btn--Style4
-            a href="#" onClick="Modal.open('interestForm')"
-              span.icon-icn_arrow.icn_arrow--white
-              |興味あります
-
-          .c-btn.c-btn--Style4
-            a href="#" onClick="Modal.open('anotherDateForm')"
-              span.icon-icn_arrow.icn_arrow--white
-              |別日程なら参加したい
+                |別日程なら参加したい
 
 
 // ----------------------------------------------------------------以下modal

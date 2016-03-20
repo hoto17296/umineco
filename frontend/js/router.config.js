@@ -1,7 +1,7 @@
 import root from './routes/root'
-import sailings from './routes/sailings'
+import communities from './routes/communities'
 
 export default {
   root,
-  sailings,
+  communities,
 }
