@@ -398,7 +398,7 @@ main
     p.message
       |オーナーに興味がある旨を伝えてよろしいですか？
     = form_for :community, url: interest_community_path(@community) do |f|
-      = text_area :message, :body, placeholder: "オーナーに伝えたい事があれば記入してください。"
+      = text_area :feed, :body, placeholder: "オーナーに伝えたい事があれば記入してください。"
 
       .c-btn.c-btn--Style3
         button type='submit'
@@ -409,8 +409,8 @@ main
   #anotherDateForm data-title='別日程なら参加したい'
     p.message
       |参加したい日程を入力してください。
-    form
-      input type="text"
+    = form_for :community, url: another_time_community_path(@community) do |f|
+      = text_field :feed, :body, placeholder: ""
 
       .c-btn.c-btn--Style3
         button type='submit'

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :community, as: :communities, controller: :communities do
     member do
       post :interest
+      post :another_time
     end
   end
   resources :member, as: :members, path: 'community/:community_id/members', controller: :members
