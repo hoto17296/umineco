@@ -3,7 +3,7 @@ class Community < ActiveRecord::Base
   has_many :users, through: :members
   has_many :ships
   has_many :sailings
-  has_many :messages
+  has_many :feeds
 
   def member?(user)
     return false if user.blank?
