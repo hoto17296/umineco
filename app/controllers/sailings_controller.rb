@@ -1,5 +1,5 @@
 class SailingsController < ApplicationController
-  before_action :set_sailing, only: [:show, :edit, :update, :destroy]
+  before_action :set_sailing, only: [:show, :edit, :update, :destroy, :interest]
 
   # GET /sailings
   # GET /sailings.json

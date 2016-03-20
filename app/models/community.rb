@@ -9,4 +9,12 @@ class Community < ActiveRecord::Base
     return false if user.blank?
     members.where(user: user).present?
   end
+
+  def add_member(user, type=:guest)
+    return if member? user
+    member = Member.new( user: user, type: type )
+    members << member
+    save
+  end
+
 end

@@ -62,6 +62,14 @@ class CommunitiesController < ApplicationController
     end
   end
 
+  # 「興味あります」「別日程なら参加したい」
+  def interest
+    # TODO メッセージを保存
+
+    # 参加者がまだコミュニティメンバーでなければ guest として追加する
+    @community.add_member(current_user)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_community

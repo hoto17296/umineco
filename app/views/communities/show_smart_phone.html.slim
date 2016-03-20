@@ -397,13 +397,13 @@ main
   #interestForm data-title='興味あります'
     p.message
       |オーナーに興味がある旨を伝えてよろしいですか？
-    form
-      textarea placeholder="オーナーに伝えたい事があれば記入してください。"
+    = form_for :community, url: interest_community_path(@community) do |f|
+      = text_area :message, :body, placeholder: "オーナーに伝えたい事があれば記入してください。"
 
-    .c-btn.c-btn--Style3
-      = link_to "#"
-        span.icon-icn_arrow.icn_arrow--white
-        |送信
+      .c-btn.c-btn--Style3
+        button type='submit'
+          span.icon-icn_arrow.icn_arrow--white
+          |送信
 
   // --------------別日程なら参加したい
   #anotherDateForm data-title='別日程なら参加したい'
@@ -412,10 +412,10 @@ main
     form
       input type="text"
 
-    .c-btn.c-btn--Style3
-      = link_to "#"
-        span.icon-icn_arrow.icn_arrow--white
-        |送信
+      .c-btn.c-btn--Style3
+        button type='submit'
+          span.icon-icn_arrow.icn_arrow--white
+          |送信
 
   // --------------メンバー一覧
   #memberList data-title='メンバー一覧'

@@ -35,12 +35,7 @@ class ParticipantsController < ApplicationController
     respond_to do |format|
       if @participant.save
         # 参加者がまだコミュニティメンバーでなければ guest として追加する
-        unless @sailing.community.nil? or @sailing.community.member?(current_user)
-          @member = Member.new
-          @member.user = current_user
-          @member.community = @sailing.community
-          @member.save
-        end
+        @sailing.community.add_member(current_user) if @sailing.community.present?
 
         format.html { redirect_to @participant, notice: 'Participant was successfully created.' }
         format.json { render :show, status: :created, location: @participant }
