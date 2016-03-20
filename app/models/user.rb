@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :members
   has_many :communities, through: :members
-  has_many :messages
+  has_many :feeds
   has_many :ships
   has_many :participants
   has_many :sailings, through: :participants

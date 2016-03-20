@@ -1,6 +1,6 @@
 class CommunitiesController < ApplicationController
-  before_action :authenticate_admin_user!, except: [:show]
-  before_action :set_community, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin_user!, except: [:show, :interest, :another_time]
+  before_action :set_community, only: [:show, :edit, :update, :destroy, :interest, :another_time]
 
   # GET /communities
   # GET /communities.json
@@ -59,6 +59,54 @@ class CommunitiesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to communities_url, notice: 'Community was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  # 「興味あります」
+  def interest
+    # コメントをフィードとして保存
+    feed_params = params.fetch(:feed, {}).permit(:body)
+    feed = Feed.new({
+      body: feed_params[:body],
+      type: :interest,
+      community: @community,
+      user: current_user,
+    })
+
+    respond_to do |format|
+      if feed.save
+        # 参加者がまだコミュニティメンバーでなければ guest として追加する
+        @community.add_member(current_user)
+        format.html { redirect_to @community, notice: 'Community was successfully updated.' }
+        format.json { render :show, status: :ok, location: @community }
+      else
+        format.html { render :edit }
+        format.json { render json: @community.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # 「別日程なら参加したい」
+  def another_time
+    # コメントをフィードとして保存
+    feed_params = params.fetch(:feed, {}).permit(:body)
+    feed = Feed.new({
+      body: feed_params[:body],
+      type: :another_time,
+      community: @community,
+      user: current_user,
+    })
+
+    respond_to do |format|
+      if feed.save
+        # 参加者がまだコミュニティメンバーでなければ guest として追加する
+        @community.add_member(current_user)
+        format.html { redirect_to @community, notice: 'Community was successfully updated.' }
+        format.json { render :show, status: :ok, location: @community }
+      else
+        format.html { render :edit }
+        format.json { render json: @community.errors, status: :unprocessable_entity }
+      end
     end
   end
 

@@ -19,7 +19,12 @@ Rails.application.routes.draw do
 
   resources :sailing, as: :sailings, controller: :sailings
   resources :participant, as: :participants, path: 'sailing/:sailing_id/participants', controller: :participants
-  resources :community, as: :communities, controller: :communities
+  resources :community, as: :communities, controller: :communities do
+    member do
+      post :interest
+      post :another_time
+    end
+  end
   resources :member, as: :members, path: 'community/:community_id/members', controller: :members
 
   # Example of regular route:

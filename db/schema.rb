@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160319040048) do
+ActiveRecord::Schema.define(version: 20160320055353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,18 @@ ActiveRecord::Schema.define(version: 20160319040048) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "feeds", force: :cascade do |t|
+    t.string   "body",                               null: false
+    t.integer  "type",         limit: 2, default: 0, null: false
+    t.integer  "community_id",                       null: false
+    t.integer  "user_id",                            null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
+
+  add_index "feeds", ["community_id"], name: "index_feeds_on_community_id", using: :btree
+  add_index "feeds", ["user_id"], name: "index_feeds_on_user_id", using: :btree
+
   create_table "marinas", force: :cascade do |t|
     t.string   "name",       null: false
     t.datetime "created_at", null: false
@@ -50,17 +62,6 @@ ActiveRecord::Schema.define(version: 20160319040048) do
   add_index "members", ["community_id"], name: "index_members_on_community_id", using: :btree
   add_index "members", ["user_id", "community_id"], name: "index_members_on_user_id_and_community_id", unique: true, using: :btree
   add_index "members", ["user_id"], name: "index_members_on_user_id", using: :btree
-
-  create_table "messages", force: :cascade do |t|
-    t.string   "body",         null: false
-    t.integer  "community_id", null: false
-    t.integer  "user_id",      null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  add_index "messages", ["community_id"], name: "index_messages_on_community_id", using: :btree
-  add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
 
   create_table "participants", force: :cascade do |t|
     t.integer  "sailing_id", null: false
@@ -124,10 +125,10 @@ ActiveRecord::Schema.define(version: 20160319040048) do
 
   add_foreign_key "comments", "sailings"
   add_foreign_key "comments", "users"
+  add_foreign_key "feeds", "communities"
+  add_foreign_key "feeds", "users"
   add_foreign_key "members", "communities"
   add_foreign_key "members", "users"
-  add_foreign_key "messages", "communities"
-  add_foreign_key "messages", "users"
   add_foreign_key "participants", "sailings"
   add_foreign_key "participants", "users"
   add_foreign_key "sailings", "communities"

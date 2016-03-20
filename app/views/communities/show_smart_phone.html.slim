@@ -376,17 +376,16 @@ main
         |一緒に遊ぶボタンを押していただくと、仮予約が完了します。
       p.messageSmall
         |このイベントをあなたの友達にも知らせよう！
-      form
-        label
-          input.messageSmall type="checkbox" checked="checked"
-            |Facebookでシェアする
-        textarea
-          | #{current_user.name}さんは#{duration[:date]}にクルージングイベントに参加します。
+      = form_for :participant, url: participants_path(sailing_id: sailing.id) do |f|
+        label.messageSmall
+          = f.check_box :share, checked: true
+          | Facebookでシェアする
+        = f.text_area :share_body, value: "#{current_user.name}さんは#{duration[:date]}にクルージングイベントに参加します。"
 
-      .c-btn.c-btn--Style3
-        = link_to "#"
-          span.icon-icn_arrow.icn_arrow--white
-          |送信
+        .c-btn.c-btn--Style3
+          button type='submit'
+            span.icon-icn_arrow.icn_arrow--white
+            |送信
 
     // --------------参加者一覧
     div id="participantList-#{sailing.id}" data-title="#{duration[:date]}参加者一覧"
@@ -403,25 +402,25 @@ main
   #interestForm data-title='興味あります'
     p.message
       |オーナーに興味がある旨を伝えてよろしいですか？
-    form
-      textarea placeholder="オーナーに伝えたい事があれば記入してください。"
+    = form_for :community, url: interest_community_path(@community) do |f|
+      = text_area :feed, :body, placeholder: "オーナーに伝えたい事があれば記入してください。"
 
-    .c-btn.c-btn--Style3
-      = link_to "#"
-        span.icon-icn_arrow.icn_arrow--white
-        |送信
+      .c-btn.c-btn--Style3
+        button type='submit'
+          span.icon-icn_arrow.icn_arrow--white
+          |送信
 
   // --------------別日程なら参加したい
   #anotherDateForm data-title='別日程なら参加したい'
     p.message
       |参加したい日程を入力してください。
-    form
-      input type="text"
+    = form_for :community, url: another_time_community_path(@community) do |f|
+      = text_field :feed, :body, placeholder: ""
 
-    .c-btn.c-btn--Style3
-      = link_to "#"
-        span.icon-icn_arrow.icn_arrow--white
-        |送信
+      .c-btn.c-btn--Style3
+        button type='submit'
+          span.icon-icn_arrow.icn_arrow--white
+          |送信
 
   // --------------メンバー一覧
   #memberList data-title='メンバー一覧'

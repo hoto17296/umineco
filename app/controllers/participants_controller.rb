@@ -26,19 +26,16 @@ class ParticipantsController < ApplicationController
   # POST /participants
   # POST /participants.json
   def create
-    @participant = Participant.new(participant_params)
+    @participant = Participant.new
     @participant.user = current_user
     @participant.sailing = @sailing
+
+    # TODO Facebook にシェア
 
     respond_to do |format|
       if @participant.save
         # 参加者がまだコミュニティメンバーでなければ guest として追加する
-        unless @sailing.community.nil? or @sailing.community.member?(current_user)
-          @member = Member.new
-          @member.user = current_user
-          @member.community = @sailing.community
-          @member.save
-        end
+        @sailing.community.add_member(current_user) if @sailing.community.present?
 
         format.html { redirect_to @participant, notice: 'Participant was successfully created.' }
         format.json { render :show, status: :created, location: @participant }
@@ -85,6 +82,6 @@ class ParticipantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def participant_params
-      params.fetch(:participant, {})
+      params.require(:participant).permit(:share, :share_body)
     end
 end
