@@ -208,7 +208,22 @@
     width: 49%;
   }
 }
-
+// 一緒に遊ぶ/連絡事項を見るボタン
+.eventActionScroll {
+  a {
+    position: fixed;
+    z-index: 99;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    padding-top: 13px;
+    display: block;
+    background: #7bcaf2;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+}
 
 
 

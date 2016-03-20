@@ -167,8 +167,10 @@
   border-bottom: 1px solid #a0d9f6;
 
   &__left {
+    position: relative;
     float: left;
     width: 190px;
+    background: #fff;
     border-right: 1px solid #a0d9f6;
 
     .date {
