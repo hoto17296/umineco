@@ -26,9 +26,11 @@ class ParticipantsController < ApplicationController
   # POST /participants
   # POST /participants.json
   def create
-    @participant = Participant.new(participant_params)
+    @participant = Participant.new
     @participant.user = current_user
     @participant.sailing = @sailing
+
+    # TODO Facebook にシェア
 
     respond_to do |format|
       if @participant.save
@@ -85,6 +87,6 @@ class ParticipantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def participant_params
-      params.fetch(:participant, {})
+      params.require(:participant).permit(:share, :share_body)
     end
 end

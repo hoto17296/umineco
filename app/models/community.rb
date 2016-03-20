@@ -6,7 +6,7 @@ class Community < ActiveRecord::Base
   has_many :messages
 
   def member?(user)
-    return false unless user.nil?
+    return false if user.blank?
     members.where(user: user).present?
   end
 end
