@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
     gon.request = {
       controller: controller_name,
       action: action_name,
+      sp: !! request.smart_phone?,
     }
     # 各ページごとに渡したいデータがあれば params に入れる
     gon.params = {};
