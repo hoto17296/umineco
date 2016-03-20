@@ -5,7 +5,8 @@ export default function(req) {
 
     case 'show': return function() {
 
-      // サイドバ―固定
+      console.log('ss');
+      // PC サイドバ―固定
       var $eventAction = $("#eventAction");
       var $main = $(".eventBody__left");
       var eventAction_offset_top = $eventAction.offset().top;
@@ -25,6 +26,11 @@ export default function(req) {
         })
       }
 
+      // SP 一緒に遊ぶボタン固定
+      var $eventActionScroll = $(".eventActionScroll");
+      var $eventArea = $(".event");
+      // var eventActionScroll_offset_top = $eventActionScroll.offset().top;
+      // var eventArea_offset_top = $eventArea.offset().top;
     }
   }
 }
