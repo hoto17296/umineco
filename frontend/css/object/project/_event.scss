@@ -241,6 +241,8 @@
     }
   }
   .prev, .next {
+    position: absolute;
+    top: 50%;
     a {
       display: inline-block;
       width: 30px;
@@ -257,13 +259,9 @@
     }
   }
   .prev {
-    position: absolute;
-    top: 50%;
     left: 10px;
   }
   .next {
-    position: absolute;
-    top: 50%;
     right: 10px;
   }
 }
@@ -279,6 +277,7 @@
 
   position: relative;
   width: 640px;
+  padding: 2px 0;
   overflow: hidden;
   background: #ddf0f9;
 
@@ -295,6 +294,7 @@
     height: 75px;
     text-align: center;
     cursor: pointer;
+    border: 1px solid #ddf0f9;
     .inner {
       height: 100%;
       background-size: cover;
@@ -309,11 +309,12 @@
     top: 0;
     width: $naviWidth;
     height: 100%;
+    padding-top: 2px;
     text-align: center;
+    background: #ddf0f9;
     a {
       width: 100%;
       display: inline-block;
-      background: #ddf0f9;
       font-size: 18px;
       line-height: 75px;
     }

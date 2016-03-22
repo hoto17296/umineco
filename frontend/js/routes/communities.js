@@ -20,6 +20,10 @@ export default function(req) {
         var pageWidth = 100 / thumbnailsLimit * thumbnailPageSize;
         $thumbnailsItems.first().addClass("current");
 
+        $(".thumbnailsBox .prev a").hide();
+        $(".mainBox .prev").hide();
+
+        // メインに表示する画像
         function showPhoto(n) {
           $main.css("transform", "translateX( -" + (100 / mainLimit * n) + "%)");
           $thumbnailsItems.removeClass("current");
@@ -28,8 +32,36 @@ export default function(req) {
 
           pageCount = Math.floor(n / thumbnailPageSize);
           $thumbnails.css("transform", "translateX( -" + ( pageWidth * pageCount ) + "%)");
+
+          if(mainCount == mainLimit - 1) {
+            $(".mainBox .next").hide();
+          } else {
+            $(".mainBox .next").show();
+          }
+          if(mainCount == 0) {
+            $(".mainBox .prev").hide();
+          } else {
+            $(".mainBox .prev").show();
+          }
+          pageNaviSwitchi();
         }
 
+        // ページナビの矢印 表示非表示
+        function pageNaviSwitchi() {
+          if (pageCount == 0) {
+            $(".thumbnailsBox .prev a").hide();
+          } else if (pageCount > 0) {
+            $(".thumbnailsBox .prev a").show();
+          }
+          if (pageCount == pageMax -1) {
+            $(".thumbnailsBox .next a").hide();
+          } else if (pageCount < pageMax -1) {
+            $(".thumbnailsBox .next a").show();
+          }
+        }
+
+
+        // メイン画像の矢印
         $(".mainBox .next").on('click', function() {
           if(mainCount < mainLimit - 1) {
             showPhoto(mainCount + 1);
@@ -43,17 +75,18 @@ export default function(req) {
         });
 
         $thumbnailsItems.on('click', function() {
-          // サムネイルがクリックされた番号
-          var index = $thumbnailsItems.index(this);
+          var index = $thumbnailsItems.index(this); // サムネイルがクリックされた番号
           showPhoto(index);
         });
 
+        // サムネイルの矢印
         $(".thumbnailsBox .next").on('click', function() {
 
           if(pageCount < pageMax -1 ) {
             $thumbnails.css("transform", "translateX( -" + ( pageWidth * ( pageCount + 1) ) + "%)");
             pageCount++;
           }
+          pageNaviSwitchi();
         });
 
         $(".thumbnailsBox .prev").on('click', function() {
@@ -61,6 +94,7 @@ export default function(req) {
             $thumbnails.css("transform", "translateX( -" + ( pageWidth * ( pageCount - 1) ) + "%)");
             pageCount--;
           }
+          pageNaviSwitchi();
         });
       }
       photoGallary();
