@@ -43,11 +43,11 @@ export default function(req) {
           } else {
             $(".mainBox .prev").show();
           }
-          pageNaviSwitchi();
+          pageNaviSwitch();
         }
 
         // ページナビの矢印 表示非表示
-        function pageNaviSwitchi() {
+        function pageNaviSwitch() {
           if (pageCount == 0) {
             $(".thumbnailsBox .prev a").hide();
           } else if (pageCount > 0) {
@@ -55,7 +55,7 @@ export default function(req) {
           }
           if (pageCount == pageMax -1) {
             $(".thumbnailsBox .next a").hide();
-          } else if (pageCount < pageMax -1) {
+          } else {
             $(".thumbnailsBox .next a").show();
           }
         }
