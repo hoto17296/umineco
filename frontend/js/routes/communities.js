@@ -86,7 +86,7 @@ export default function(req) {
             $thumbnails.css("transform", "translateX( -" + ( pageWidth * ( pageCount + 1) ) + "%)");
             pageCount++;
           }
-          pageNaviSwitchi();
+          pageNaviSwitch();
         });
 
         $(".thumbnailsBox .prev").on('click', function() {
@@ -94,7 +94,7 @@ export default function(req) {
             $thumbnails.css("transform", "translateX( -" + ( pageWidth * ( pageCount - 1) ) + "%)");
             pageCount--;
           }
-          pageNaviSwitchi();
+          pageNaviSwitch();
         });
       }
       photoGallary();
