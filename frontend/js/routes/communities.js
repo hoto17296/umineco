@@ -50,7 +50,7 @@ export default function(req) {
         function pageNaviSwitch() {
           if (pageCount == 0) {
             $(".thumbnailsBox .prev a").hide();
-          } else if (pageCount > 0) {
+          } else {
             $(".thumbnailsBox .prev a").show();
           }
           if (pageCount == pageMax -1) {
