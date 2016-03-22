@@ -29,8 +29,30 @@ main
     .eventBody
       // --------------event main
       .eventBody__left
-        .main
-          =image_tag "article/umineco01/img_main.jpg", alt:""
+        #photoGallary
+          .mainBox
+            ul.main.isTransition
+              - (1..9).each do |n|
+                li.mainItem
+                  =image_tag "article/umineco01/img_main_#{n}.jpg", alt:""
+            span.prev
+              a. href="#"
+                span.icon-angle-left
+            span.next
+              a href="#"
+                span.icon-angle-right
+
+          .thumbnailsBox
+            ul.thumbnails.isTransition
+              - (1..9).each do |n|
+                li.thumbnailsItem
+                  .inner style="background-image: url(/images/article/umineco01/img_main_#{n}.jpg)"
+            span.prev
+              a href="#"
+                span.icon-angle-left
+            span.next
+              a href="#"
+                span.icon-angle-right
 
         // --------------遊び方
         section.c-box

@@ -39,16 +39,16 @@
     float: left;
     width: 640px;
 
-    .main {
-      margin-bottom: 50px;
-      width: 640px;
-      height: 425px;
-
-      img {
-        width: 100%;
-        height: auto;
-      }
-    }
+//     .main {
+//       margin-bottom: 50px;
+//       width: 640px;
+//       height: 425px;
+//
+//       img {
+//         width: 100%;
+//         height: auto;
+//       }
+//     }
     .imgbox {
       margin-bottom: 20px;
       width: 640px;
@@ -211,9 +211,123 @@
   }
 }
 
+// フォトギャラリー
+#photoGallary {
+  width: 640px;
+  margin-bottom: 20px;
+  background: #fafafa;
+}
+// メイン
+.mainBox {
+  position: relative;
+  width: 640px;
+  overflow: hidden;
 
+  .main {
+    display: table;
+    table-layout: fixed;
+    width: 900%;
+    height: 432px;
+    transform: translateX(0);
+  }
+  .mainItem {
+    display: table-cell;
+    height: 432px;
+    vertical-align: middle;
+    text-align: center;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  .prev, .next {
+    a {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      font-size: 18px;
+      line-height: 30px;
+      text-align: center;
+      vertical-align: middle;
+    }
+    span {
+      color: #397fd6;
+    }
+  }
+  .prev {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+  }
+  .next {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+  }
+}
 
+.isTransition {
+  transition: transform 500ms ease-in;
+}
+// サムネイル
+.thumbnailsBox {
+  $imageLength: 9;
+  $naviWidth: 5%;
+  $pageSize: 5;
 
+  position: relative;
+  width: 640px;
+  overflow: hidden;
+  background: #ddf0f9;
+
+  .thumbnails {
+    display: table;
+    table-layout: fixed;
+    margin-left: $naviWidth;
+    width: (100% - 2 * $naviWidth) / $pageSize * $imageLength;
+    transform: translateX(0);
+  }
+  .thumbnailsItem {
+    display: table-cell;
+    padding: 3px;
+    height: 75px;
+    text-align: center;
+    cursor: pointer;
+    .inner {
+      height: 100%;
+      background-size: cover;
+      background-position: center center;
+    }
+  }
+  .current {
+    border: 1px solid #397fd6;
+  }
+  .prev, .next {
+    position: absolute;
+    top: 0;
+    width: $naviWidth;
+    height: 100%;
+    text-align: center;
+    a {
+      width: 100%;
+      display: inline-block;
+      background: #ddf0f9;
+      font-size: 18px;
+      line-height: 75px;
+    }
+    span {
+      color: #397fd6;
+    }
+  }
+  .prev {
+    left: 0;
+  }
+  .next {
+    right: 0;
+  }
+}
 
 
 
