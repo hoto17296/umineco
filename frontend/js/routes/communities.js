@@ -5,6 +5,101 @@ export default function(req) {
 
     case 'show': return function() {
 
+      function photoGallary() {
+        // 写真ギャラリー
+        var $main = $(".main");
+        var $thumbnails = $(".thumbnails");
+        var $mainItems = $main.find(".mainItem");
+        var $thumbnailsItems = $thumbnails.find(".thumbnailsItem");
+        var mainCount = 0;
+        var pageCount = 0;
+        var mainLimit = $mainItems.size();
+        var thumbnailsLimit = $thumbnailsItems.size();
+        var thumbnailPageSize = 5;
+        var pageMax =  Math.ceil(thumbnailsLimit / thumbnailPageSize);
+        var pageWidth = 100 / thumbnailsLimit * thumbnailPageSize;
+        $thumbnailsItems.first().addClass("current");
+
+        $(".thumbnailsBox .prev a").hide();
+        $(".mainBox .prev").hide();
+
+        // メインに表示する画像
+        function showPhoto(n) {
+          $main.css("transform", "translateX( -" + (100 / mainLimit * n) + "%)");
+          $thumbnailsItems.removeClass("current");
+          $thumbnailsItems.eq(n).addClass("current");
+          mainCount = n;
+
+          pageCount = Math.floor(n / thumbnailPageSize);
+          $thumbnails.css("transform", "translateX( -" + ( pageWidth * pageCount ) + "%)");
+
+          if(mainCount == mainLimit - 1) {
+            $(".mainBox .next").hide();
+          } else {
+            $(".mainBox .next").show();
+          }
+          if(mainCount == 0) {
+            $(".mainBox .prev").hide();
+          } else {
+            $(".mainBox .prev").show();
+          }
+          pageNaviSwitch();
+        }
+
+        // ページナビの矢印 表示非表示
+        function pageNaviSwitch() {
+          if (pageCount == 0) {
+            $(".thumbnailsBox .prev a").hide();
+          } else {
+            $(".thumbnailsBox .prev a").show();
+          }
+          if (pageCount == pageMax -1) {
+            $(".thumbnailsBox .next a").hide();
+          } else {
+            $(".thumbnailsBox .next a").show();
+          }
+        }
+
+
+        // メイン画像の矢印
+        $(".mainBox .next").on('click', function() {
+          if(mainCount < mainLimit - 1) {
+            showPhoto(mainCount + 1);
+          }
+        });
+
+        $(".mainBox .prev").on('click', function() {
+          if(mainCount > 0) {
+            showPhoto(mainCount - 1);
+          }
+        });
+
+        $thumbnailsItems.on('click', function() {
+          var index = $thumbnailsItems.index(this); // サムネイルがクリックされた番号
+          showPhoto(index);
+        });
+
+        // サムネイルの矢印
+        $(".thumbnailsBox .next").on('click', function() {
+
+          if(pageCount < pageMax -1 ) {
+            $thumbnails.css("transform", "translateX( -" + ( pageWidth * ( pageCount + 1) ) + "%)");
+            pageCount++;
+          }
+          pageNaviSwitch();
+        });
+
+        $(".thumbnailsBox .prev").on('click', function() {
+          if(pageCount > 0 ) {
+            $thumbnails.css("transform", "translateX( -" + ( pageWidth * ( pageCount - 1) ) + "%)");
+            pageCount--;
+          }
+          pageNaviSwitch();
+        });
+      }
+      photoGallary();
+
+
       if ( ! req.sp ) {
         // PC サイドバ―固定
         var $eventAction = $("#eventAction");
