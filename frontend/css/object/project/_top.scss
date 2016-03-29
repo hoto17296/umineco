@@ -1,5 +1,32 @@
 @charset "utf-8";
 
+// メインカルーセル
+.topMainArea {
+  position: relative;
+  text-align: center;
+
+  &__text {
+    @extend %font-40;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 715px;
+    height: 105px;
+    z-index: 1;
+    color: #fff;
+    letter-spacing: 2px;
+
+    span {
+      display: block;
+      @extend %font-20;
+      letter-spacing: 2px;
+    }
+  }
+}
+
 #mainCarousel {
   width: 100%;
   min-width: 960px;
@@ -7,25 +34,27 @@
 
 // uminecoの遊び方
 .aboutBox {
+  position: relative;
+  top: -22px;
   padding: 40px 0 40px 0;
-  border-radius: 10px;
-  background: #f0f7fa;
+  background: $bg-color-gray;
 
   &__ttl {
+    width: 285px;
     margin-bottom: 20px;
-    text-align: center;
+
     img {
-      width: 285px;
-      height: auto;
+      @include image;
     }
   }
   &__point {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
     margin-bottom: 20px;
-    text-align: center;
 
     li {
-      display: inline-block;
-      margin-right: 55px;
+      display: table-cell;
 
       &:last-child {
         margin-right: 0;
@@ -39,127 +68,69 @@
 }
 
 // 画像リスト
-.c-imglistBox {
+.imglistwrapper {
   @extend %clearfix;
-  margin-bottom: 30px;
+}
+.c-imglistBox {
+  width: 470px;
+  float: left;
+  margin: 0 20px 20px 0;
 
-  // 画像
-  &__left {
-    float: left;
-    width: 470px;
-    height: 320px;
-    border-radius: 10px;
-    overflow: hidden;
-    img {
-      width: 470px;
-      height: auto;
-    }
+  &:nth-child(2n) {
+    margin-right: 0;
   }
-  // 詳細
-  &__right {
+  img {
+    @include image;
+  }
+  &__header {
     position: relative;
-    min-height: 320px;
-    float: right;
-    width: 470px;
+    height: 315px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
 
-    .ttl {
-      font-size: 26px;
-      line-height: 1.4;
-    }
-
-    .infoBox {
-      @extend %clearfix;
-      position: absolute;
-      bottom: 50px;
-
-      &__left {
-        float: left;
-        width: 350px;
-        padding-top: 30px;
-
-        .text {
-          font-size: 18px;
-          margin-bottom: 10px;
-        }
-        .icn_arrow--blue {
-          display: inline-block;
-          width: 30px;
-          vertical-align: middle;
-          text-align: center;
-          font-size: 24px;
-        }
-      }
-      &__right {
-        position: relative;
-        float: right;
-        width: 100px;
-        height: 100px;
-        overflow: hidden;
-        border-radius: 50%;
-        border: 2px solid #3da6d0;
-        vertical-align: middle;
-
-        img {
-          position: absolute;
-          top: -5px;
-          left: -5px;
-          width: 105px;
-          height: 105px;
-        }
-      }
-    }
-    .dateBox {
+    .headerInner {
       position: absolute;
       bottom: 0;
       padding: 10px;
-      background: #f0f7fa;
-      border-bottom: 3px solid #a0d9f6;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
 
-      &__ttl {
+      .ttl {
+        @extend %font-16;
         display: inline-block;
-
-        span {
-          margin-right: 10px;
-          padding: 5px 8px;
-          background: #3da6d0;
-          font-size: 14px;
-          letter-spacing: 1px;
-          color: #ffffff;
-        }
+        width: 370px;
+        color: #fff;
       }
-      &__date {
+      .fbIcom {
         display: inline-block;
-        font-size: 17px;
+        width: 50px;
       }
     }
   }
+  &__footer {
+    position: relative;
+    background: $bg-color-gray;
+    height: 45px;
+    border-radius: 0 0 5px 5px;
+
+    .textMap {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+    .textReview {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+    span {
+      @extend %font-18;
+      display: inline-block;
+      width: 20px;
+      margin-right: 3px;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

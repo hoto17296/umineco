@@ -13,19 +13,34 @@
 // 矢印アイコン
 // ==========================================================================
 
-// 青
-.icn_arrow--blue {
+.icn_arrow {
   margin-right: 5px;
-  font-size: 12px;
-  color: #7bcaf2;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border: 3px transparent solid;
+    border-right-width: 0;
+  }
 }
 
-// 白
-.icn_arrow--white {
-  margin-right: 5px;
-  font-size: 12px;
-  color: #ffffff;
+// 白い矢印
+.icn_arrow-1 {
+
+  &:before {
+    border-left-color: $icn-arrow-01;
+  }
 }
+.icn_arrow-2 {
+
+  &:before {
+    border-left-color: $icn-arrow-02;
+  }
+}
+
+.icn_color-1 { color: $color-main-blue; }
 
 // ==========================================================================
 // テーブル

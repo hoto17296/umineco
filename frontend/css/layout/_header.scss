@@ -3,11 +3,12 @@
 .l-header {
   @extend %clearfix;
   padding: 10px 0;
-  border-bottom: 1px solid #a0d9f6;
+  background: $color-main-blue;
 
   &__logo {
     float: left;
-    width: 267px;
+    width: 160px;
+
     img {
       width: 100%;
       height: auto;
@@ -15,11 +16,15 @@
   }
   &__navi {
     float: right;
-    margin-top: 30px;
+    margin-top: 10px;
 
+    a {
+      color: #fff;
+    }
     li {
       display: inline-block;
       margin-left: 20px;
+      color: #ffffff;
       }
     .fbIcon {
       display: inline-block;
@@ -34,20 +39,4 @@
     }
   }
 }
-
-
-
-@media only screen and (max-width: 1240px) {
-}
-
-@media only screen and (max-width: 1030px) {
-}
-
-@media only screen and (max-width: 768px) {
-}
-
-@media only screen and (max-width: 481px) {
-}
-
-
 

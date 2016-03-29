@@ -4,28 +4,33 @@
 // ==========================================================================
 // color
 // ==========================================================================
-$text-color:        #333;
-$border-color:      #ad988a;
 
-$link-color:        #333;
+// サイトイメージカラー
+$color-main-blue: #0d3474; // 青
+$color-sub-red: #b30303; // 赤
 
-$red:              #db4f57;
-$cream-white:      #fffff8;
-$cream:            #fff6df;
-$brown:            #6e5849;
-
+// 背景色
+$bg-color-blue: #f0f7fa; // 薄い青
+$bg-color-gray: #f8f8f8; // 薄い灰色
 
 
-// WP-PageNavi用
+// テキスト
+$text-color: #333;
 
-$current-border-color: #d6e4d0;
-$border-color: #d6e4d0;
-$border-bottom-color: #bfd3b7;
+// リンク
+$link-color: #333;
 
-$background-color: #d6e4d0;
-$nv-font-color: #6f5b10;
-$hover-color: #bfd3b7;
 
+// タイトル
+$ttl-color-01: #333333; // 記事タイトル
+$ttl-color-03: #4972b6; // h3 薄い青
+
+// アイコンの色
+$icn-arrow-01: #ffffff; // 白
+$icn-arrow-02: #b30303; // 赤
+
+// ボーダーカラー
+$boder-color-01: #c2c2c2; // 灰色
 
 
 // ==========================================================================
@@ -36,7 +41,10 @@ $hover-color: #bfd3b7;
   *display: inline;
   *zoom: 1;
 }
-
+@mixin image {
+  width: 100%;
+  height: auto;
+}
 
 // ==========================================================================
 // extend Placeholder Selector
@@ -77,46 +85,7 @@ $hover-color: #bfd3b7;
 %font-40 {
   font-size: 4.0rem;
 }
-
-// @media only screen and (max-width: 800px) {
-//   %font-24 {
-//     font-size: 2.2rem;
-//   }
-// }
-
-
-
-%font {
-  font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
-  font-weight: bold;
-  letter-spacing: 2px;
+%font-46 {
+  font-size: 4.6rem;
 }
 
-%layout {
-  width: 1080px;
-  margin: 0 auto;
-}
-
-%text-overflow {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-
-
-%arrow {
-
-  &:before {
-    content: '';
-    height: 0;
-    width: 0;
-    display: inline-block;
-    border: 5px transparent solid;
-    border-top: 3px transparent solid;
-    border-bottom: 3px transparent solid;
-    border-right-width: 2px;
-    border-left-color: $brown;
-    padding: 0 5px 0 0;
-  }
-}

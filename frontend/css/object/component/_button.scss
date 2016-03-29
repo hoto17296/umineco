@@ -1,6 +1,5 @@
 @charset "utf-8";
 
-
 a {
   text-decoration: none;
   -webkit-transition: all 0.5s ease;
@@ -12,38 +11,109 @@ a {
 .c-btn {
   a {
     display: inline-block;
-    font-size: 18px;
     padding: 10px;
   }
 }
-// 黄 ボタン
+
+// 背景白の赤い矢印のボタン
 .c-btn--Style1 {
   text-align: center;
 
   a {
-    width: 260px;
-    background: #ffde52;
-    border-radius: 30px;
-    border: 1px solid #e3c12e;
-    border-bottom: 3px solid #e3c12e;
+    position: relative;
+    background: #ffffff;
+    padding: 0 30px;
+    border: 1px solid $boder-color-01;
+    border-radius: 5px;
+    letter-spacing: 1px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 10px;
+      height: 0;
+      width: 0;
+      margin: auto 0;
+      border: 3px transparent solid;
+      border-right-width: 0;
+      border-left-color: $icn-arrow-02;
+    }
   }
 }
-
-// 青 ボタン
+// 背景青のボタン
 .c-btn--Style2 {
   text-align: center;
 
   a {
-    width: 260px;
-    // padding: 5px 10px;
-    background: #397fd6;
-    border-radius: 30px;
-    border: 1px solid #3667a4;
-    border-bottom: 3px solid #3667a4;
-    font-size: 16px;
+    position: relative;
+    background: $color-main-blue;
+    padding: 5px 40px;
+    border-radius: 5px;
     color: #ffffff;
+    letter-spacing: 1px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 10px;
+      height: 0;
+      width: 0;
+      margin: auto 0;
+      border: 3px transparent solid;
+      border-right-width: 0;
+      border-left-color: #ffffff;
+    }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 青 ボタン
+// .c-btn--Style2 {
+//   text-align: center;
+//
+//   a {
+//     width: 260px;
+//     background: #397fd6;
+//     border-radius: 30px;
+//     border: 1px solid #3667a4;
+//     border-bottom: 3px solid #3667a4;
+//     font-size: 16px;
+//     color: #ffffff;
+//   }
+// }
 
 // 青 ペタッとボタン
 .c-btn--Style3 {

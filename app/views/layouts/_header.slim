@@ -15,17 +15,17 @@ header#header.l-header
             = current_user.name
 
           li
-            span.icon-icn_arrow.icn_arrow--blue
+            span.icn_arrow.icn_arrow-1
             = link_to 'ログアウト', destroy_user_session_path, method: :delete
         - else
 
           li
             a href="#" onClick="Modal.open('loginForm')"
-              span.icon-icn_arrow.icn_arrow--blue
+              span.icn_arrow.icn_arrow-1
               |ログイン
 
         li
-          span.icon-icn_arrow.icn_arrow--blue
+          span.icn_arrow.icn_arrow-1
           = link_to "/about"
             |uminecoとは
 
