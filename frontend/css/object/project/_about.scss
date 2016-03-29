@@ -13,8 +13,8 @@
   width: 100%;
   display: table;
   margin-bottom: 20px;
-  border-radius: 10px;
-  background: #f0f7fa;
+  border-radius: 5px;
+  background: $bg-color-gray;
 
   &__ttl {
     padding: 50px 30px;
@@ -28,18 +28,18 @@
     }
   }
   &__text {
+    @extend %font-18;
     padding: 20px;
     display: table-cell;
     vertical-align: middle;
-    font-size: 20px;
   }
 }
 
 .aboutTextBox {
+  @extend %font-18;
   width: 600px;
   margin: 50px auto;
   text-align: center;
-  font-size: 20px;
 }
 
 

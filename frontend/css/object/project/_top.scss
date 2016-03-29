@@ -40,8 +40,8 @@
   background: $bg-color-gray;
 
   &__ttl {
-    width: 285px;
-    margin-bottom: 20px;
+    width: 280px;
+    margin: 0 auto 40px auto;
 
     img {
       @include image;
@@ -55,6 +55,7 @@
 
     li {
       display: table-cell;
+      text-align: center;
 
       &:last-child {
         margin-right: 0;
@@ -88,22 +89,30 @@
     border-radius: 5px 5px 0 0;
     overflow: hidden;
 
+
     .headerInner {
       position: absolute;
       bottom: 0;
+      display: table;
+      table-layout: fixed;
       padding: 10px;
       width: 100%;
       background: rgba(0, 0, 0, 0.6);
 
       .ttl {
         @extend %font-16;
-        display: inline-block;
-        width: 370px;
+        display: table-cell;
         color: #fff;
+        vertical-align: middle;
+
       }
       .fbIcom {
-        display: inline-block;
-        width: 50px;
+        display: table-cell;
+        width: 60px;
+        img {
+          width: 50px;
+          height: auto;
+        }
       }
     }
   }
@@ -117,11 +126,13 @@
       position: absolute;
       top: 10px;
       left: 10px;
+      color: #333333;
     }
     .textReview {
       position: absolute;
       top: 10px;
       right: 10px;
+      color: #333333;
     }
     span {
       @extend %font-18;
