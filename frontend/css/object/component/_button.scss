@@ -9,23 +9,24 @@ a {
 }
 
 .c-btn {
+  text-align: center;
+
   a {
     display: inline-block;
-    padding: 10px;
+    border-radius: 5px;
+    letter-spacing: 1px;
   }
 }
 
-// 背景白の赤い矢印のボタン
+// 背景白の赤い矢印のボタン 矢印あり
 .c-btn--Style1 {
-  text-align: center;
 
   a {
     position: relative;
     background: #ffffff;
-    padding: 0 30px;
-    border: 1px solid $boder-color-01;
-    border-radius: 5px;
-    letter-spacing: 1px;
+    padding: 5px 30px;
+    border: 1px solid #c2c2c2;
+    color: #333333;
 
     &:before {
       content: '';
@@ -38,11 +39,11 @@ a {
       margin: auto 0;
       border: 3px transparent solid;
       border-right-width: 0;
-      border-left-color: $icn-arrow-02;
+      border-left-color: $color-sub-red;
     }
   }
 }
-// 背景青のボタン
+// 背景青のボタン 矢印あり
 .c-btn--Style2 {
   text-align: center;
 
@@ -50,9 +51,7 @@ a {
     position: relative;
     background: $color-main-blue;
     padding: 5px 40px;
-    border-radius: 5px;
     color: #ffffff;
-    letter-spacing: 1px;
 
     &:before {
       content: '';
@@ -67,6 +66,21 @@ a {
       border-right-width: 0;
       border-left-color: #ffffff;
     }
+  }
+}
+
+// 背景青のボタン 矢印無し
+.c-btn--Style3 {
+  text-align: center;
+
+  a {
+    position: relative;
+    background: #2c4388;
+    padding: 5px 40px;
+    color: #ffffff;
+  }
+  .icon-icn_fb {
+    padding-right: 5px;
   }
 }
 
@@ -116,46 +130,46 @@ a {
 // }
 
 // 青 ペタッとボタン
-.c-btn--Style3 {
-
-  a {
-    width: 180px;
-    padding: 5px 0;
-    background: #397fd6;
-    border-radius: 5px;
-    font-size: 16px;
-    text-align: center;
-    color: #ffffff;
-  }
-}
+// .c-btn--Style3 {
+//
+//   a {
+//     width: 180px;
+//     padding: 5px 0;
+//     background: #397fd6;
+//     border-radius: 5px;
+//     font-size: 16px;
+//     text-align: center;
+//     color: #ffffff;
+//   }
+// }
 // 水色 ペタッとボタン
-.c-btn--Style4 {
-  display: inline-block;
-
-  a {
-    padding: 5px 7px;
-    background: #62bcea;
-    border-radius: 5px;
-    font-size: 14px;
-    text-align: center;
-    color: #ffffff;
-  }
-}
+// .c-btn--Style4 {
+//   display: inline-block;
+//
+//   a {
+//     padding: 5px 7px;
+//     background: #62bcea;
+//     border-radius: 5px;
+//     font-size: 14px;
+//     text-align: center;
+//     color: #ffffff;
+//   }
+// }
 // 紺 ペタッとボタン
-.c-btn--Style5 {
-
-  a {
-    width: 100%;
-    padding: 5px 0;
-    background: #3b5998;
-    border-radius: 5px;
-    font-size: 14px;
-    text-align: center;
-    color: #ffffff;
-  }
-
-  // facebookログイン
-  .icn_arrow--white {
-    font-size: 14px;
-  }
-}
+// .c-btn--Style5 {
+//
+//   a {
+//     width: 100%;
+//     padding: 5px 0;
+//     background: #3b5998;
+//     border-radius: 5px;
+//     font-size: 14px;
+//     text-align: center;
+//     color: #ffffff;
+//   }
+//
+//   // facebookログイン
+//   .icn_arrow--white {
+//     font-size: 14px;
+//   }
+// }

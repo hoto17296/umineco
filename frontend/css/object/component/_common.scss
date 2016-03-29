@@ -7,7 +7,11 @@
 .c-box {
   margin-bottom: 50px;
 }
-
+.textLink {
+  a {
+    color: $link-color;
+  }
+}
 
 // ==========================================================================
 // 矢印アイコン
@@ -26,17 +30,25 @@
   }
 }
 
-// 白い矢印
+// 白い三角矢印
 .icn_arrow-1 {
 
   &:before {
-    border-left-color: $icn-arrow-01;
+    border-left-color: #ffffff;
   }
 }
+// 赤い三角矢印
 .icn_arrow-2 {
 
   &:before {
-    border-left-color: $icn-arrow-02;
+    border-left-color: $color-sub-red;
+  }
+}
+// 青い三角矢印
+.icn_arrow-3 {
+
+  &:before {
+    border-left-color: $color-main-blue;
   }
 }
 
@@ -50,18 +62,18 @@
 
   width: 100%;
   margin-bottom: 30px;
-  border-top: 1px solid #a0d9f6;
+  border-top: 1px solid $boder-color-01;
 
   th {
     padding: 10px;
     width: 25%;
-    border-bottom: 1px solid #a0d9f6;
-    background: #f0f7fa;
+    border-bottom: 1px solid $boder-color-01;
+    background: $bg-color-gray;
     vertical-align: middle;
   }
   td {
     padding: 10px;
-    border-bottom: 1px solid #a0d9f6;
+    border-bottom: 1px solid $boder-color-01;
   }
   a {
     text-decoration: none;
@@ -73,21 +85,3 @@
     }
   }
 }
-
-
-
-@media only screen and (max-width: 1240px) {
-}
-
-@media only screen and (max-width: 1030px) {
-}
-
-@media only screen and (max-width: 768px) {
-}
-
-
-@media only screen and (max-width: 481px) {
-}
-
-
-

@@ -37,12 +37,12 @@ header#header.l-header
       p.message
         |Facebookでログインして、uminecoで遊ぼう！
 
-      .c-btn.c-btn--Style5
+      .c-btn.c-btn--Style2
         = link_to user_omniauth_authorize_path(:facebook)
-          span.icon-icn_fb.icn_arrow--white
+          span.icon-icn_fb
           |ログインまたは新規登録
 
-      p.messageSmall
+      p.messageSmall.textLink
         |登録することで、
         = link_to '利用規約', '#'
         |、
