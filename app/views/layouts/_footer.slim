@@ -4,32 +4,33 @@ footer#footer.l-footer
   .l-inner
     .l-footer__left
       h2.logo
-        = image_tag "common/logo_f.png", alt:"umineco"
+        = link_to root_path
+          = image_tag "common/logo.png", alt:"umineco"
 
       ul.footerLink
         li
           = link_to root_path
-            span.icon-icn_arrow.icn_arrow--blue
+            span.icn_arrow.icn_arrow-1
             |TOP
         li
           = link_to about_path
-            span.icon-icn_arrow.icn_arrow--blue
+            span.icn_arrow.icn_arrow-1
             |uminecoβとは
         li
           = link_to "#"
-            span.icon-icn_arrow.icn_arrow--blue
+            span.icn_arrow.icn_arrow-1
             |ログイン
         li
           = link_to terms_path
-            span.icon-icn_arrow.icn_arrow--blue
+            span.icn_arrow.icn_arrow-1
             |利用規約
         li
           = link_to "#"
-            span.icon-icn_arrow.icn_arrow--blue
+            span.icn_arrow.icn_arrow-1
             |プライバシーポリシー
         li
           = link_to company_path
-            span.icon-icn_arrow.icn_arrow--blue
+            span.icn_arrow.icn_arrow-1
             |運営会社
 
     .l-footer__right

@@ -26,6 +26,8 @@
   }
 
   .CarouselNavi {
+    position: relative;
+    top: -25px;
     text-align: center;
 
     span {
@@ -34,11 +36,11 @@
       height: 5px;
       margin: 0 10px;
       border-radius: 50%;
-      background: #dcebf1;
+      background: #e4e4e4;
     }
 
     .current {
-      background: #6dc9ee;
+      background: #acc9f7;
     }
   }
 }

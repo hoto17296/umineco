@@ -1,6 +1,5 @@
 @charset "utf-8";
 
-
 a {
   text-decoration: none;
   -webkit-transition: all 0.5s ease;
@@ -10,82 +9,81 @@ a {
 }
 
 .c-btn {
-  a {
-    display: inline-block;
-    font-size: 18px;
-    padding: 10px;
-  }
-}
-// 黄 ボタン
-.c-btn--Style1 {
   text-align: center;
 
   a {
-    width: 260px;
-    background: #ffde52;
-    border-radius: 30px;
-    border: 1px solid #e3c12e;
-    border-bottom: 3px solid #e3c12e;
+    display: inline-block;
+    border-radius: 5px;
+    letter-spacing: 1px;
   }
 }
 
-// 青 ボタン
+// 背景白の赤い矢印のボタン 矢印あり
+.c-btn--Style1 {
+
+  a {
+    position: relative;
+    background: #ffffff;
+    padding: 5px 30px;
+    border: 1px solid #c2c2c2;
+    color: #333333;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 10px;
+      height: 0;
+      width: 0;
+      margin: auto 0;
+      border: 5px transparent solid;
+      border-top-width: 3px;
+      border-bottom-width: 3px;
+      border-right-width: 0;
+      border-left-color: $color-sub-red;
+    }
+  }
+}
+// 背景青のボタン 矢印あり
 .c-btn--Style2 {
   text-align: center;
 
   a {
-    width: 260px;
-    // padding: 5px 10px;
-    background: #397fd6;
-    border-radius: 30px;
-    border: 1px solid #3667a4;
-    border-bottom: 3px solid #3667a4;
-    font-size: 16px;
+    position: relative;
+    background: $color-main-blue;
+    padding: 5px 40px;
     color: #ffffff;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 10px;
+      height: 0;
+      width: 0;
+      margin: auto 0;
+      border: 5px transparent solid;
+      border-top-width: 3px;
+      border-bottom-width: 3px;
+      border-right-width: 0;
+      border-left-color: #ffffff;
+    }
   }
 }
 
-// 青 ペタッとボタン
+// 背景青のボタン 矢印無し
 .c-btn--Style3 {
+  text-align: center;
 
   a {
-    width: 180px;
-    padding: 5px 0;
-    background: #397fd6;
-    border-radius: 5px;
-    font-size: 16px;
-    text-align: center;
+    position: relative;
+    background: #2c4388;
+    padding: 5px 40px;
     color: #ffffff;
   }
-}
-// 水色 ペタッとボタン
-.c-btn--Style4 {
-  display: inline-block;
-
-  a {
-    padding: 5px 7px;
-    background: #62bcea;
-    border-radius: 5px;
-    font-size: 14px;
-    text-align: center;
-    color: #ffffff;
-  }
-}
-// 紺 ペタッとボタン
-.c-btn--Style5 {
-
-  a {
-    width: 100%;
-    padding: 5px 0;
-    background: #3b5998;
-    border-radius: 5px;
-    font-size: 14px;
-    text-align: center;
-    color: #ffffff;
-  }
-
-  // facebookログイン
-  .icn_arrow--white {
-    font-size: 14px;
+  .icon-icn_fb {
+    padding-right: 5px;
   }
 }

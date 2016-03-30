@@ -1,50 +1,70 @@
 @charset "utf-8";
 
-// 青い背景
+// 青い上下の線
 .c-title-1 {
+  position: relative;
   margin-bottom: 20px;
-  padding: 5px 15px;
-  background: #c2e7f9;
-  border-top: 3px solid #a0d9f6;
-  font-size: 26px;
+  padding: 10px 0;
+  border-top: 2px solid $color-main-blue;
+  border-bottom: 1px solid $color-main-blue;
+  text-align: center;
+
+  &::before {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    content: "";
+    width: 100%;
+    border-bottom: 1px solid $color-main-blue;
+  }
+  img {
+    width: 220px;
+    height: auto;
+  }
 }
 
-// 青い文字・上に線あり
+// point 赤い線
 .c-title-2 {
-  padding: 10px 0;
-  color: #6dc9ee;
-  border-top: 1px solid #a0d9f6;
-  font-size: 26px;
-  font-weight: bold;
+  @extend %font-20;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid $color-sub-red;
+
+  img {
+    width: 60px;
+    height: auto;
+    padding-right: 10px;
+    vertical-align: middle;
+  }
 }
 
 // 青い文字
 .c-title-3 {
-  margin-bottom: 10px;
-  font-size: 20px;
-  color: #6dc9ee;
+  @extend %font-18;
+  margin-bottom: 5px;
+  color: $ttl-color-03;
 }
 
 // 青い文字・下に線あり
 .c-title-4 {
+  @extend %font-20;
   margin-bottom: 10px;
-  font-size: 20px;
-  color: #6dc9ee;
-  border-bottom: 1px solid #a0d9f6;
+  border-bottom: 1px solid $boder-color-01;
+  color: $ttl-color-03;
 }
 
 // メンバー
 .c-title-5 {
-  padding: 10px 0;
-  color: #6dc9ee;
-  font-size: 24px;
+  @extend %font-20;
+  margin-bottom: 10px;
+  color: $ttl-color-03;
 
   span {
+    @extend %font-16;
     margin-right: 10px;
     padding: 5px 10px;
-    background: #3da6d0;
+    background: $color-main-blue;
     color: #ffffff;
-    font-size: 20px;
   }
 }
 

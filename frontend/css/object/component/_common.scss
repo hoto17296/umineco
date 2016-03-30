@@ -13,19 +13,42 @@
 // 矢印アイコン
 // ==========================================================================
 
-// 青
-.icn_arrow--blue {
+.icn_arrow {
   margin-right: 5px;
-  font-size: 12px;
-  color: #7bcaf2;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border: 3px transparent solid;
+    border-right-width: 0;
+  }
 }
 
-// 白
-.icn_arrow--white {
-  margin-right: 5px;
-  font-size: 12px;
-  color: #ffffff;
+// 白い三角矢印
+.icn_arrow-1 {
+
+  &:before {
+    border-left-color: #ffffff;
+  }
 }
+// 赤い三角矢印
+.icn_arrow-2 {
+
+  &:before {
+    border-left-color: $color-sub-red;
+  }
+}
+// 青い三角矢印
+.icn_arrow-3 {
+
+  &:before {
+    border-left-color: $color-main-blue;
+  }
+}
+
+.icn_color-1 { color: $color-main-blue; }
 
 // ==========================================================================
 // テーブル
@@ -35,18 +58,18 @@
 
   width: 100%;
   margin-bottom: 30px;
-  border-top: 1px solid #a0d9f6;
+  border-top: 1px solid $boder-color-01;
 
   th {
     padding: 10px;
     width: 25%;
-    border-bottom: 1px solid #a0d9f6;
-    background: #f0f7fa;
+    border-bottom: 1px solid $boder-color-01;
+    background: $bg-color-gray;
     vertical-align: middle;
   }
   td {
     padding: 10px;
-    border-bottom: 1px solid #a0d9f6;
+    border-bottom: 1px solid $boder-color-01;
   }
   a {
     text-decoration: none;
@@ -58,21 +81,3 @@
     }
   }
 }
-
-
-
-@media only screen and (max-width: 1240px) {
-}
-
-@media only screen and (max-width: 1030px) {
-}
-
-@media only screen and (max-width: 768px) {
-}
-
-
-@media only screen and (max-width: 481px) {
-}
-
-
-
