@@ -402,7 +402,7 @@ main
         label.messageSmall
           = f.check_box :share, checked: true
           | Facebookでシェアする
-        = f.text_area :share_body, value: "#{current_user.name}さんは#{duration[:date]}にクルージングイベントに参加します。"
+        = f.text_area :share_body, value: "#{duration[:date]}にクルージングイベントに参加します！"
 
         .c-btn.c-btn--Style3
           button type='submit'
