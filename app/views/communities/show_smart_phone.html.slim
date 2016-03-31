@@ -405,7 +405,7 @@ main
         |送信ボタンを押していただくと、仮予約が完了します。
       p.messageSmall
         |このイベントをあなたの友達にも知らせよう！
-      = form_for :participant, url: participants_path(sailing_id: sailing.id, format: :json) do |f|
+      = form_for :participant, url: participants_path(sailing_id: sailing.id, format: :json), html: { class: :reservation_form } do |f|
         label.messageSmall
           = f.check_box :share, checked: true, class: :reservation_with_share
           | Facebookでシェアする

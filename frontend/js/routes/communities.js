@@ -147,6 +147,15 @@ export default function(req) {
         var $body = $form.find('textarea');
         $body.prop('disabled', ! checked );
       });
+      $('.reservation_form').on('submit', function(event) {
+        event.preventDefault();
+        var $form = $(this);
+        var action = $form.attr('action');
+        $.post(action, (res) => {
+          console.log(res);
+        });
+      });
+
     }
   }
 }
