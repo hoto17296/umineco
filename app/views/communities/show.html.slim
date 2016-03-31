@@ -348,21 +348,21 @@ main
 
   - @community.sailings.each do |sailing|
     - duration = tsrange2str sailing.duration
-    // --------------仮予約 1
-    div id="reservationForm-#{sailing.id}" data-title='2016/02/20に仮予約'
+
+    // --------------仮予約
+    div id="reservationForm-#{sailing.id}" data-title="#{duration[:date]}に仮予約"
       p.message
         |送信ボタンを押していただくと、仮予約が完了します。
-      p
+      p.messageSmall
         |このイベントをあなたの友達にも知らせよう！
-      form
-        label
-          input.messageSmall type="checkbox" checked="checked"
-            |Facebookでシェアする
-        textarea #{duration[:date]}にクルージングイベントに参加します。
+      = form_for :participant, url: participants_path(sailing_id: sailing.id) do |f|
+        label.messageSmall
+          = f.check_box :share, checked: true
+          | Facebookでシェアする
+        = f.text_area :share_body, value: "#{duration[:date]}にクルージングイベントに参加します！"
 
-      .c-btn.c-btn--Style2
-        = link_to "#"
-          |送信
+        .c-btn.c-btn--Style2
+          button type='submit' 送信
 
     // --------------参加者一覧
     div id="participantList-#{sailing.id}" data-title="#{duration[:date]}参加者一覧"

@@ -11,7 +11,7 @@ a {
 .c-btn {
   text-align: center;
 
-  a {
+  a, button {
     display: inline-block;
     border-radius: 5px;
     letter-spacing: 1px;
@@ -49,11 +49,12 @@ a {
 .c-btn--Style2 {
   text-align: center;
 
-  a {
+  a, button {
     position: relative;
     background: $color-main-blue;
     padding: 5px 40px;
     color: #ffffff;
+    border: none;
 
     &:before {
       content: '';
