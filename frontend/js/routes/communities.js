@@ -139,6 +139,14 @@ export default function(req) {
           }
         })
       }
+
+      // 仮予約フォーム
+      $('.reservation_with_share').on('change', function() {
+        var checked = $(this).prop('checked');
+        var $form = $(this).parents('form');
+        var $body = $form.find('textarea');
+        $body.prop('disabled', ! checked );
+      });
     }
   }
 }
