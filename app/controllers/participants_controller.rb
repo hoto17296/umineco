@@ -38,7 +38,8 @@ class ParticipantsController < ApplicationController
         @sailing.community.add_member(current_user) if @sailing.community.present?
 
         format.html { redirect_to @participant, notice: 'Participant was successfully created.' }
-        format.json { render :show, status: :created, location: @participant }
+        #format.json { render :show, status: :created, location: @participant }
+        format.json { render json: { error: nil } }
       else
         format.html { render :new }
         format.json { render json: @participant.errors, status: :unprocessable_entity }
