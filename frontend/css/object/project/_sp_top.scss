@@ -12,9 +12,10 @@
 
 // uminecoの遊び方
 .aboutBox {
-  margin-top: 5px;
-  padding: 40px 0 40px 0;
-  background: #f0f7fa;
+  position: relative;
+  top: -22px;
+  padding: 20px 0;
+  background: $bg-color-gray;
 
   &__ttl {
     margin-bottom: 20px;
@@ -45,115 +46,72 @@
 }
 
 // 画像リスト
+
 .c-imglistBox {
-  @extend %clearfix;
+  margin-bottom: 5px;
 
-  // 画像
-  &__image {
-    img {
-      width: 100%;
-      height: auto;
-    }
+  &:nth-child(2n) {
+    margin-right: 0;
   }
-  &__head {
+  img {
+    @include image;
+  }
+  &__header {
     position: relative;
-    margin-bottom: 5px;
+    overflow: hidden;
 
-    .fbIcon {
-      top: -25px;
+
+    .headerInner {
+      display: table;
       position: absolute;
-      left: 5px;
-      width: 55px;
-      height: 55px;
-      overflow: hidden;
-      border-radius: 50%;
-      border: 2px solid #3da6d0;
-      vertical-align: middle;
+      bottom: 0;
+      width: 100%;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.6);
+      table-layout: fixed;
 
-      img {
-        position: absolute;
-        top: -5px;
-        left: -5px;
-        width: 60px;
-        height: 60px;
+      .ttl {
+        @extend %font-16;
+        display: table-cell;
+        color: #fff;
+        vertical-align: middle;
+
       }
-    }
-    .ttl {
-      line-height: 1.2;
-      margin: 5px 0 0 70px;
-    }
-  }
-
-  // 詳細
-  &__detail {
-    width: 100%;
-    padding: 3px 3px 5px 3px;
-    background: #f0f7fa;
-    border-bottom: 2px solid #1e7ba1;
-
-    .dateBox {
-
-      &__ttl {
-        display: inline-block;
-
-        span {
-          margin-right: 3px;
-          padding: 3px 5px;
-          background: #3da6d0;
-          font-size: 10px;
-          letter-spacing: 1px;
-          color: #ffffff;
+      .fbIcom {
+        display: table-cell;
+        width: 60px;
+        img {
+          width: 50px;
+          height: auto;
         }
       }
-      &__date {
-        display: inline-block;
-        font-size: 12px;
-      }
     }
-    .infoBox {
-      @extend %clearfix;
+  }
+  &__footer {
+    position: relative;
+    background: $bg-color-gray;
+    height: 45px;
 
-      .text {
-        margin-right: 5px;
-        display: inline-block;
-        font-size: 12px;
-      }
-      .icn_arrow--blue {
-        display: inline-block;
-        width: 18px;
-        vertical-align: middle;
-        text-align: center;
-        font-size: 20px;
-      }
+    .textMap {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: #333333;
+    }
+    .textReview {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #333333;
+    }
+    span {
+      @extend %font-18;
+      display: inline-block;
+      width: 20px;
+      margin-right: 3px;
+      text-align: center;
+      vertical-align: middle;
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
