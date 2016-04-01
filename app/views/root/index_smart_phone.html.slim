@@ -4,11 +4,17 @@
   meta property="og:url" content="#{root_url()}"
   meta property="og:image" content="#{root_url()}images/common/img_umineco.jpg"
 
-#mainCarousel.Carousel
-  ul.CarouselInner
-    - (1..3).each do |n|
-      li.CarouselItem
-        = image_tag "top/img_main_sp_#{n}.jpg", alt:""
+.topMainArea
+  p.topMainArea__text
+    |海の上だから出会える大自然がある
+    span
+      |ここにしかない景色を見よう。
+
+  #mainCarousel.Carousel
+    ul.CarouselInner
+      - (1..3).each do |n|
+        li.CarouselItem
+          = image_tag "top/img_main_sp_#{n}.jpg", alt:""
 
 main
 
