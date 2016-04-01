@@ -30,6 +30,7 @@
 }
 
 .aboutTextBox {
+  @extend %font-12;
   margin: 20px 0;
   text-align: center;
 }
