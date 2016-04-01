@@ -6,9 +6,9 @@
   background: $color-main-blue;
 
   &__logo {
-    width: 200px;
+    width: 130px;
     height: auto;
-    margin: 0 auto 10px auto;
+    margin: 0 0 10px 10px;
     img {
       width: 100%;
       height: auto;
@@ -26,10 +26,11 @@
       display: inline-block;
       margin-left: 5px;
       font-size: 12px;
+      color: #fff;
     }
     .fbIcon {
       display: inline-block;
-      width: 25px;
+      width: 20px;
       border-radius: 50%;
       overflow: hidden;
       vertical-align: middle;

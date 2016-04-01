@@ -1,12 +1,29 @@
 @charset "utf-8";
 
-// メインスライダー
-#main_slider {
-  margin-bottom: 30px;
+// メインカルーセル
+.topMainArea {
+  position: relative;
+  text-align: center;
 
-  img {
+  &__text {
+    @extend %font-16;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
     width: 100%;
-    height: auto;
+    height: 75px;
+    z-index: 1;
+    color: #fff;
+    letter-spacing: 2px;
+
+    span {
+      display: block;
+      @extend %font-12;
+      letter-spacing: 2px;
+    }
   }
 }
 
