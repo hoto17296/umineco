@@ -282,7 +282,7 @@ main
           h2.c-title-4.reservationttl
             |日程・ご予約
 
-          - @community.sailings.slice(0..2).each do |sailing|
+          - @community.sailings.from_now.slice(0..2).each do |sailing|
             - duration = tsrange2str sailing.duration
             .reservationBox
               .reservationBox__left
@@ -331,7 +331,7 @@ main
 
 #ModalList style="display:none"
 
-  - @community.sailings.each do |sailing|
+  - @community.sailings.from_now.each do |sailing|
     - duration = tsrange2str sailing.duration
 
     // --------------仮予約
@@ -374,7 +374,7 @@ main
 
   // --------------別日程を確認する
   #anotherDateForm data-title='別日程を確認する'
-    - @community.sailings.each do |sailing|
+    - @community.sailings.from_now.each do |sailing|
       - duration = tsrange2str sailing.duration
       .reservationBox
         .reservationBox__left

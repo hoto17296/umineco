@@ -5,6 +5,8 @@ class Sailing < ActiveRecord::Base
   has_many :users, through: :participants
   has_many :comments
 
+  scope :from_now, lambda { select {|sailing| sailing.duration.begin > DateTime.now } }
+
   def participant?(user)
     return false unless user.instance_of? User
     participants.inject(false) {|v, p| v || p.user.id == user.id }
