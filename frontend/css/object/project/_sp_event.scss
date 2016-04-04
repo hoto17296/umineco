@@ -175,6 +175,7 @@
   &__left {
     float: left;
     width: 70%;
+    padding-right: 10px;
     border-right: 1px solid $color-main-blue;
 
     .date {
@@ -185,6 +186,9 @@
     .time {
       font-size: 14px;
       text-align: center;
+    }
+    a {
+      width: 100%;
     }
     .c-btn--Style3 {
       margin-right: 10px;
