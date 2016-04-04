@@ -282,7 +282,7 @@ main
           h2.c-title-4.reservationttl
             |日程・ご予約
 
-          - @community.sailings.each do |sailing|
+          - @community.sailings.slice(0..2).each do |sailing|
             - duration = tsrange2str sailing.duration
             .reservationBox
               .reservationBox__left
@@ -373,15 +373,34 @@ main
         |送信
 
   // --------------別日程を確認する
-  #anotherDateForm data-title='別日程なら参加したい'
-    p.message
-      |参加したい日程を入力してください。
-    form
-      input type="text"
+  #anotherDateForm data-title='別日程を確認する'
+    - @community.sailings.each do |sailing|
+      - duration = tsrange2str sailing.duration
+      .reservationBox
+        .reservationBox__left
+          p.date= duration[:date]
+          p.time
+            = duration[:begin]
+            | -
+            = duration[:end]
 
-    .c-btn.c-btn--Style2
-      = link_to "#"
-        |送信
+          - if current_user and sailing.participant? current_user
+            .c-btn.c-btn--Style2
+              | 仮予約済み
+          - elsif sailing.participants.size >= sailing.max
+            .c-btn.c-btn--Style2
+              | 満員
+          - else
+            .c-btn.c-btn--Style2
+              a href="#" onClick="Modal.open('reservationForm-#{sailing.id}')"
+                |一緒に遊ぶ
+        .reservationBox__right
+          p.ttl
+            |参加者
+          p.participant
+            a href="#" onClick="Modal.open('participantList-#{sailing.id}')"
+              span.participant__number= sailing.participants.size
+              | /#{sailing.max}人
 
   // --------------メンバー一覧
   #memberList data-title='メンバー一覧'
