@@ -1,11 +1,9 @@
 @charset "utf-8";
 
-a {
+a, button {
   text-decoration: none;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all  0.5s ease;
+  transition: all 0.2s ease;
+  font-size: 14px;
 }
 
 .c-btn {
@@ -43,6 +41,9 @@ a {
       border-right-width: 0;
       border-left-color: $color-sub-red;
     }
+    &:hover {
+      background: #ededed;
+    }
   }
 }
 // 背景青のボタン 矢印あり
@@ -51,10 +52,11 @@ a {
 
   a, button {
     position: relative;
-    background: $color-main-blue;
     padding: 5px 40px;
+    border: 1px solid $color-main-blue;
+    background: $color-main-blue;
     color: #ffffff;
-    border: none;
+    cursor: pointer;
 
     &:before {
       content: '';
@@ -71,10 +73,18 @@ a {
       border-right-width: 0;
       border-left-color: #ffffff;
     }
+    &:hover {
+      border: 1px solid $color-main-blue;
+      background: #ffffff;
+      color: $color-main-blue;
+      &:before {
+        border-left-color: $color-main-blue;
+      }
+    }
   }
 }
 
-// 背景青のボタン 矢印無し
+// 背景青のボタン 矢印無し facebookボタン
 .c-btn--Style3 {
   text-align: center;
 
@@ -82,7 +92,16 @@ a {
     position: relative;
     background: #2c4388;
     padding: 5px 40px;
+    border: 1px solid $color-main-blue;
     color: #ffffff;
+    &:hover {
+      border: 1px solid $color-main-blue;
+      background: #ffffff;
+      color: $color-main-blue;
+      &:before {
+        border-left-color: $color-main-blue;
+      }
+    }
   }
   .icon-icn_fb {
     padding-right: 5px;

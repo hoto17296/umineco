@@ -11,7 +11,6 @@ header#header.l-header
         li
           .fbIcon
             = image_tag(current_user.picture)
-          = current_user.name
 
         li
           span.icn_arrow.icn_arrow-1
@@ -22,10 +21,6 @@ header#header.l-header
           a href="#" onClick="Modal.open('loginForm')"
             span.icn_arrow.icn_arrow-1
             |ログイン
-      li
-        span.icn_arrow.icn_arrow-1
-        = link_to "/about"
-          |uminecoとは
 
 // --------------login modal
 #ModalList style="display:none"
@@ -41,9 +36,9 @@ header#header.l-header
 
       p.messageSmall.textLink
         |登録することで、
-        = link_to '利用規約', '#'
-        |、
-        = link_to 'プラバシーポリシー', '#'
+        /= link_to '利用規約', terms_path
+        /|、
+        = link_to 'プラバシーポリシー', privacy_path
         |に同意したことになります。
 
 /! /partial header

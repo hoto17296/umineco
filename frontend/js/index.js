@@ -2,10 +2,15 @@ import $ from 'jquery'
 import './lib/modal'
 import Router from './router'
 
-// href='#' なリンクを無効にする
-$('a').on('click', (event) => {
-  if ( event.target.href.match(/#$/) ) {
-    event.preventDefault();
+// スムーズスクロール
+$('a[href^="#"]').click(function(event) {
+  event.preventDefault();
+  var speed = 400;
+  var href= $(this).attr("href");
+  var position = $(href).offset().top;
+
+  if(href != "#") {
+    $('body,html').animate({scrollTop:position}, speed, 'swing');
   }
 });
 
