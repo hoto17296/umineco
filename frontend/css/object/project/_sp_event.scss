@@ -212,6 +212,7 @@
 }
 // ご相談
 .consultationBox {
+  margin-top: 20px;
 
   &__ttl {
     font-size: 20px;
@@ -219,7 +220,7 @@
   .c-btn {
     a {
       width: 100%;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
   }
 }
