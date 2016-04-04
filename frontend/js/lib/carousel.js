@@ -7,7 +7,7 @@ class Carousel {
     this.$inner = this.$elem.find('.CarouselInner');
     this.$inner.addClass('isTransition');
     this.$items = this.$elem.find('.CarouselItem');
-    this.interval = opts.interval || 5000; // ms
+    this.interval = opts.interval || 6000; // ms
     this.count_flag = 0;
     this.limit = this.$items.size();
     // 初期設定

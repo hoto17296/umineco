@@ -1,6 +1,6 @@
 /! partial header
 
-header#header
+header#header.l-header
   h1.l-header__logo
     = link_to root_path
       =image_tag "common/logo.png", alt:"umineco"
@@ -14,16 +14,16 @@ header#header
           = current_user.name
 
         li
-          span.icon-icn_arrow.icn_arrow--blue
+          span.icn_arrow.icn_arrow-1
           = link_to 'ログアウト', destroy_user_session_path, method: :delete
       - else
 
         li
           a href="#" onClick="Modal.open('loginForm')"
-            span.icon-icn_arrow.icn_arrow--blue
+            span.icn_arrow.icn_arrow-1
             |ログイン
       li
-        span.icon-icn_arrow.icn_arrow--blue
+        span.icn_arrow.icn_arrow-1
         = link_to "/about"
           |uminecoとは
 
@@ -34,12 +34,12 @@ header#header
       p.message
         |Facebookでログインして、uminecoで遊ぼう！
 
-      .c-btn.c-btn--Style5
+      .c-btn.c-btn--Style2
         = link_to user_omniauth_authorize_path(:facebook)
-          span.icon-icn_fb.icn_arrow--white
+          span.icon-icn_fb
           |ログインまたは新規登録
 
-      p.messageSmall
+      p.messageSmall.textLink
         |登録することで、
         = link_to '利用規約', '#'
         |、

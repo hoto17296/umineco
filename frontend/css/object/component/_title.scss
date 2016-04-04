@@ -2,12 +2,14 @@
 
 // 青い上下の線
 .c-title-1 {
+  @extend %font-20;
   position: relative;
   margin-bottom: 20px;
   padding: 10px 0;
   border-top: 2px solid $color-main-blue;
   border-bottom: 1px solid $color-main-blue;
   text-align: center;
+  letter-spacing: 1px;
 
   &::before {
     position: absolute;

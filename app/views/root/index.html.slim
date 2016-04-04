@@ -4,12 +4,11 @@
   meta property="og:url" content="#{root_url()}"
   meta property="og:image" content="#{root_url()}images/common/img_umineco.jpg"
 
-
 .topMainArea
   p.topMainArea__text
     |海の上だから出会える大自然がある
     span
-      |ここにしかない景色を見よう。
+      |ここにしかない景色を体験しよう。
 
   #mainCarousel.Carousel
     ul.CarouselInner
@@ -38,7 +37,7 @@ main
 
   .l-inner
     // --------------リスト
-    .imglistwrapper
+    .imglistwrapper#communityList
       section.c-imglistBox
         =link_to '/community/1'
           .c-imglistBox__header

@@ -26,11 +26,11 @@
       height: 50px;
       width: 100%;
       padding: 10px 0;
-      border-bottom: 1px solid #6dc9ee;
+      border-bottom: 1px solid $color-main-blue;
       text-align: center;
       .title {
         font-size: 18px;
-        color: #6dc9ee;
+        color: $color-main-blue;
       }
       .close {
         position: absolute;
@@ -38,7 +38,7 @@
         right: 0.8em;
         font-size: 1.5em;
         font-weight: bold;
-        color: #6dc9ee;
+        color: $color-main-blue;
 
         &::before { content: '×'; }
       }
@@ -56,12 +56,11 @@
       font-size: 12px;
       a {
         text-decoration: underline;
-        color: #7bceef;
+        color: $link-color;
       }
     }
     .c-btn {
       margin: 0 auto 10px auto;
-      width: 230px;
     }
     textarea {
       width: 100%;
@@ -81,30 +80,35 @@
 
 // メンバー一覧
 .modalMemberList {
-  @extend %clearfix;
 
   li {
+    display: table;
+    width: 100%;
     margin-bottom: 10px;
     border-bottom: 1px dotted #e5e5e5;
   }
   &__img {
-    float: left;
+    display: table-cell;
     width: 50px;
-    border-radius: 5px;
-    overflow: hidden;
+    padding-bottom: 10px;
+
     img {
+      border-radius: 5px;
       width: 100%;
       height: auto;
     }
   }
   &__body {
-    margin-left: 60px;
+    display: table-cell;
+    padding: 0 10px 10px;
+    vertical-align: middle;
 
     .name {
-      margin-bottom: 5px;
+      @extend %font-16;
     }
     .text {
-      font-size: 12px;
+      @extend %font-12;
+      color: #727272;
     }
   }
 }

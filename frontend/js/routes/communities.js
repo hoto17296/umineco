@@ -23,6 +23,9 @@ export default function(req) {
         $(".thumbnailsBox .prev a").hide();
         $(".mainBox .prev").hide();
 
+        $(".mainBox .main").css("width", (100 * mainLimit) + "%");
+        $(".thumbnails").css("width", (100 - 2 * 5) / thumbnailPageSize * thumbnailsLimit + "%");
+
         // メインに表示する画像
         function showPhoto(n) {
           $main.css("transform", "translateX( -" + (100 / mainLimit * n) + "%)");
