@@ -128,19 +128,28 @@ export default function(req) {
       else {
         // SP 一緒に遊ぶボタン固定
         var $eventActionScroll = $(".eventActionScroll");
-        var $eventArea = $(".event");
-        var eventArea_offset_top = $eventArea.offset().top;
-        var windowHeight = $(window).height();
-        var sub_scroll = eventArea_offset_top + $eventArea.outerHeight(true) - $eventActionScroll.outerHeight(true) - windowHeight;
 
-        $(window).scroll(function () {
-          var ws = $(window).scrollTop();
-          if (ws > sub_scroll) {
+        $(window).bind("scroll", function() {
+          var scrollHeight = $(document).height();
+          var scrollPosition = $(window).outerHeight(true) + $(window).scrollTop();
+          var footHeight = $("#footer").outerHeight(true);
+
+          // スクロール位置がフッターまで来たら
+          if ( scrollHeight - scrollPosition  <= footHeight ) {
             $eventActionScroll.css({position:'absolute', bottom: '0px'});
           } else {
             $eventActionScroll.css({position:'fixed', bottom: '0px'});
           }
-        })
+        });
+        // スムーズスクロール
+        $('a[href^=#]').click(function() {
+         var speed = 400;
+         var href= $(this).attr("href");
+         var target = $(href == "#" || href == "" ? 'html' : href);
+         var position = target.offset().top;
+         $('body,html').animate({scrollTop:position}, speed, 'swing');
+         return false;
+        });
       }
 
       // 仮予約フォーム
@@ -158,7 +167,6 @@ export default function(req) {
           console.log(res);
         });
       });
-
     }
   }
 }
