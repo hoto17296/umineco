@@ -378,7 +378,7 @@ main
     p.message
       |このヨットクラブに興味がある旨を伝えてよろしいですか？
     = form_for :community, url: interest_community_path(@community) do |f|
-      = text_area :feed, :body, placeholder: "オーナーに伝えたい事があれば記入してください。"
+      = text_area :feed, :body, placeholder: "伝えたい事があれば記入してください。"
 
       .c-btn.c-btn--Style2
         button type='submit'
