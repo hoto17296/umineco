@@ -1,18 +1,15 @@
 @charset "utf-8";
 
-a, button {
-  text-decoration: none;
-  transition: all 0.2s ease;
-  font-size: 14px;
-}
-
 .c-btn {
   text-align: center;
 
   a, button {
     display: inline-block;
     border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
     letter-spacing: 1px;
+    transition: all 0.2s ease;
   }
 }
 
