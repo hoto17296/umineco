@@ -142,7 +142,8 @@ export default function(req) {
           }
         });
         // スムーズスクロール
-        $('a[href^=#]').click(function() {
+        $('a[href^="#"]').click(function() {
+          console.log('aa');
          var speed = 400;
          var href= $(this).attr("href");
          var target = $(href == "#" || href == "" ? 'html' : href);
