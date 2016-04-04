@@ -158,6 +158,15 @@
 .reservationttl {
   text-align: center;
 }
+
+#modal {
+  .reservationBox__left {
+    width: 350px;
+  }
+  .reservationBox__right {
+    width: 150px;
+  }
+}
 .reservationBox {
   @extend %clearfix;
   margin-bottom: 10px;
