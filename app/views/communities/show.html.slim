@@ -4,8 +4,6 @@
   meta property="og:url" content="#{community_url(@community)}"
   meta property="og:image" content="#{root_url()}images/article/umineco01/img_main.jpg"
 
-p#notice = notice
-
 main
   article.l-inner.event
 
@@ -23,7 +21,7 @@ main
           |神奈川県 三浦市 三崎町
         li
           span.icon-icn_review.icn_color-1
-          |レビュー15件
+          |レビュー1件
 
 
     .eventBody
@@ -144,14 +142,16 @@ main
                   |原田 祐二
               li
                 .memberList__img
-                  =image_tag "article/umineco01/thumb_member_04.jpg", alt:""
+                  =image_tag "article/umineco01/thumb_member_08.jpg", alt:""
                 .memberList__name
-                  |田 野
+                  .name
+                  |佐々木 盛海
               li
                 .memberList__img
-                  =image_tag "article/umineco01/thumb_member_05.jpg", alt:""
+                  =image_tag "article/umineco01/thumb_member_12.jpg", alt:""
                 .memberList__name
-                  |内田 隆
+                  .name
+                  |サカイ 優佳子
 
             .memberList__btn.textLink
               span.icn_arrow.icn_arrow-3
@@ -249,18 +249,18 @@ main
 
           .reviewStar
             span.number
-              |17件
+              |1件
             .starBig
-              =image_tag "community/icn_star_3.png", alt:"星3"
+              =image_tag "community/icn_star_5.png", alt:"星5"
 
           // レビュー 1
           .reviewBox
             .reviewBox__header
               .left
-                =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+                =image_tag "article/umineco01/thumb_review_01.jpg", alt:""
               .right
                 .starSmall
-                  =image_tag "community/icn_star_3.png", alt:"星3"
+                  =image_tag "community/icn_star_5.png", alt:"星5"
 
                 h4.ttl
                   |はじめてヨットに乗った
@@ -271,29 +271,9 @@ main
                 |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
 
             p.reviewBox__info
-              |2016年２月 / 山田太郎
+              |2016年3月 / 石川 雄基
 
-          // レビュー 2
-          .reviewBox
-            .reviewBox__header
-              .left
-                =image_tag "article/umineco01/fb_thumb.jpg", alt:""
-              .right
-                .starSmall
-                  =image_tag "community/icn_star_3.png", alt:"星3"
-
-                h4.ttl
-                  |はじめてヨットに乗った
-            .reviewBox__body
-              p
-                |はじめてヨットに乗ったのですが、とても楽しかったです！風の力だけで船を動かすなんてすごいなと感じました。
-              p
-                |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
-
-            p.reviewBox__info
-              |2016年２月 / 山田太郎
-
-          .c-btn.c-btn--Style1
+          /.c-btn.c-btn--Style1
             a href="#" onClick="Modal.open('reviewList')"
               |他のレビューを見る
 
@@ -386,7 +366,7 @@ main
   // --------------興味あります
   #interestForm data-title='興味あります'
     p.message
-      |オーナーに興味がある旨を伝えてよろしいですか？
+      |このヨットクラブに興味がある旨を伝えてよろしいですか？
     form
       textarea placeholder="オーナーに伝えたい事があれば記入してください。"
 
@@ -428,16 +408,16 @@ main
           |原田 祐二
       li
         .modalMemberList__img
-          =image_tag "article/umineco01/thumb_member_04.jpg", alt:""
+          =image_tag "article/umineco01/thumb_member_08.jpg", alt:""
         .modalMemberList__body
           .name
-          |田 野
+          |佐々木 盛海
       li
         .modalMemberList__img
-          =image_tag "article/umineco01/thumb_member_05.jpg", alt:""
+          =image_tag "article/umineco01/thumb_member_12.jpg", alt:""
         .modalMemberList__body
           .name
-          |内田 隆
+          |サカイ 優佳子
       li
         .modalMemberList__img
           =image_tag "article/umineco01/thumb_member_06.jpg", alt:""
@@ -452,10 +432,10 @@ main
           |木村 聡
       li
         .modalMemberList__img
-          =image_tag "article/umineco01/thumb_member_08.jpg", alt:""
+          =image_tag "article/umineco01/thumb_member_04.jpg", alt:""
         .modalMemberList__body
           .name
-          |佐々木 盛海
+          |田 野
       li
         .modalMemberList__img
           =image_tag "article/umineco01/thumb_member_09.jpg", alt:""
@@ -467,7 +447,7 @@ main
           =image_tag "article/umineco01/thumb_member_10.jpg", alt:""
         .modalMemberList__body
           .name
-          |佐々木 健人
+          |佐々木 健利
       li
         .modalMemberList__img
           =image_tag "article/umineco01/thumb_member_11.jpg", alt:""
@@ -476,10 +456,10 @@ main
           |柴田 雅和
       li
         .modalMemberList__img
-          =image_tag "article/umineco01/thumb_member_12.jpg", alt:""
+          =image_tag "article/umineco01/thumb_member_05.jpg", alt:""
         .modalMemberList__body
           .name
-          |サカイ 優佳子
+          |内田 隆
       li
         .modalMemberList__img
           =image_tag "article/umineco01/thumb_member_13.jpg", alt:""
@@ -491,7 +471,7 @@ main
   #reviewList data-title='レビュー 一覧'
     .reviewStar
       span.number
-        |17件
+        |1件
       .starBig
         =image_tag "community/icn_star_3.png", alt:"星3"
 
@@ -499,10 +479,10 @@ main
     .reviewBox
       .reviewBox__header
         .left
-          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
+          =image_tag "article/umineco01/thumb_review_01.jpg", alt:""
         .right
           .starSmall
-            =image_tag "community/icn_star_3.png", alt:"星3"
+            =image_tag "community/icn_star_5.png", alt:"星5"
 
           h4.ttl
             |はじめてヨットに乗った
@@ -513,64 +493,11 @@ main
           |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
 
       p.reviewBox__info
-        |2016年２月 / 山田太郎
+        |2016年3月 / 石川 雄基
 
-    // レビュー 2
-    .reviewBox
-      .reviewBox__header
-        .left
-          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
-        .right
-          .starSmall
-            =image_tag "community/icn_star_3.png", alt:"星3"
-
-          h4.ttl
-            |はじめてヨットに乗った
-      .reviewBox__body
-        p
-          |はじめてヨットに乗ったのですが、とても楽しかったです！風の力だけで船を動かすなんてすごいなと感じました。
-        p
-          |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
-
-      p.reviewBox__info
-        |2016年２月 / 山田太郎
-
-    // レビュー 3
-    .reviewBox
-      .reviewBox__header
-        .left
-          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
-        .right
-          .starSmall
-            =image_tag "community/icn_star_3.png", alt:"星3"
-
-          h4.ttl
-            |はじめてヨットに乗った
-      .reviewBox__body
-        p
-          |はじめてヨットに乗ったのですが、とても楽しかったです！風の力だけで船を動かすなんてすごいなと感じました。
-        p
-          |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
-
-      p.reviewBox__info
-        |2016年２月 / 山田太郎
-
-    // レビュー 4
-    .reviewBox
-      .reviewBox__header
-        .left
-          =image_tag "article/umineco01/fb_thumb.jpg", alt:""
-        .right
-          .starSmall
-            =image_tag "community/icn_star_3.png", alt:"星3"
-
-          h4.ttl
-            |はじめてヨットに乗った
-      .reviewBox__body
-        p
-          |はじめてヨットに乗ったのですが、とても楽しかったです！風の力だけで船を動かすなんてすごいなと感じました。
-        p
-          |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
-
-      p.reviewBox__info
-        |2016年２月 / 山田太郎
+  // --------------送信しました
+  #thanksMessage data-title='送信しました'
+    p.message
+      |ありがとうございました。
+      br
+      |オーナーからのご連絡をお待ち下さい。
