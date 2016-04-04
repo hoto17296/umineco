@@ -170,13 +170,13 @@
   @extend %clearfix;
   margin-bottom: 10px;
   padding-bottom: 10px;
-  border-bottom: 1px solid $color-main-blue;
+  border-bottom: 1px solid $boder-color-01;
 
   &__left {
     float: left;
     width: 70%;
     padding-right: 10px;
-    border-right: 1px solid $color-main-blue;
+    border-right: 1px solid $boder-color-01;
 
     .date {
       font-size: 20px;
