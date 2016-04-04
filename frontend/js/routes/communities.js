@@ -143,6 +143,20 @@ export default function(req) {
         });
       }
 
+      // 「一緒に遊ぶ」クリック時
+      // TODO 「別日程」「興味あります」も同様
+      $('.participateButton').on('click', function() {
+        // ログインしていたら仮予約モーダルを表示
+        if ( window.Rails.current_user ) {
+          var id = $(this).data('id');
+          Modal.open('reservationForm-' + id);
+        }
+        // ログインしてなかったらログインモーダルを表示
+        else {
+          Modal.open('loginForm');
+        }
+      });
+
       // 仮予約フォーム
       $('.reservation_with_share').on('change', function() {
         var checked = $(this).prop('checked');
