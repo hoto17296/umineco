@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+a {
+  text-decoration: none;
+}
+
 .c-btn {
   text-align: center;
 
@@ -7,7 +11,6 @@
     display: inline-block;
     border-radius: 5px;
     font-size: 14px;
-    text-decoration: none;
     letter-spacing: 1px;
     transition: all 0.2s ease;
   }
