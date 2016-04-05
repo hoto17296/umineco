@@ -20,8 +20,9 @@ main
           span.icon-icn_map.icn_color-1
           |神奈川県 三浦市 三崎町
         li
-          span.icon-icn_review.icn_color-1
-          |レビュー1件
+          a href="#reviewArea"
+            span.icon-icn_review.icn_color-1
+            |レビュー1件
 
     .eventBody
       // --------------event main
@@ -312,7 +313,7 @@ main
 
 
       // --------------レビュー
-      section.c-box
+      section.c-box#reviewArea
         .l-inner
           h3.c-title-1
             =image_tag "community/ttl_community_5.png", alt:"レビュー"
