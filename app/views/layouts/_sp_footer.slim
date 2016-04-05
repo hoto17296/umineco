@@ -1,11 +1,38 @@
 /! partial footer
 
+.contactArea
+  .l-inner
+    .contactArea__left
+      h3.ttl
+        |ご意見・ご質問はお気軽にどうぞ
+      p
+        |uminecoについてのご意見・ご要望など、お気軽にお問合せください。
+
+    .contactArea__right
+      <iframe src="https://docs.google.com/forms/d/1Bema8-yx5lp5VodQgwg51GFyyFhlnpPAKduIL-Ur1LU/viewform?embedded=true" width="100%" height="300" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます...</iframe>
+    /.contactArea__right
+      form
+        dl.table
+          dt
+            label for="f_mail" メールアドレス
+          dd
+            input#f_mail type="text"
+        dl.table
+          dt
+            label for="f_detail" 内容
+          dd
+            textarea#f_detail
+        .c-btn.c-btn--Style1
+          a href="#"
+            |送信
+
 footer#footer.l-footer
   .l-footer__fb
     div.fb-page data-href="https://www.facebook.com/%E3%82%A6%E3%83%9F%E3%83%8D%E3%82%B3-umineco-994585757295634/" data-tabs="timeline" data-width="300" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"
 
   h2.l-footer__logo
-    = image_tag "common/logo.png", alt:"umineco"
+    = link_to root_path
+      = image_tag "common/logo.png", alt:"umineco"
 
   ul.l-footer__link
     li
