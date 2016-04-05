@@ -1,5 +1,31 @@
 /! partial footer
 
+.contactArea
+  .l-inner
+    .contactArea__left
+      h3.ttl
+        |ご意見・ご質問はお気軽にどうぞ
+      p
+        |uminecoについてのご意見・ご要望など、お気軽にお問合せください。
+    .contactArea__right
+      <iframe src="https://docs.google.com/forms/d/1Bema8-yx5lp5VodQgwg51GFyyFhlnpPAKduIL-Ur1LU/viewform?embedded=true" width="560" height="250" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます...</iframe>
+
+    /.contactArea__right
+      form
+        dl.table
+          dt
+            label for="f_mail" メールアドレス
+          dd
+            input#f_mail type="text"
+        dl.table
+          dt
+            label for="f_detail" 内容
+          dd
+            textarea#f_detail
+        .c-btn.c-btn--Style1
+          a href="#"
+            |送信
+
 footer#footer.l-footer
   .l-inner
     .l-footer__left

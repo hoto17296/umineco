@@ -1,8 +1,68 @@
 @charset "utf-8";
 
-.l-footer {
+// フッターお問合せフォーム
+.contactArea {
   @extend %clearfix;
   margin-top: 100px;
+  padding: 30px 0 20px 0;
+  background: $bg-color-gray;
+  border-top: 1px solid $color-main-blue;
+
+  &__left {
+    float: left;
+    width: 400px;
+
+    .ttl {
+      @extend %font-18;
+      margin-bottom: 10px;
+    }
+  }
+  &__right {
+    float: right;
+    width: 560px;
+
+    input, textarea {
+      width: 100%;
+      padding: 5px;
+    }
+    input {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      &:focus {
+        outline:solid 2px #397fd6;
+      }
+    }
+    textarea {
+      height: 100px;
+      margin-bottom: 5px;
+      border: 1px solid #ccc;
+      &:focus {
+        outline:solid 2px #397fd6;
+      }
+    }
+    .table {
+      display: table;
+      width: 100%;
+    }
+    dt {
+      display: table-cell;
+      width: 130px;
+      padding-right: 10px;
+      text-align: right;
+      vertical-align: middle;
+    }
+    dd {
+      display: table-cell;
+    }
+    .c-btn {
+      padding-left: 140px;
+    }
+  }
+}
+
+// フッター
+.l-footer {
+  @extend %clearfix;
   padding: 40px 0;
   background: $color-main-blue;
 
@@ -36,4 +96,3 @@
     width: 500px;
   }
 }
-
