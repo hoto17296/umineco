@@ -91,7 +91,40 @@
     text-align: right;
   }
 }
+// 一日の流れ
+.oneDayFlow {
+  @extend %clearfix;
 
+  li {
+    float: left;
+    width: 310px;
+    margin: 0 20px 20px 0;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+  &__ttl {
+    @extend %font-16;
+    text-align: center;
+    margin-bottom: 5px;
+    padding: 10px 0;
+    background: $bg-color-gray;
+
+    span {
+      margin-right: 10px;
+      color: $color-main-blue;
+      letter-spacing: 2px;
+    }
+  }
+  &__img {
+    img {
+      @include image;
+    }
+  }
+  &__text {
+  }
+}
 // レビュー
 .reviewStar {
   @extend %font-20;
