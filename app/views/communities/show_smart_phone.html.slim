@@ -94,25 +94,85 @@ main
               p.text
                 |海に入れる夏はだれもいないプライベートな海で海水浴を楽しもう！
 
-
-        // --------------ヨットの魅力
+        // --------------一日の流れ
         section.c-box
           h3.c-title-1
-            =image_tag "community/ttl_community_2.png", alt:"ヨットの魅力"
+            =image_tag "community/ttl_community_7.png", alt:"一日の流れ"
 
           .l-inner
-            .imgbox
-              =image_tag "article/umineco01/img_community_05.jpg", alt:""
-
-            p.text
-              |ヨットは風の力を使って船を動かします。そのためには、風はもちろんのこと、天候や潮の流れなど自然の大きな流れを読む力が必要です。
-            p.text
-              |ヨットを操船するというのは、自然と対話するということです。
-            p.text
-              |街に住んでいるとなかなか自然と触れ合うことが出来ませんが、ヨットに乗ると大自然に囲まれるだけでなく、その自然と対話をします。
-              br
-              |この感覚を味わえるのがヨットの良さであり、海を好きになる理由です。
-
+            ul.oneDayFlow
+              li
+                .oneDayFlow__img
+                  =image_tag "article/umineco01/thumb_flow1.jpg", alt:""
+                .oneDayFlow__ttl
+                  span
+                    |9:00
+                  |駅集合
+                .oneDayFlow__text
+                  |京急三崎口改札横の売店前集合！
+              li
+                .oneDayFlow__img
+                  =image_tag "article/umineco01/thumb_flow2.jpg", alt:""
+                .oneDayFlow__ttl
+                  span
+                    |9:15
+                  |食材買う
+                .oneDayFlow__text
+                  |地元の市場でヨットの上で食べるランチの食材を購入！
+              li
+                .oneDayFlow__img
+                  =image_tag "article/umineco01/thumb_flow3.jpg", alt:""
+                .oneDayFlow__ttl
+                  span
+                    |9:30
+                  |マリーナ到着
+                .oneDayFlow__text
+                  |タクシーでシーボニアマリーナへ移動！
+              li
+                .oneDayFlow__img
+                  =image_tag "article/umineco01/thumb_flow4.jpg", alt:""
+                .oneDayFlow__ttl
+                  span
+                    |10:00
+                  |セーリング
+                .oneDayFlow__text
+                  |出航準備をしてセーリング開始！
+              li
+                .oneDayFlow__img
+                  =image_tag "article/umineco01/thumb_flow5.jpg", alt:""
+                .oneDayFlow__ttl
+                  span
+                    |12:00
+                  |ランチ
+                .oneDayFlow__text
+                  |湾の中に入ってランチ！ヨットの中のキッチンで料理！
+              li
+                .oneDayFlow__img
+                  =image_tag "article/umineco01/thumb_flow6.jpg", alt:""
+                .oneDayFlow__ttl
+                  span
+                    |13:00
+                  |海水浴
+                .oneDayFlow__text
+                  |夏はシュノーケリングなどで海水浴！
+              li
+                .oneDayFlow__img
+                  =image_tag "article/umineco01/thumb_flow7.jpg", alt:""
+                .oneDayFlow__ttl
+                  span
+                    |15:00
+                  |お風呂
+                .oneDayFlow__text
+                  |セーリングのあとはマリーナにあるお風呂で一日の疲れを癒やそう！
+              li
+                .oneDayFlow__img
+                  =image_tag "article/umineco01/thumb_flow8.jpg", alt:""
+                .oneDayFlow__ttl
+                  span
+                    |17:00
+                  |地元の居酒屋で宴会
+                .oneDayFlow__text
+                  |ここでしか食べれない新鮮地魚を食べよう！
 
         // --------------私たちについて
         section.c-box
@@ -178,6 +238,68 @@ main
                 span.icn_arrow.icn_arrow-3
                 a href="#" onClick="Modal.open('memberList')"
                   |メンバーの一覧(6)
+
+            // --------------ボート情報
+            .c-box
+              h4.c-title-4
+                |ボート情報
+
+              table.c-table
+                tr
+                  th
+                    |メーカー名
+                  td
+                    |ニュージャパンヨット社製
+                tr
+                  th
+                    |メーカー
+                    br
+                    |種類
+                  td
+                    |パサトーレバカンス
+                tr
+                  th
+                    |全長
+                  td
+                    |28ft
+                tr
+                  th
+                    |定員
+                  td
+                    |12名
+                tr
+                  th
+                    |出力
+                  td
+                    |8.0hp
+                tr
+                  th
+                    |推進力形式
+                  td
+                    |船内機
+                tr
+                  th
+                    |保管方法
+                  td
+                    |陸置
+                tr
+                  th
+                    |エンジン
+                    br
+                    |（モデル）
+                  td
+                    |YANMAR
+                tr
+                  th
+                    |免許種別
+                  td
+                    |2級
+                tr
+                  th
+                    |燃料種別
+                  td
+                    |軽油
+
 
               h4.c-title-5
                 span
@@ -257,12 +379,16 @@ main
                 |5,000円/人
             tr
               th
-                |お支払い方法
+                |お支払い
+                br
+                |方法
               td
                 |現地、現金支払い
             tr
               th
-                |キャンセル期日
+                |キャンセル
+                br
+                |期日
               td
                 |2日前の17:00まで
 
@@ -272,18 +398,14 @@ main
           table.c-table
             tr
               th
-                |時間
+                |集合時間
               td
-                |09:00 - 17:00
+                |9時
             tr
               th
                 |集合場所
               td
                 |京急三崎口駅前
-
-          .map
-            iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.161974324885!2d139.63101931524506!3d35.17751528031473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60183c3c25da307b%3A0x3369fbefd391c3bf!2z5Lqs5rWc5oCl6KGM6Zu76YmE77yI5qCq77yJIOS4ieW0juWPo-mnhQ!5e0!3m2!1sja!2sjp!4v1457762860576" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen
-
 
           .c-box
             h4.c-title-4
