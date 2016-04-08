@@ -418,7 +418,7 @@ main
                 - if current_user and sailing.participant? current_user
                   .c-btn.c-btn--Style2
                     | 仮予約済み
-                - elsif sailing.participants.size >= sailing.max
+                - elsif sailing.participants.size >= sailing.capacity
                   .c-btn.c-btn--Style2
                     | 満員
                 - else
@@ -431,7 +431,7 @@ main
                 p.participant
                   a href="#" onClick="Modal.open('participantList-#{sailing.id}')"
                     span.participant__number= sailing.participants.size
-                    | /#{sailing.max}人
+                    | /#{sailing.capacity}人
 
 
           // その他
@@ -509,7 +509,7 @@ main
           - if current_user and sailing.participant? current_user
             .c-btn.c-btn--Style2
               | 仮予約済み
-          - elsif sailing.participants.size >= sailing.max
+          - elsif sailing.participants.size >= sailing.capacity
             .c-btn.c-btn--Style2
               | 満員
           - else
@@ -522,7 +522,7 @@ main
           p.participant
             a href="#" onClick="Modal.open('participantList-#{sailing.id}')"
               span.participant__number= sailing.participants.size
-              | /#{sailing.max}人
+              | /#{sailing.capacity}人
 
   // --------------メンバー一覧
   #memberList data-title='メンバー一覧'

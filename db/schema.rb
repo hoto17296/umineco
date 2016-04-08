@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160320055353) do
+ActiveRecord::Schema.define(version: 20160408092505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,10 +78,11 @@ ActiveRecord::Schema.define(version: 20160320055353) do
     t.string   "name"
     t.integer  "community_id"
     t.integer  "ship_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.tsrange  "duration"
     t.tsrange  "invite_duration"
+    t.integer  "capacity",        default: 5, null: false
   end
 
   add_index "sailings", ["community_id"], name: "index_sailings_on_community_id", using: :btree
