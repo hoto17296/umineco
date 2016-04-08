@@ -18,6 +18,8 @@ gem 'omniauth-facebook'
 
 gem 'jpmobile'
 
+gem 'slack-api'
+
 # Passing Data to JavaScript
 gem 'gon'
 

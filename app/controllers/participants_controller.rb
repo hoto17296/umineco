@@ -30,6 +30,12 @@ class ParticipantsController < ApplicationController
     @participant.user = current_user
     @participant.sailing = @sailing
 
+    Slack.chat_postMessage(
+      text: "#{current_user.name} さんが仮予約しました",
+      username: "umineco app",
+      channel: ENV['SLACK_NOTIFICATION_CHANNEL']
+    )
+
     # TODO Facebook にシェア
 
     respond_to do |format|
