@@ -77,7 +77,7 @@ class CommunitiesController < ApplicationController
       if feed.save
         # 参加者がまだコミュニティメンバーでなければ guest として追加する
         @community.add_member(current_user)
-        format.html { redirect_to @community, notice: 'Community was successfully updated.' }
+        format.html { redirect_to @community, notice: '興味がある旨を送信しました。' }
         format.json { render :show, status: :ok, location: @community }
       else
         format.html { render :edit }

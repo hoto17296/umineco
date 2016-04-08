@@ -37,11 +37,10 @@ class ParticipantsController < ApplicationController
         # 参加者がまだコミュニティメンバーでなければ guest として追加する
         @sailing.community.add_member(current_user) if @sailing.community.present?
 
-        format.html { redirect_to @participant, notice: 'Participant was successfully created.' }
-        #format.json { render :show, status: :created, location: @participant }
-        format.json { render json: { error: nil } }
+        format.html { redirect_to @sailing.community, notice: '仮予約を受け付けました。' }
+        format.json { render :show, status: :created, location: @participant }
       else
-        format.html { render :new }
+        format.html { redirect_to @sailing.community, notice: 'エラーが発生しました。' }
         format.json { render json: @participant.errors, status: :unprocessable_entity }
       end
     end

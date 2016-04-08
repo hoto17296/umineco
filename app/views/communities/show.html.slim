@@ -423,7 +423,7 @@ main
                     | 満員
                 - else
                   .c-btn.c-btn--Style2
-                    a href="#" onClick="Modal.open('reservationForm-#{sailing.id}')"
+                    a.participateButton href="#" data-id=sailing.id
                       |一緒に遊ぶ
               .reservationBox__right
                 p.ttl
@@ -441,7 +441,7 @@ main
                 |別日程を確認する
 
             .c-btn.c-btn--Style1
-              a href="#" onClick="Modal.open('interestForm')"
+              a.interestButton href="#"
                 |興味あります
 
             .fbBtn
@@ -463,7 +463,7 @@ main
         |送信ボタンを押していただくと、仮予約が完了します。
       p.messageSmall
         |このイベントをあなたの友達にも知らせよう！
-      = form_for :participant, url: participants_path(sailing_id: sailing.id, format: :json), html: { class: :reservation_form } do |f|
+      = form_for :participant, url: participants_path(sailing_id: sailing.id) do |f|
         label.messageSmall
           = f.check_box :share, checked: true, class: :reservation_with_share
           | Facebookでシェアする
@@ -488,12 +488,11 @@ main
   #interestForm data-title='興味あります'
     p.message
       |このヨットクラブに興味がある旨を伝えてよろしいですか？
-    form
-      textarea placeholder="伝えたい事があれば記入してください。"
+    = form_tag interest_community_path(@community) do
+      = text_area :feed, :body, placeholder: "伝えたい事があれば記入してください。"
 
-    .c-btn.c-btn--Style2
-      = link_to "#"
-        |送信
+      .c-btn.c-btn--Style2
+        button type='submit' 送信
 
   // --------------別日程を確認する
   #anotherDateForm data-title='別日程を確認する'

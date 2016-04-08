@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
       action: action_name,
       sp: !! request.smart_phone?,
     }
+    gon.current_user = current_user
     # 各ページごとに渡したいデータがあれば params に入れる
     gon.params = {};
   end

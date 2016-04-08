@@ -5,13 +5,11 @@ import Router from './router'
 // スムーズスクロール
 $('a[href^="#"]').click(function(event) {
   event.preventDefault();
-  var speed = 400;
   var href= $(this).attr("href");
+  if ( href === '#' ) return;
+  var speed = 400;
   var position = $(href).offset().top;
-
-  if(href != "#") {
-    $('body,html').animate({scrollTop:position}, speed, 'swing');
-  }
+  $('body,html').animate({scrollTop:position}, speed, 'swing');
 });
 
 var router = new Router( window.Rails.request );

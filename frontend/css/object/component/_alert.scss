@@ -1,0 +1,21 @@
+.alert {
+  max-width: 960px;
+  margin: 0 auto;
+  font-size: 1.1em;
+
+  @mixin alert($type, $color) {
+    .#{$type} {
+      margin: 1em 0;
+      padding: .5em .7em;
+      font-weight: bold;
+      border-width: .2em;
+      border-radius: .5em;
+      border-style: solid;
+      border-color: $color;
+      color: $color;
+    }
+  }
+
+  @include alert('notice', #4972b6);
+  @include alert('warning', #b30303);
+}
