@@ -30,23 +30,37 @@ class ParticipantsController < ApplicationController
     @participant.user = current_user
     @participant.sailing = @sailing
 
-    Slack.chat_postMessage(
-      text: "#{current_user.name} さんが仮予約しました",
-      username: "umineco app",
-      channel: ENV['SLACK_NOTIFICATION_CHANNEL']
-    )
+    has_error = false
+    begin
+      # Facebook にシェア
+      params = participant_params
+      if params[:share]
+        graph = Koala::Facebook::API.new(current_user.token)
+        message = params[:share_body]
+        link = community_url @sailing.community
+        graph.put_connections('me', 'feed', message: message, link: link)
+      end
 
-    # TODO Facebook にシェア
+      # Slack に通知
+      Slack.chat_postMessage(
+        text: "#{current_user.name} さんが仮予約しました",
+        username: "umineco app",
+        channel: ENV['SLACK_NOTIFICATION_CHANNEL']
+      )
+    rescue => e
+      has_error = true
+      logger.warn e.message
+    end
 
     respond_to do |format|
-      if @participant.save
+      if ! has_error and @participant.save
         # 参加者がまだコミュニティメンバーでなければ guest として追加する
         @sailing.community.add_member(current_user) if @sailing.community.present?
 
         format.html { redirect_to @sailing.community, notice: '仮予約を受け付けました。' }
         format.json { render :show, status: :created, location: @participant }
       else
-        format.html { redirect_to @sailing.community, notice: 'エラーが発生しました。' }
+        format.html { redirect_to @sailing.community, alert: 'エラーが発生しました。' }
         format.json { render json: @participant.errors, status: :unprocessable_entity }
       end
     end
@@ -88,6 +102,8 @@ class ParticipantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def participant_params
-      params.require(:participant).permit(:share, :share_body)
+      _params = params.require(:participant).permit(:share, :share_body)
+      _params[:share] = ( _params[:share].to_i === 1 )
+      _params
     end
 end

@@ -15,6 +15,7 @@ gem 'slim-rails'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'koala'
 
 gem 'jpmobile'
 
