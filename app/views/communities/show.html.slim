@@ -488,12 +488,11 @@ main
   #interestForm data-title='興味あります'
     p.message
       |このヨットクラブに興味がある旨を伝えてよろしいですか？
-    form
-      textarea placeholder="伝えたい事があれば記入してください。"
+    = form_tag interest_community_path(@community) do
+      = text_area :feed, :body, placeholder: "伝えたい事があれば記入してください。"
 
-    .c-btn.c-btn--Style2
-      = link_to "#"
-        |送信
+      .c-btn.c-btn--Style2
+        button type='submit' 送信
 
   // --------------別日程を確認する
   #anotherDateForm data-title='別日程を確認する'
