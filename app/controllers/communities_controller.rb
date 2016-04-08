@@ -73,6 +73,12 @@ class CommunitiesController < ApplicationController
       user: current_user,
     })
 
+    Slack.chat_postMessage(
+      text: "#{current_user.name} さんが興味があると言っています\nメッセージ： #{feed_params[:body]}",
+      username: "umineco app",
+      channel: ENV['SLACK_NOTIFICATION_CHANNEL']
+    )
+
     respond_to do |format|
       if feed.save
         # 参加者がまだコミュニティメンバーでなければ guest として追加する

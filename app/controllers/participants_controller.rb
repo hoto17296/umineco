@@ -40,6 +40,13 @@ class ParticipantsController < ApplicationController
         link = community_url @sailing.community
         graph.put_connections('me', 'feed', message: message, link: link)
       end
+
+      # Slack に通知
+      Slack.chat_postMessage(
+        text: "#{current_user.name} さんが仮予約しました",
+        username: "umineco app",
+        channel: ENV['SLACK_NOTIFICATION_CHANNEL']
+      )
     rescue => e
       has_error = true
       logger.warn e.message

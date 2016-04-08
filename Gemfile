@@ -19,6 +19,8 @@ gem 'koala'
 
 gem 'jpmobile'
 
+gem 'slack-api'
+
 # Passing Data to JavaScript
 gem 'gon'
 
