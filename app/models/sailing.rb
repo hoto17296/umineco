@@ -12,9 +12,4 @@ class Sailing < ActiveRecord::Base
     participants.inject(false) {|v, p| v || p.user.id == user.id }
   end
 
-  # 最大参加人数(仮)
-  def max
-    10
-  end
-
 end
