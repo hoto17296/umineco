@@ -5,6 +5,7 @@ class Sailing < ActiveRecord::Base
   has_many :users, through: :participants
   has_many :comments
 
+  default_scope lambda { order(duration: :asc) }
   scope :from_now, lambda { select {|sailing| sailing.duration.begin > DateTime.now } }
 
   def participant?(user)
