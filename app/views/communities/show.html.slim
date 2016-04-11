@@ -31,7 +31,7 @@ main
         #photoGallary
           .mainBox
             ul.main.isTransition
-              - (1..24).each do |n|
+              - (1..36).each do |n|
                 li.mainItem
                   =image_tag "article/umineco01/img_slider_#{n}.jpg", alt:""
             span.prev
@@ -43,7 +43,7 @@ main
 
           .thumbnailsBox
             ul.thumbnails.isTransition
-              - (1..24).each do |n|
+              - (1..36).each do |n|
                 li.thumbnailsItem
                   .inner style="background-image: url(/images/article/umineco01/img_slider_#{n}.jpg)"
             span.prev
