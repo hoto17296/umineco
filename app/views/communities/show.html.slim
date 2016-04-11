@@ -185,56 +185,6 @@ main
             p.text
               |船舶免許を持っていない方や初心者の方も大歓迎のヨットクラブです！
 
-          .c-box
-            h4.c-title-4
-              |メンバー
-
-            ul.memberList
-              li
-                .memberList__img
-                  =image_tag "article/umineco01/thumb_member_01.jpg", alt:""
-                .memberList__name
-                  |拓海 広志
-              /li
-                .memberList__img
-                  =image_tag "article/umineco01/thumb_member_02.jpg", alt:""
-                .memberList__name
-                  |石川 輝雄
-              li
-                .memberList__img
-                  =image_tag "article/umineco01/thumb_member_03.jpg", alt:""
-                .memberList__name
-                  |原田 祐二
-              li
-                .memberList__img
-                  =image_tag "article/umineco01/thumb_member_08.jpg", alt:""
-                .memberList__name
-                  .name
-                  |佐々木 盛海
-              /li
-                .memberList__img
-                  =image_tag "article/umineco01/thumb_member_12.jpg", alt:""
-                .memberList__name
-                  .name
-                  |サカイ 優佳子
-              li
-                .memberList__img
-                  =image_tag "article/umineco01/thumb_member_04.jpg", alt:""
-                .memberList__name
-                  .name
-                  |田 野
-              li
-                .memberList__img
-                  =image_tag "article/umineco01/thumb_member_10.jpg", alt:""
-                .memberList__name
-                  .name
-                  |佐々木 健利
-
-            .memberList__btn.textLink
-              span.icn_arrow.icn_arrow-3
-              a href="#" onClick="Modal.open('memberList')"
-                |メンバーの一覧(6)
-
           // --------------ボート情報
           .c-box
             h4.c-title-4
@@ -289,9 +239,12 @@ main
                   |軽油
 
             h4.c-title-5
-              span
-                |オーナー
-              |拓海 広志（海洋・海事ライター）
+              .c-title-5__image
+                =image_tag "article/umineco01/thumb_member_01.jpg", alt:""
+              .c-title-5__name
+                span
+                  |オーナー
+                |拓海 広志（海洋・海事ライター）
 
             p.text
               |海と人の関係性を多面的に探求することをライフワークとしており、長年にわたって日本及び世界各地の海と島、港町と漁村を訪ねてきました。仕事以外の趣味は、ヨット、ボート、カヤック、ダイビング、遠泳、ビーチバレーなどマリンスポーツ全般と山歩き、そして読書と音楽です。
@@ -523,88 +476,6 @@ main
             a href="#" onClick="Modal.open('participantList-#{sailing.id}')"
               span.participant__number= sailing.participants.size
               | /#{sailing.capacity}人
-
-  // --------------メンバー一覧
-  #memberList data-title='メンバー一覧'
-    ul.modalMemberList
-      li
-        .modalMemberList__img
-          =image_tag "article/umineco01/thumb_member_01.jpg", alt:""
-        .modalMemberList__body
-          .name
-            |拓海 広志
-      /li
-        .modalMemberList__img
-          =image_tag "article/umineco01/thumb_member_02.jpg", alt:""
-        .modalMemberList__body
-          .name
-          |石川 輝雄
-      li
-        .modalMemberList__img
-          =image_tag "article/umineco01/thumb_member_03.jpg", alt:""
-        .modalMemberList__body
-          .name
-          |原田 祐二
-      li
-        .modalMemberList__img
-          =image_tag "article/umineco01/thumb_member_08.jpg", alt:""
-        .modalMemberList__body
-          .name
-          |佐々木 盛海
-      /li
-        .modalMemberList__img
-          =image_tag "article/umineco01/thumb_member_12.jpg", alt:""
-        .modalMemberList__body
-          .name
-          |サカイ 優佳子
-      /li
-        .modalMemberList__img
-          =image_tag "article/umineco01/thumb_member_06.jpg", alt:""
-        .modalMemberList__body
-          .name
-          |山崎 雅文
-      /li
-        .modalMemberList__img
-          =image_tag "article/umineco01/thumb_member_07.jpg", alt:""
-        .modalMemberList__body
-          .name
-          |木村 聡
-      li
-        .modalMemberList__img
-          =image_tag "article/umineco01/thumb_member_04.jpg", alt:""
-        .modalMemberList__body
-          .name
-          |田 野
-      /li
-        .modalMemberList__img
-          =image_tag "article/umineco01/thumb_member_09.jpg", alt:""
-        .modalMemberList__body
-          .name
-          |松川 健一
-      li
-        .modalMemberList__img
-          =image_tag "article/umineco01/thumb_member_10.jpg", alt:""
-        .modalMemberList__body
-          .name
-          |佐々木 健利
-      /li
-        .modalMemberList__img
-          =image_tag "article/umineco01/thumb_member_11.jpg", alt:""
-        .modalMemberList__body
-          .name
-          |柴田 雅和
-      /li
-        .modalMemberList__img
-          =image_tag "article/umineco01/thumb_member_05.jpg", alt:""
-        .modalMemberList__body
-          .name
-          |内田 隆
-      li
-        .modalMemberList__img
-          =image_tag "article/umineco01/thumb_member_13.jpg", alt:""
-        .modalMemberList__body
-          .name
-          |寺地 弘陽
 
   // --------------レビュー一覧
   #reviewList data-title='レビュー 一覧'
