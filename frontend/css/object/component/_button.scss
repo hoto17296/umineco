@@ -107,3 +107,46 @@ a {
     padding-right: 5px;
   }
 }
+
+// 背景青のボタン 矢印あり 小さい
+.c-btn--Style4 {
+  display: inline-block;
+  text-align: center;
+
+  a, button {
+    position: relative;
+    margin-left: 10px;
+    padding: 2px 20px;
+    border: 1px solid $color-main-blue;
+    background: $color-main-blue;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #ffffff;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 5px;
+      height: 0;
+      width: 0;
+      margin: auto 0;
+      border: 5px transparent solid;
+      border-top-width: 3px;
+      border-bottom-width: 3px;
+      border-right-width: 0;
+      border-left-color: #ffffff;
+    }
+    &:hover {
+      border: 1px solid $color-main-blue;
+      background: #ffffff;
+      color: $color-main-blue;
+      text-decoration: none;
+      &:before {
+        border-left-color: $color-main-blue;
+      }
+    }
+  }
+}
