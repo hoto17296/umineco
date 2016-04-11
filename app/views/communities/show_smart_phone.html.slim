@@ -436,12 +436,12 @@ main
       p.message
         |送信ボタンを押していただくと、仮予約が完了します。
       p.messageSmall
-        |このイベントをあなたの友達にも知らせよう！
+        |クルージングに参加することをあなたの友達にも知らせよう！
       = form_for :participant, url: participants_path(sailing_id: sailing.id) do |f|
         label.messageSmall
           = f.check_box :share, checked: true, class: :reservation_with_share
           | Facebookでシェアする
-        = f.text_area :share_body, value: "#{duration[:date]}にクルージングイベントに参加します！"
+        = f.text_area :share_body, value: "#{duration[:date]}のクルージングに参加します！"
 
         .c-btn.c-btn--Style2
           button type='submit'
