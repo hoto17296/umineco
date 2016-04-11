@@ -319,7 +319,6 @@
   .mainItem {
     display: table-cell;
     min-height: 215px;
-    // max-height: 255px;
     height: 255px;
     vertical-align: middle;
     text-align: center;
@@ -330,15 +329,17 @@
   }
   .prev, .next {
     position: absolute;
-    top: 50%;
+    top: 0;
+    display: block;
+    height: 100%;
+
     a {
+      @extend %font-24;
       display: inline-block;
-      width: 20px;
-      height: 20px;
+      width: 80px;
+      height: 100%;
       border-radius: 50%;
-      font-size: 16px;
-      line-height: 20px;
-      text-align: center;
+      line-height: 255px;
       vertical-align: middle;
     }
     span {
@@ -346,10 +347,14 @@
     }
   }
   .prev {
-    left: 10px;
+    left: 0;
+    padding-left: 5px;
+    text-align: left;
   }
   .next {
-    right: 10px;
+    right: 0;
+    padding-right: 5px;
+    text-align: right;
   }
 }
 

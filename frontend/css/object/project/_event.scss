@@ -294,15 +294,17 @@
   }
   .prev, .next {
     position: absolute;
-    top: 50%;
+    top: 0;
+    display: block;
+    height: 100%;
+
     a {
-      @extend %font-20;
+      @extend %font-32;
       display: inline-block;
-      width: 30px;
-      height: 30px;
+      width: 150px;
+      height: 100%;
       border-radius: 50%;
-      line-height: 30px;
-      text-align: center;
+      line-height: 480px;
       vertical-align: middle;
     }
     span {
@@ -310,10 +312,14 @@
     }
   }
   .prev {
-    left: 10px;
+    left: 0;
+    padding-left: 10px;
+    text-align: left;
   }
   .next {
-    right: 10px;
+    right: 0;
+    padding-right: 10px;
+    text-align: right;
   }
 }
 
