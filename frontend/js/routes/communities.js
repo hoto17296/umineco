@@ -133,7 +133,6 @@ export default function(req) {
           var scrollHeight = $(document).height();
           var scrollPosition = $(window).outerHeight(true) + $(window).scrollTop();
           var footHeight = $(".contactArea").outerHeight(true) + $("#footer").outerHeight(true);
-          console.log(footHeight);
 
           // スクロール位置がフッターまで来たら
           if ( scrollHeight - scrollPosition  <= footHeight ) {
