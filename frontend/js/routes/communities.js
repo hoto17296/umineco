@@ -109,7 +109,7 @@ export default function(req) {
         var $eventAction = $("#eventAction");
         var $main = $(".eventBody__left");
 
-        $(window).on("load scroll", function () {
+        $(window).on("load scroll", function() {
           var eventAction_offset_top = $eventAction.offset().top;
           var main_offset_top = $main.offset().top;
           var sub_scroll = main_offset_top + $main.outerHeight(true) - $eventAction.outerHeight(true);
@@ -129,10 +129,11 @@ export default function(req) {
         // SP 一緒に遊ぶボタン固定
         var $eventActionScroll = $(".eventActionScroll");
 
-        $(window).bind("scroll", function() {
+        $(window).on("load scroll", function() {
           var scrollHeight = $(document).height();
           var scrollPosition = $(window).outerHeight(true) + $(window).scrollTop();
-          var footHeight = $("#footer").outerHeight(true);
+          var footHeight = $(".contactArea").outerHeight(true) + $("#footer").outerHeight(true);
+          console.log(footHeight);
 
           // スクロール位置がフッターまで来たら
           if ( scrollHeight - scrollPosition  <= footHeight ) {
