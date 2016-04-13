@@ -7,11 +7,17 @@
 
   &__logo {
     float: left;
-    width: 160px;
+    width: 500px;
 
     img {
-      width: 100%;
+      width: 160px;
       height: auto;
+      margin-right: 20px;
+    }
+    span {
+      display: inline-block;
+      margin-bottom: 4px;
+      color: #fff;
     }
   }
   &__navi {
