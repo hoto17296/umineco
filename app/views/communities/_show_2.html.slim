@@ -1,8 +1,8 @@
 - content_for :ogp do
-  meta property='og:title' content='僕らのヨット遊びをシェアします！初心者歓迎！ | umineco'
+  meta property='og:title' content='海と風と太陽と、さあ一緒に遊びましょう。 | umineco'
   meta property="og:description" content="私たちDelphinus Clubは、三崎のシーボニアマリーナをベースにクルーザーヨットを共同所有して毎週末セーリングを楽しんでいます。メンバーは約12名で構成されていますが、メンバーの連れてくる家族や友達にもセーリングを楽しんでいただくことをテーマに様々なイベントを開催したりしています。船舶免許を持っていない方や初心者の方も大歓迎のヨットクラブです！"
   meta property="og:url" content="#{community_url(@community)}"
-  meta property="og:image" content="#{root_url()}images/article/umineco01/img_main.jpg"
+  meta property="og:image" content="#{root_url()}images/article/umineco02/img_main.jpg"
 
 main
   article.l-inner.event
@@ -10,19 +10,19 @@ main
     // --------------event header
     .eventHeader
       h2.eventHeader__ttl
-        |僕らのヨット遊びをシェアします！初心者歓迎！
+        |海と風と太陽と、さあ一緒に遊びましょう。
 
       ul.eventHeader__info
         li
           span.icon-icn_yacht.icn_color-1
-          |Delphinus
+          |Chico
         li
           span.icon-icn_map.icn_color-1
           |神奈川県 三浦市 三崎町
         li
           a href="#reviewArea"
             span.icon-icn_review.icn_color-1
-            |レビュー5件
+            |レビュー0件
 
 
     .eventBody
@@ -31,9 +31,9 @@ main
         #photoGallary
           .mainBox
             ul.main.isTransition
-              - (1..26).each do |n|
+              - (1..11).each do |n|
                 li.mainItem
-                  =image_tag "article/umineco01/img_slider_#{n}.jpg", alt:""
+                  =image_tag "article/umineco02/img_slider_#{n}.jpg", alt:""
             span.prev
               a. href="#"
                 span.icon-keyboard_arrow_left
@@ -43,9 +43,9 @@ main
 
           .thumbnailsBox
             ul.thumbnails.isTransition
-              - (1..26).each do |n|
+              - (1..11).each do |n|
                 li.thumbnailsItem
-                  .inner style="background-image: url(/images/article/umineco01/img_slider_#{n}.jpg)"
+                  .inner style="background-image: url(/images/article/umineco02/img_slider_#{n}.jpg)"
             span.prev
               a href="#"
                 span.icon-keyboard_arrow_left
@@ -62,33 +62,35 @@ main
           .c-box
             h4.c-title-2
               =image_tag "community/ttl_point_1.png", alt:"Point1"
-              |初心者の方も自分で舵を握って運転してみよう
+              |簡単ヨットレッスン
             .imgbox
-              <iframe width="640" height="425" src="https://www.youtube.com/embed/2YJ81w_zXjA?rel=0" frameborder="0" allowfullscreen></iframe>
+              =image_tag "article/umineco02/img_community_01.jpg", alt:""
             p.text
-              |実際に舵を握って操船の体験をしてもらいます。
+              |品川からわずか1時間ちょっと、日帰りできるリゾートで一緒にセーリングを楽しみませんか。
               br
-              |丁寧な指導をしてから操船してもらうので、初心者の方も安心して操船していただけます！
+              |歓迎されるゲストになるためのワンポイントレッスン。これができればヨット仲間だ！
 
           // ポイント2
           .c-box
             h4.c-title-2
               =image_tag "community/ttl_point_2.png", alt:"Point2"
-              |新鮮な魚でランチ
+              |自由に楽しくセーリング
             .imgbox
-              =image_tag "article/umineco01/img_community_02.jpg", alt:""
+              =image_tag "article/umineco02/img_community_02.jpg", alt:""
             p.text
-              |朝採れたばかりの新鮮な魚でランチをします。ヨットから釣った魚を食べることもできるかも！
+              |午前だけ、午後だけの参加もOK！自由で楽しくなければ遊びじゃない！
+
 
           // ポイント3
           .c-box
             h4.c-title-2
               =image_tag "community/ttl_point_3.png", alt:"Point3"
-              |ヨットから飛び込んで海水浴
+              |いろいろ遊びましょう。
             .imgbox
-              =image_tag "article/umineco01/img_community_03.jpg", alt:""
+              =image_tag "article/umineco02/img_community_03.jpg", alt:""
             p.text
-              |海に入れる夏はだれもいないプライベートな海で海水浴を楽しもう！
+              |ディンギー（キャビン・エンジンの無いヨット）でも遊んでいます。他にもいろいろ。
+
 
 
         // --------------一日の流れ
@@ -98,76 +100,47 @@ main
           ul.oneDayFlow
             li
               .oneDayFlow__img
-                =image_tag "article/umineco01/thumb_flow1.jpg", alt:""
+                =image_tag "article/umineco02/thumb_flow1.jpg", alt:""
               .oneDayFlow__ttl
                 span
-                  |9:00
-                |駅集合
-              .oneDayFlow__text
-                |京急三崎口改札横の売店前集合！
+                  |10:30
+                |ハーバー集合
             li
               .oneDayFlow__img
-                =image_tag "article/umineco01/thumb_flow2.jpg", alt:""
+                =image_tag "article/umineco02/thumb_flow2.jpg", alt:""
               .oneDayFlow__ttl
                 span
-                  |9:15
-                |食材買う
-              .oneDayFlow__text
-                |地元の市場でヨットの上で食べるランチの食材を購入！
+                  |11:00
+                |午前のセーリング
+
             li
               .oneDayFlow__img
-                =image_tag "article/umineco01/thumb_flow3.jpg", alt:""
+                =image_tag "article/umineco02/thumb_flow3.jpg", alt:""
               .oneDayFlow__ttl
                 span
-                  |9:30
-                |マリーナ到着
-              .oneDayFlow__text
-                |タクシーでシーボニアマリーナへ移動！
-            li
-              .oneDayFlow__img
-                =image_tag "article/umineco01/thumb_flow4.jpg", alt:""
-              .oneDayFlow__ttl
-                span
-                  |10:00
-                |セーリング
-              .oneDayFlow__text
-                |出航準備をしてセーリング開始！
-            li
-              .oneDayFlow__img
-                =image_tag "article/umineco01/thumb_flow5.jpg", alt:""
-              .oneDayFlow__ttl
-                span
-                  |12:00
+                  |12:30
                 |ランチ
-              .oneDayFlow__text
-                |湾の中に入ってランチ！ヨットの中のキッチンで料理！
             li
               .oneDayFlow__img
-                =image_tag "article/umineco01/thumb_flow6.jpg", alt:""
+                =image_tag "article/umineco02/thumb_flow4.jpg", alt:""
               .oneDayFlow__ttl
                 span
-                  |13:00
-                |海水浴
-              .oneDayFlow__text
-                |夏はシュノーケリングなどで海水浴！
+                  |13:30
+                |午後のセーリング
             li
               .oneDayFlow__img
-                =image_tag "article/umineco01/thumb_flow7.jpg", alt:""
+                =image_tag "article/umineco02/thumb_flow5.jpg", alt:""
               .oneDayFlow__ttl
                 span
-                  |15:00
-                |お風呂
-              .oneDayFlow__text
-                |セーリングのあとはマリーナにあるお風呂で一日の疲れを癒やそう！
+                  |16:00
+                |気分が乗れば、サンセットを眺めてダンスも
             li
               .oneDayFlow__img
-                =image_tag "article/umineco01/thumb_flow8.jpg", alt:""
+                =image_tag "article/umineco02/thumb_flow6.jpg", alt:""
               .oneDayFlow__ttl
                 span
                   |17:00
-                |地元の居酒屋で宴会
-              .oneDayFlow__text
-                |ここでしか食べれない新鮮地魚を食べよう！
+                |秘密の場所でパーティーをすることも
 
 
         // --------------私たちについて
@@ -177,25 +150,25 @@ main
 
           .c-box
             .imgbox
-              =image_tag "article/umineco01/img_community_06.jpg", alt:""
+              =image_tag "article/umineco02/img_community_04.jpg", alt:""
             p.text
-              |私たちDelphinus Clubは、三崎のシーボニアマリーナをベースにクルーザーヨットを共同所有して毎週末セーリングを楽しんでいます。
+              |個人所有の船、いろいろな関係の多くの友人が遊びに来てくれて楽しくセーリングしています。シーボニア・ヨット・クラブに所属し、さまざまなイベントも運営や参加をしています。三浦半島の南端にある小網代湾のシーボニアは首都圏から1時間半でリゾート気分が味わえる素敵な場所、ぜひ一緒に遊んでください。
             p.text
-              |メンバーは約12名で構成されていますが、メンバーの連れてくる家族や友達にもセーリングを楽しんでいただくことをテーマに様々なイベントを開催したりしています。
-            p.text
-              |船舶免許を持っていない方や初心者の方も大歓迎のクラブです！
+              |Chicoはカリブ海のUSヴァージン諸島のセントトーマス島で1年間滞在した時に乗っていた船の名前、つい昔話をするかもしれませんが許してください。
 
           .c-box
             h4.c-title-5
               .c-title-5__image
-                =image_tag "article/umineco01/thumb_member_01.jpg", alt:""
+                =image_tag "article/umineco02/thumb_member_01.jpg", alt:""
               .c-title-5__name
                 span
                   |代  表
-                |拓海 広志（海洋・海事ライター）
+                |矢島 久道
 
             p.text
-              |海と人の関係性を多面的に探求することをライフワークとしており、長年にわたって日本及び世界各地の海と島、港町と漁村を訪ねてきました。仕事以外の趣味は、ヨット、ボート、カヤック、ダイビング、遠泳、ビーチバレーなどマリンスポーツ全般と山歩き、そして読書と音楽です。
+              |1969年にヨットを始めて、毎週のように海に来ながら、プロセーラーにもヨット選手にもならなかった軟弱なヨット乗り、でも、週末を楽しむことは誰にも負けないつもりです。シーボニアだけでなく、夢の島マリーナや浦安マリーナでも遊んでいます。サルサや落語・プロレスも好き、笑って踊れるセーラーを目指しています。
+              br
+              |ASAベアボートスキッパー、1級小型船舶操縦士、PADIアドバンスダイバーなど
 
           // --------------ヨット情報
           .c-box
@@ -207,48 +180,48 @@ main
                 th
                   |メーカー名
                 td colspan="3"
-                  |ニュージャパンヨット社製
+                  |
               tr
                 th
                   |メーカー種類
                 td colspan="3"
-                  |パサトーレバカンス
+                  |
               tr
                 th
                   |全長
                 td
-                  |28ft
+                  |
                 th
                   |定員
                 td
-                  |12名
+                  |
               tr
                 th
                   |出力
                 td
-                  |8.0hp
+                  |
                 th
                   |推進力形式
                 td
-                  |船内機
+                  |
               tr
                 th
                   |保管方法
                 td
-                  |陸置
+                  |
                 th
                   |エンジン（モデル）
                 td
-                  |YANMAR
+                  |
               tr
                 th
                   |免許種別
                 td
-                  |2級
+                  |
                 th
                   |燃料種別
                 td
-                  |軽油
+                  |
 
         // --------------連絡事項
         section.c-box
@@ -263,7 +236,7 @@ main
               th
                 |料金
               td
-                |5,000円/人（食事代を除く）
+                |?円/人（食事代を除く）
             tr
               th
                 |お支払い方法
@@ -283,35 +256,21 @@ main
               th
                 |集合時間
               td
-                |9時
+                |10時半
             tr
               th
                 |集合場所
               td
-                |京急三崎口駅前
+                |シーボニアマリーナ
                 .c-btn.c-btn--Style4
-                  a href="https://www.google.co.jp/maps/place/%E4%BA%AC%E6%B5%9C%E6%80%A5%E8%A1%8C%E9%9B%BB%E9%89%84%EF%BC%88%E6%A0%AA%EF%BC%89+%E4%B8%89%E5%B4%8E%E5%8F%A3%E9%A7%85/@35.1775153,139.6310193,17z/data=!3m1!4b1!4m2!3m1!1s0x60183c3c25da307b:0x3369fbefd391c3bf" target="_blink"
+                  a href="https://www.google.co.jp/maps/place/%E3%82%B7%E3%83%BC%E3%83%9C%E3%83%8B%E3%82%A2%E3%83%9E%E3%83%AA%E3%83%BC%E3%83%8A/@35.162652,139.6184313,17z/data=!3m1!4b1!4m2!3m1!1s0x60183c6dfadf586f:0xd9686a40b52d0fcc" target="_blink"
                     |MAP
 
           .c-box
             h4.c-title-4
               |持ち物ついて
             p
-              |・動きやすく、濡れてもよい服
-              br
-              |・デッキシューズもしくはスニーカー
-              br
-              |・サングラス
-              br
-              |・日焼け止め
-              br
-              |・タオル・雨合羽＆防寒着
-              br
-              |・泳ぐ方は水着、水中メガネ、フィン
-              br
-              |・船酔する方は酔い止め薬
-              br
-              |・入浴後の着替え
+              |なし
 
           .c-box
             h4.c-title-4
@@ -326,75 +285,14 @@ main
 
           .reviewStar
             span.number
-              |5件
+              |0件
             .starBig
-              =image_tag "community/icn_star_4.png", alt:"星4"
+              =image_tag "community/icn_star_0.png", alt:"星0"
 
           // レビュー 1
           .reviewBox
-            .reviewBox__header
-              .left
-                =image_tag "article/umineco01/thumb_review_05.jpg", alt:""
-              .right
-                .starSmall
-                  =image_tag "community/icn_star_5.png", alt:"星5"
-
-                h4.ttl
-                  |自然も新しい出会いも楽しめそう
-            .reviewBox__body
-              p
-                |みんなでわいわいしながら海の上を旅するって感じで面白かったです。
-                br
-                |朝早いのはつらいけど、魚屋でランチを何にするか決めたり、ヨットの準備をしたり、すべてが初めてのことなので常にわくわくしていました。
-                br
-                |ヨットの上では初めて会った人も多くて最初は少し不安なところもありましたが、行ってみるとみんないい人ですぐに打ち解けられました。
-
-            p.reviewBox__info
-              |2016年4月 / 東堂 佐紀
-
-          // レビュー 2
-          .reviewBox
-            .reviewBox__header
-              .left
-                =image_tag "article/umineco01/thumb_review_03.jpg", alt:""
-              .right
-                .starSmall
-                  =image_tag "community/icn_star_5.png", alt:"星5"
-
-                h4.ttl
-                  |ヨットすげぇ！
-            .reviewBox__body
-              p
-                |ヨットに乗っていろいろお話を聞くと年間の維持費が100万以上もかかるらしいことに驚いた。そう考えると5千円で乗れるのはすごくお得だと思いました！！
-
-            p.reviewBox__info
-              |2016年3月 / 佐々木 将人
-
-          // レビュー 3
-          .reviewBox
-            .reviewBox__header
-              .left
-                =image_tag "article/umineco01/thumb_review_04.jpg", alt:""
-              .right
-                .starSmall
-                  =image_tag "community/icn_star_4.png", alt:"星4"
-
-                h4.ttl
-                  |非日常体験
-            .reviewBox__body
-              p
-                |都心に住んでいるともっと自然に触れたいと思う時が多いのですが、ヨットは大自然にぽーんって放り出された感じで体全体で自然を楽しめるのでとてもよかったです。
-                br
-                |最初は運転しないで普通にのってるだけでも楽しかったのですが、みんなに勧められて運転してみたら思ってたよりいい経験になりました。
-                br
-                |注意する点は酔い止めを必ず飲むことですね。少しだけ酔いそうになりました。
-
-            p.reviewBox__info
-              |2016年3月 / 吉田 彩子
-
-          .c-btn.c-btn--Style1
-            a href="#" onClick="Modal.open('reviewList')"
-              |他のレビューを見る
+            p
+              |まだレビューはありません。
 
 
       // --------------event side
@@ -526,102 +424,15 @@ main
   #reviewList data-title='レビュー 一覧'
     .reviewStar
       span.number
-        |5件
+        |1件
       .starBig
-        =image_tag "community/icn_star_4.png", alt:"星4"
+        =image_tag "community/icn_star_3.png", alt:"星3"
 
     // レビュー 1
     .reviewBox
       .reviewBox__header
         .left
-          =image_tag "article/umineco01/thumb_review_05.jpg", alt:""
-        .right
-          .starSmall
-            =image_tag "community/icn_star_5.png", alt:"星5"
-
-          h4.ttl
-            |自然も新しい出会いも楽しめそう
-      .reviewBox__body
-        p
-          |みんなでわいわいしながら海の上を旅するって感じで面白かったです。
-          br
-          |朝早いのはつらいけど、魚屋でランチを何にするか決めたり、ヨットの準備をしたり、すべてが初めてのことなので常にわくわくしていました。
-          br
-          |ヨットの上では初めて会った人も多くて最初は少し不安なところもありましたが、行ってみるとみんないい人ですぐに打ち解けられました。
-
-      p.reviewBox__info
-        |2016年4月 / 東堂 佐紀
-
-    // レビュー 2
-    .reviewBox
-      .reviewBox__header
-        .left
-          =image_tag "article/umineco01/thumb_review_03.jpg", alt:""
-        .right
-          .starSmall
-            =image_tag "community/icn_star_5.png", alt:"星5"
-
-          h4.ttl
-            |ヨットすげぇ！
-      .reviewBox__body
-        p
-          |ヨットに乗っていろいろお話を聞くと年間の維持費が100万以上もかかるらしいことに驚いた。そう考えると5千円で乗れるのはすごくお得だと思いました！！
-
-      p.reviewBox__info
-        |2016年3月 / 佐々木 将人
-
-    // レビュー 3
-    .reviewBox
-      .reviewBox__header
-        .left
-          =image_tag "article/umineco01/thumb_review_04.jpg", alt:""
-        .right
-          .starSmall
-            =image_tag "community/icn_star_4.png", alt:"星4"
-
-          h4.ttl
-            |非日常体験
-      .reviewBox__body
-        p
-          |都心に住んでいるともっと自然に触れたいと思う時が多いのですが、ヨットは大自然にぽーんって放り出された感じで体全体で自然を楽しめるのでとてもよかったです。
-          br
-          |最初は運転しないで普通にのってるだけでも楽しかったのですが、みんなに勧められて運転してみたら思ってたよりいい経験になりました。
-          br
-          |注意する点は酔い止めを必ず飲むことですね。少しだけ酔いそうになりました。
-
-      p.reviewBox__info
-        |2016年3月 / 吉田 彩子
-
-
-    // レビュー 4
-    .reviewBox
-      .reviewBox__header
-        .left
-          =image_tag "article/umineco01/thumb_review_02.jpg", alt:""
-        .right
-          .starSmall
-            =image_tag "community/icn_star_5.png", alt:"星5"
-
-          h4.ttl
-            |ヨット最高！また違う友達と一緒に乗りたい！
-      .reviewBox__body
-        p
-          |元々海が好きだからこれはハマる予感。普段はサーフィンしかやってこなかったけど、新しい遊びを発見した感じ。
-          br
-          |ヨットは結構簡単に進むだろうと思っていたら全然進まなくて難しかった。
-          br
-          |慣れてくると、風を感じることができて自然と一体になって進むのがすごく気持ちいい！
-          br
-          |良い体験をありがとうございました！
-
-      p.reviewBox__info
-        |2016年3月 / 山本 陸
-
-    // レビュー 5
-    .reviewBox
-      .reviewBox__header
-        .left
-          =image_tag "article/umineco01/thumb_review_01.jpg", alt:""
+          =image_tag "article/umineco02/thumb_review_01.jpg", alt:""
         .right
           .starSmall
             =image_tag "community/icn_star_5.png", alt:"星5"
@@ -635,7 +446,7 @@ main
           |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
 
       p.reviewBox__info
-        |2016年2月 / 石川 雄基
+        |2016年3月 / 石川 雄基
 
   // --------------送信しました
   #thanksMessage data-title='送信しました'
