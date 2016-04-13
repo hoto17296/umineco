@@ -59,17 +59,24 @@ main
               |レビュー5件
 
       section.c-imglistBox
-        .c-imglistBox__header
-          .img
-            =image_tag "common/thumb_comingSoon.jpg", alt:""
+        =link_to '/community/2'
+          .c-imglistBox__header
+            .img
+              =image_tag "article/umineco02/img_slider_1.jpg", alt:""
 
-        .c-imglistBox__footer
-          p.textMap
-            span.icon-icn_map.icn_color-1
-            |-
-          p.textReview
-            span.icon-icn_review.icn_color-1
-            |-
+            .headerInner
+              .fbIcom
+                =image_tag "article/umineco02/thumb_member_01.jpg", alt:""
+              h2.ttl
+                |海と風と太陽と、さあ一緒に遊びましょう。
+
+          .c-imglistBox__footer
+            p.textMap
+              span.icon-icn_map.icn_color-1
+              |神奈川県 三浦市
+            p.textReview
+              span.icon-icn_review.icn_color-1
+              |レビュー0件
 
       section.c-imglistBox
         .c-imglistBox__header
