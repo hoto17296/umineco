@@ -3,12 +3,18 @@
 .l-header {
   @extend %clearfix;
   position: relative;
-  height: 50px;
+  height: 60px;
   background: $color-main-blue;
 
+  &__text {
+    margin: 5px 0 0 10px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #fff;
+  }
   &__logo {
     position: absolute;
-    top: 10px;
+    top: 20px;
     left: 10px;
     width: 130px;
     height: auto;
@@ -20,7 +26,7 @@
   }
   &__navi {
     position: absolute;
-    top: 10px;
+    top: 20px;
     right: 10px;
     padding: 5px 0;
     text-align: center;
