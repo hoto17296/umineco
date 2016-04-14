@@ -1,6 +1,6 @@
 - content_for :ogp do
   meta property='og:title' content='僕らのヨット遊びをシェアします！初心者歓迎！ | umineco'
-  meta property="og:description" content="私たちDelphinus Clubは、三崎のシーボニアマリーナをベースにクルーザーヨットを共同所有して毎週末セーリングを楽しんでいます。メンバーは約12名で構成されていますが、メンバーの連れてくる家族や友達にもセーリングを楽しんでいただくことをテーマに様々なイベントを開催したりしています。船舶免許を持っていない方や初心者の方も大歓迎のヨットクラブです！"
+  meta property="og:description" content="私たちDelphinus Clubは、三崎のシーボニアマリーナをベースにクルーザーヨットを共同所有して毎週末セーリングを楽しんでいます。船舶免許を持っていない方や初心者の方も大歓迎です！"
   meta property="og:url" content="#{community_url(@community)}"
   meta property="og:image" content="#{root_url()}images/article/umineco01/img_main.jpg"
 
@@ -30,7 +30,7 @@ main
         #photoGallary
           .mainBox
             ul.main.isTransition
-              - (1..26).each do |n|
+              - (1..24).each do |n|
                 li.mainItem
                   =image_tag "article/umineco01/img_slider_#{n}.jpg", alt:""
             span.prev
@@ -42,7 +42,7 @@ main
 
           .thumbnailsBox
             ul.thumbnails.isTransition
-              - (1..26).each do |n|
+              - (1..24).each do |n|
                 li.thumbnailsItem
                   .inner style="background-image: url(/images/article/umineco01/img_slider_#{n}.jpg)"
             span.prev
@@ -405,25 +405,23 @@ main
           .reviewBox
             .reviewBox__header
               .left
-                =image_tag "article/umineco01/thumb_review_02.jpg", alt:""
+                =image_tag "article/umineco01/thumb_review_05.jpg", alt:""
               .right
                 .starSmall
                   =image_tag "community/icn_star_5.png", alt:"星5"
 
                 h4.ttl
-                  |ヨット最高！また違う友達と一緒に乗りたい！
+                  |自然も新しい出会いも楽しめそう
             .reviewBox__body
               p
-                |元々海が好きだからこれはハマる予感。普段はサーフィンしかやってこなかったけど、新しい遊びを発見した感じ。
+                |みんなでわいわいしながら海の上を旅するって感じで面白かったです。
                 br
-                |ヨットは結構簡単に進むだろうと思っていたら全然進まなくて難しかった。
+                |朝早いのはつらいけど、魚屋でランチを何にするか決めたり、ヨットの準備をしたり、すべてが初めてのことなので常にわくわくしていました。
                 br
-                |慣れてくると、風を感じることができて自然と一体になって進むのがすごく気持ちいい！
-                br
-                |良い体験をありがとうございました！
+                |ヨットの上では初めて会った人も多くて最初は少し不安なところもありましたが、行ってみるとみんないい人ですぐに打ち解けられました。
 
             p.reviewBox__info
-              |2016年3月 / 山本 陸
+              |2016年4月 / 東堂 佐紀
 
           // レビュー 2
           .reviewBox
@@ -666,3 +664,4 @@ main
       |ありがとうございました。
       br
       |オーナーからのご連絡をお待ち下さい。
+
