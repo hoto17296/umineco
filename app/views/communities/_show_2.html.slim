@@ -1,0 +1,403 @@
+- content_for :ogp do
+  meta property='og:title' content='海と風と太陽と、さあ一緒に遊びましょう。 | umineco'
+  meta property="og:description" content="私たちDelphinus Clubは、三崎のシーボニアマリーナをベースにクルーザーヨットを共同所有して毎週末セーリングを楽しんでいます。メンバーは約12名で構成されていますが、メンバーの連れてくる家族や友達にもセーリングを楽しんでいただくことをテーマに様々なイベントを開催したりしています。船舶免許を持っていない方や初心者の方も大歓迎のヨットクラブです！"
+  meta property="og:url" content="#{community_url(@community)}"
+  meta property="og:image" content="#{root_url()}images/article/umineco02/img_main.jpg"
+
+main
+  article.l-inner.event
+
+    // --------------event header
+    .eventHeader
+      h2.eventHeader__ttl
+        |海と風と太陽と、さあ一緒に遊びましょう。
+
+      ul.eventHeader__info
+        li
+          span.icon-icn_yacht.icn_color-1
+          |Chico
+        li
+          span.icon-icn_map.icn_color-1
+          |神奈川県 三浦市 三崎町
+        li
+          a href="#reviewArea"
+            span.icon-icn_review.icn_color-1
+            |レビュー0件
+
+
+    .eventBody
+      // --------------event main
+      .eventBody__left
+        #photoGallary
+          .mainBox
+            ul.main.isTransition
+              - (1..11).each do |n|
+                li.mainItem
+                  =image_tag "article/umineco02/img_slider_#{n}.jpg", alt:""
+            span.prev
+              a. href="#"
+                span.icon-keyboard_arrow_left
+            span.next
+              a href="#"
+                span.icon-keyboard_arrow_right
+
+          .thumbnailsBox
+            ul.thumbnails.isTransition
+              - (1..11).each do |n|
+                li.thumbnailsItem
+                  .inner style="background-image: url(/images/article/umineco02/img_slider_#{n}.jpg)"
+            span.prev
+              a href="#"
+                span.icon-keyboard_arrow_left
+            span.next
+              a href="#"
+                span.icon-keyboard_arrow_right
+
+        // --------------遊び方
+        section.c-box
+          h3.c-title-1
+            =image_tag "community/ttl_community_1.png", alt:"遊び方"
+
+          // ポイント1
+          .c-box
+            h4.c-title-2
+              =image_tag "community/ttl_point_1.png", alt:"Point1"
+              |簡単ヨットレッスン
+            .imgbox
+              =image_tag "article/umineco02/img_community_01.jpg", alt:""
+            p.text
+              |品川からわずか1時間ちょっと、日帰りできるリゾートで一緒にセーリングを楽しみませんか。
+              br
+              |歓迎されるゲストになるためのワンポイントレッスン。これができればヨット仲間だ！
+
+          // ポイント2
+          .c-box
+            h4.c-title-2
+              =image_tag "community/ttl_point_2.png", alt:"Point2"
+              |自由に楽しくセーリング
+            .imgbox
+              =image_tag "article/umineco02/img_community_02.jpg", alt:""
+            p.text
+              |午前だけ、午後だけの参加もOK！自由で楽しくなければ遊びじゃない！
+
+
+          // ポイント3
+          .c-box
+            h4.c-title-2
+              =image_tag "community/ttl_point_3.png", alt:"Point3"
+              |いろいろ遊びましょう。
+            .imgbox
+              =image_tag "article/umineco02/img_community_03.jpg", alt:""
+            p.text
+              |ディンギー（キャビン・エンジンの無いヨット）でも遊んでいます。他にもいろいろ。
+
+
+
+        // --------------一日の流れ
+        section.c-box
+          h3.c-title-1
+            =image_tag "community/ttl_community_7.png", alt:"一日の流れ"
+          ul.oneDayFlow
+            li
+              .oneDayFlow__img
+                =image_tag "article/umineco02/thumb_flow1.jpg", alt:""
+              .oneDayFlow__ttl
+                span
+                  |10:30
+                |ハーバー集合
+            li
+              .oneDayFlow__img
+                =image_tag "article/umineco02/thumb_flow2.jpg", alt:""
+              .oneDayFlow__ttl
+                span
+                  |11:00
+                |午前のセーリング
+
+            li
+              .oneDayFlow__img
+                =image_tag "article/umineco02/thumb_flow3.jpg", alt:""
+              .oneDayFlow__ttl
+                span
+                  |12:30
+                |ランチ
+            li
+              .oneDayFlow__img
+                =image_tag "article/umineco02/thumb_flow4.jpg", alt:""
+              .oneDayFlow__ttl
+                span
+                  |13:30
+                |午後のセーリング
+            li
+              .oneDayFlow__img
+                =image_tag "article/umineco02/thumb_flow5.jpg", alt:""
+              .oneDayFlow__ttl
+                span
+                  |16:00
+                |気分が乗れば、サンセットを眺めてダンスも
+            li
+              .oneDayFlow__img
+                =image_tag "article/umineco02/thumb_flow6.jpg", alt:""
+              .oneDayFlow__ttl
+                span
+                  |17:00
+                |秘密の場所でパーティーをすることも
+
+
+        // --------------私たちについて
+        section.c-box
+          h3.c-title-1
+            =image_tag "community/ttl_community_3.png", alt:"私たちについて"
+
+          .c-box
+            .imgbox
+              =image_tag "article/umineco02/img_community_04.jpg", alt:""
+            p.text
+              |個人所有の船、いろいろな関係の多くの友人が遊びに来てくれて楽しくセーリングしています。シーボニア・ヨット・クラブに所属し、さまざまなイベントも運営や参加をしています。三浦半島の南端にある小網代湾のシーボニアは首都圏から1時間半でリゾート気分が味わえる素敵な場所、ぜひ一緒に遊んでください。
+            p.text
+              |Chicoはカリブ海のUSヴァージン諸島のセントトーマス島で1年間滞在した時に乗っていた船の名前、つい昔話をするかもしれませんが許してください。
+
+          .c-box
+            h4.c-title-5
+              .c-title-5__image
+                =image_tag "article/umineco02/thumb_member_01.jpg", alt:""
+              .c-title-5__name
+                span
+                  |代  表
+                |矢島 久道
+
+            p.text
+              |1969年にヨットを始めて、毎週のように海に来ながら、プロセーラーにもヨット選手にもならなかった軟弱なヨット乗り、でも、週末を楽しむことは誰にも負けないつもりです。シーボニアだけでなく、夢の島マリーナや浦安マリーナでも遊んでいます。サルサや落語・プロレスも好き、笑って踊れるセーラーを目指しています。
+              br
+              |ASAベアボートスキッパー、1級小型船舶操縦士、PADIアドバンスダイバーなど
+
+        // --------------連絡事項
+        section.c-box
+          h3.c-title-1
+            =image_tag "community/ttl_community_4.png", alt:"連絡事項"
+
+          h4.c-title-3
+            |料金について
+
+          table.c-table
+            tr
+              th
+                |料金
+              td
+                |5,000円/人（食事代を除く）
+            tr
+              th
+                |お支払い方法
+              td
+                |現地、現金支払い
+            tr
+              th
+                |キャンセル期日
+              td
+                |2日前の17:00まで
+
+          h4.c-title-3
+            |集合場所について
+
+          table.c-table
+            tr
+              th
+                |集合時間
+              td
+                |10時半
+            tr
+              th
+                |集合場所
+              td
+                |シーボニアマリーナ
+                .c-btn.c-btn--Style4
+                  a href="https://www.google.co.jp/maps/place/%E3%82%B7%E3%83%BC%E3%83%9C%E3%83%8B%E3%82%A2%E3%83%9E%E3%83%AA%E3%83%BC%E3%83%8A/@35.162652,139.6184313,17z/data=!3m1!4b1!4m2!3m1!1s0x60183c6dfadf586f:0xd9686a40b52d0fcc" target="_blink"
+                    |MAP
+
+          .c-box
+            h4.c-title-4
+              |持ち物ついて
+            p
+              |なし
+
+          .c-box
+            h4.c-title-4
+              |備考
+            p
+              |なし
+
+        // --------------レビュー
+        section.c-box#reviewArea
+          h3.c-title-1
+            =image_tag "community/ttl_community_5.png", alt:"レビュー"
+
+          .reviewStar
+            span.number
+              |0件
+            .starBig
+              =image_tag "community/icn_star_0.png", alt:"星0"
+
+          // レビュー 1
+          .reviewBox
+            p
+              |まだレビューはありません。
+
+
+      // --------------event side
+      .eventBody__right
+        section#eventAction
+          h2.c-title-4.reservationttl
+            |日程・ご予約
+
+          - @community.sailings.from_now.slice(0..2).each do |sailing|
+            - duration = tsrange2str sailing.duration
+            .reservationBox
+              .reservationBox__left
+                p.date= duration[:date]
+                p.time
+                  = duration[:begin]
+                  | -
+                  = duration[:end]
+
+                - if current_user and sailing.participant? current_user
+                  .c-btn.c-btn--Style2
+                    | 仮予約済み
+                - elsif sailing.participants.size >= sailing.capacity
+                  .c-btn.c-btn--Style2
+                    | 満員
+                - else
+                  .c-btn.c-btn--Style2
+                    a.participateButton href="#" data-id=sailing.id
+                      |一緒に遊ぶ
+              .reservationBox__right
+                p.ttl
+                  |参加者
+                p.participant
+                  a href="#" onClick="Modal.open('participantList-#{sailing.id}')"
+                    span.participant__number= sailing.participants.size
+                    | /#{sailing.capacity}人
+
+
+          // その他
+          .consultationBox
+            .c-btn.c-btn--Style1
+              a href="#" onClick="Modal.open('anotherDateForm')"
+                |別日程を確認する
+
+            .c-btn.c-btn--Style1
+              a.interestButton href="#"
+                |興味あります
+
+            .fbBtn
+              .c-btn.c-btn--Style3
+                a href="http://www.facebook.com/share.php?u=#{community_url(@community)}" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+                  span.icon-icn_fb
+                  |Facebookでシェアする
+
+// ----------------------------------------------------------------以下modal
+
+#ModalList style="display:none"
+
+  - @community.sailings.from_now.each do |sailing|
+    - duration = tsrange2str sailing.duration
+
+    // --------------仮予約
+    div id="reservationForm-#{sailing.id}" data-title="#{duration[:date]}に仮予約"
+      p.message
+        |送信ボタンを押していただくと、仮予約が完了します。
+      p.messageSmall
+        |セーリングに参加することをあなたの友達にも知らせよう！
+      = form_for :participant, url: participants_path(sailing_id: sailing.id) do |f|
+        label.messageSmall
+          = f.check_box :share, checked: true, class: :reservation_with_share
+          | Facebookでシェアする
+        = f.text_area :share_body, value: "#{duration[:date]}のセーリングに参加します！"
+
+        .c-btn.c-btn--Style2
+          button type='submit' 送信
+
+    // --------------参加者一覧
+    div id="participantList-#{sailing.id}" data-title="#{duration[:date]}参加者一覧"
+      ul.participantList
+        - sailing.participants.each do |participant|
+          - user = participant.user
+          li
+            .participantList__img= image_tag user.picture
+            .participantList__name= user.name
+      - if sailing.participants.size === 0
+        | 参加者はまだいません。
+
+
+  // --------------興味あります
+  #interestForm data-title='興味あります'
+    p.message
+      |このヨットクラブに興味がある旨を伝えてよろしいですか？
+    = form_tag interest_community_path(@community) do
+      = text_area :feed, :body, placeholder: "伝えたい事があれば記入してください。"
+
+      .c-btn.c-btn--Style2
+        button type='submit' 送信
+
+  // --------------別日程を確認する
+  #anotherDateForm data-title='別日程を確認する'
+    - @community.sailings.from_now.each do |sailing|
+      - duration = tsrange2str sailing.duration
+      .reservationBox
+        .reservationBox__left
+          p.date= duration[:date]
+          p.time
+            = duration[:begin]
+            | -
+            = duration[:end]
+
+          - if current_user and sailing.participant? current_user
+            .c-btn.c-btn--Style2
+              | 仮予約済み
+          - elsif sailing.participants.size >= sailing.capacity
+            .c-btn.c-btn--Style2
+              | 満員
+          - else
+            .c-btn.c-btn--Style2
+              a href="#" onClick="Modal.open('reservationForm-#{sailing.id}')"
+                |一緒に遊ぶ
+        .reservationBox__right
+          p.ttl
+            |参加者
+          p.participant
+            a href="#" onClick="Modal.open('participantList-#{sailing.id}')"
+              span.participant__number= sailing.participants.size
+              | /#{sailing.capacity}人
+
+  // --------------レビュー一覧
+  #reviewList data-title='レビュー 一覧'
+    .reviewStar
+      span.number
+        |1件
+      .starBig
+        =image_tag "community/icn_star_3.png", alt:"星3"
+
+    // レビュー 1
+    .reviewBox
+      .reviewBox__header
+        .left
+          =image_tag "article/umineco02/thumb_review_01.jpg", alt:""
+        .right
+          .starSmall
+            =image_tag "community/icn_star_5.png", alt:"星5"
+
+          h4.ttl
+            |はじめてヨットに乗った
+      .reviewBox__body
+        p
+          |はじめてヨットに乗ったのですが、とても楽しかったです！風の力だけで船を動かすなんてすごいなと感じました。
+        p
+          |ヨットで料理をしてみんなで食事をするのも新鮮で一緒に参加された方と仲良くなれました！操船するのは難しかったですが、もっとうまくなりたいのでまた乗せて下さい！
+
+      p.reviewBox__info
+        |2016年3月 / 石川 雄基
+
+  // --------------送信しました
+  #thanksMessage data-title='送信しました'
+    p.message
+      |ありがとうございました。
+      br
+      |オーナーからのご連絡をお待ち下さい。
