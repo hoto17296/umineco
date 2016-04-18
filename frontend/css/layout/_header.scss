@@ -7,7 +7,7 @@
 
   &__logo {
     float: left;
-    width: 500px;
+    width: 440px;
 
     img {
       width: 160px;
@@ -37,6 +37,13 @@
       margin-left: 20px;
       color: #ffffff;
       }
+    .fbName {
+      width: 130px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      vertical-align: middle;
+    }
     .fbIcon {
       display: inline-block;
       width: 25px;
