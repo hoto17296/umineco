@@ -29,7 +29,7 @@ var config = {
   },
 };
 
-if ( process.env.NODE_MODULES === 'production' ) {
+if ( process.env.NODE_ENV === 'production' ) {
   config.plugins = [ new CompressionPlugin() ];
 }
 
