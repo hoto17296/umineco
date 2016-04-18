@@ -42,5 +42,116 @@
   text-align: center;
 }
 
+// オーナーページ
+.ownerMainImage {
+  width: 100%;
+  margin-bottom: 80px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.owner {
+  p {
+    @extend %font-16;
+    margin-bottom: 10px;
+    line-height: 1.8;
+    letter-spacing: 1px;
+  }
+  .ownerImage {
+    margin-bottom: 20px;
+  }
+  .flowList {
+    margin-bottom: 50px;
+    li {
+      @extend %font-18;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.ownerConcept {
+  @extend %clearfix;
+
+  &__img {
+    float: left;
+    width: 310px;
+    margin-right: 20px;
+  }
+  &__text {
+    float: left;
+    width: 560px;
+
+    .right {
+      text-align: right;
+    }
+  }
+}
+.ownerMerit {
+  @extend %clearfix;
+
+  .left {
+    float: left;
+    width: 470px;
+  }
+  .right {
+    float: right;
+    width: 470px;
+  }
+  &__ttl {
+    @extend %font-18;
+    padding: 5px 0;
+    background: $color-main-blue;
+    color: #fff;
+    text-align: center;
+  }
+  &__text {
+    @extend %font-24;
+    margin: 10px 0;
+    color: $ttl-color-03;
+    text-align: center;
+    letter-spacing: 5px;
+
+    span {
+      font-weight: bold;
+    }
+  }
+}
+.ownerReview {
+  @extend %clearfix;
+
+  .left {
+    float: left;
+    width: 470px;
+  }
+  .right {
+    float: right;
+    width: 470px;
+  }
+  &__ttl {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  &__image {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  dd {
+    letter-spacing: 1px;
+    line-height: 1.8;
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
 
