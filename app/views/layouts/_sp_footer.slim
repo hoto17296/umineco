@@ -43,11 +43,22 @@ footer#footer.l-footer
       = link_to about_path
         span.icn_arrow.icn_arrow-1
         |uminecoとは
-    // 利用規約は一時的に非表示
-    /li
-    /  = link_to "#"
-    /    span.icn_arrow.icn_arrow-1
-    /    |ログイン
+    - if user_signed_in?
+      li
+        span.icn_arrow.icn_arrow-1
+        = link_to 'ログアウト', destroy_user_session_path, method: :delete
+    - else
+
+      li
+        a href="#" onClick="Modal.open('loginForm')"
+          span.icn_arrow.icn_arrow-1
+          |ログイン
+    li
+      = link_to owner_path
+        span.icn_arrow.icn_arrow-1
+        |ヨットを登録
+
+    / 利用規約は一時的に非表示
     /li
     /  = link_to terms_path
     /    span.icn_arrow.icn_arrow-1
