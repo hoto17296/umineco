@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     get key, to: "root##{key}", as: key
   end
 
+  post :contact, to: 'root#contact', as: :contact
+
   devise_for :users,
     controllers: { omniauth_callbacks: 'omniauth_callbacks' },
     skip: [ :sessions, :registrations, :password ]
