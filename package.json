@@ -9,7 +9,7 @@
   "scripts": {
     "start": "bundle exec foreman start",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "webpack"
+    "postinstall": "webpack -p"
   },
   "dependencies": {
     "babel-core": "^6.5.2",

@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 var CompressionPlugin = require('compression-webpack-plugin');
 
-module.exports = {
+var config = {
   context: __dirname + '/frontend',
   entry: {
     pc: './pc.js',
@@ -27,12 +27,10 @@ module.exports = {
       },
     ]
   },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      output: { comments: false },
-      compress: { warnings: false },
-    }),
-    new CompressionPlugin(),
-  ],
-  devtool: 'source-map',
 };
+
+if ( process.env.NODE_MODULES === 'production' ) {
+  config.plugins = [ new CompressionPlugin() ];
+}
+
+module.exports = config;
