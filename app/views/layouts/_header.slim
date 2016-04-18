@@ -11,7 +11,7 @@ header#header.l-header
     navi
       ul.l-header__navi
         - if user_signed_in?
-          li
+          li.fbName
             .fbIcon
               = image_tag(current_user.picture)
             = current_user.name
@@ -30,6 +30,10 @@ header#header.l-header
           span.icn_arrow.icn_arrow-1
           = link_to "/about"
             |uminecoとは
+        li
+          .c-btn.c-btn--Style5
+            = link_to owner_path
+              |ヨットを登録
 
 
 // --------------login modal
