@@ -62,9 +62,12 @@
     margin-bottom: 30px;
 
     &__img {
-      display: inline;
+      width: 25px;
+      margin-right: 5px;
+      float: left;
     }
     li {
+      @extend %clearfix;
       margin-bottom: 10px;
     }
   }
