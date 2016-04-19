@@ -1,4 +1,6 @@
 - if @community.id === 1
   = render "communities/show_1"
-- else
+- elsif @community.id === 2
   = render "communities/show_2"
+- else
+  = render "communities/show_3"
