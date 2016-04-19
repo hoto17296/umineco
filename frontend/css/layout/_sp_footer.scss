@@ -13,6 +13,7 @@
     .ttl {
       @extend %font-18;
       margin-bottom: 10px;
+      text-align: center;
     }
     p {
       margin-bottom: 20px;
@@ -38,25 +39,6 @@
       &:focus {
         outline:solid 2px #397fd6;
       }
-    }
-    .table {
-      display: table;
-      width: 100%;
-      margin-top: 10px;
-    }
-    dt {
-      @extend %font-12;
-      display: table-cell;
-      width: 100px;
-      padding-right: 10px;
-      text-align: right;
-      vertical-align: middle;
-    }
-    dd {
-      display: table-cell;
-    }
-    .c-btn {
-      padding-left: 140px;
     }
   }
 }
