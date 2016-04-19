@@ -60,13 +60,24 @@
   }
   .flowList {
     margin-bottom: 30px;
+
+    &__img {
+      display: inline;
+    }
     li {
-      margin-bottom: 5px;
+      margin-bottom: 10px;
     }
   }
   .attention {
     margin-top: 10px;
     font-weight: bold;
+  }
+  .c-btn {
+    a {
+      width: 250px;
+      margin-top: 20px;
+      padding: 10px 0;
+    }
   }
 }
 

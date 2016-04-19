@@ -11,7 +11,7 @@ main.owner
 
       .ownerConcept
         .ownerConcept__img
-          =image_tag "owner/thumb1_1_sp.jpg", alt:""
+          =image_tag "owner/thumb1_1_sp.jpg", alt:"原田 祐二"
         .ownerConcept__text
           p
             |初めてヨットに乗った時のあの感動は、思い出すだけで鳥肌が立ちます。沖に出てエンジンを止め操船をさせてもらった時に、風の力だけで進むヨットと自分の体が一体になったあの感覚は、未だに鮮明に覚えています。
@@ -21,8 +21,6 @@ main.owner
             |私はこの楽しみをより多くの若者に伝えていき、ヨット界を盛り上げるべく奮闘していきます。
           p
             |みなさんもuminecoを通じて、新しいセーラーと出会い、風を感じ、楽しい時間をヨットの上で過ごしませんか？
-          p.right
-            |原田 祐二
 
     // ----------------------20代30代が集まるumineo
     .c-box-3
@@ -51,13 +49,21 @@ main.owner
         =image_tag "owner/ttl_04.png", alt:"実際にサイトを利用する流れ", height: "22"
       ol.flowList
         li
-          |1. ヨットを所有しているオーナー様は、uminecoにヨットを登録（掲載無料）していただきます。
+          .flowList__img
+            =image_tag "owner/icn_no1.png", alt:"1", width: "25"
+          |ヨットを所有しているオーナー様は、uminecoにヨットを登録（掲載無料）していただきます。
         li
-          |2. ヨットに乗りたい人は、uminecoを見て予約をしてきます。
+          .flowList__img
+            =image_tag "owner/icn_no2.png", alt:"2", width: "25"
+          |ヨットに乗りたい人は、uminecoを見て予約をしてきます。
         li
-          |3. 参加者は参加費を払います。
+          .flowList__img
+            =image_tag "owner/icn_no3.png", alt:"3", width: "25"
+          |参加者は参加費を払います。
         li
-          |4. uminecoは参加費から報酬をオーナー様にお支払いします。
+          .flowList__img
+            =image_tag "owner/icn_no4.png", alt:"4", width: "25"
+          |uminecoは参加費から報酬をオーナー様にお支払いします。
         p.attention
           |※uminecoの手数料は1件あたり1000円もしくは参加費の2割の金額の内、高い金額が適用されます。
 
@@ -137,8 +143,9 @@ main.owner
     p
       |webサイトに掲載する写真と、ヨット情報をご提供頂ければ、ページの作成はuminecoがすべて行いますのでオーナー様は難しい作業をする必要は一切ございません。気になる点などございましたらお気軽にお問合せください。
 
-    iframe src="https://docs.google.com/forms/d/1BmEoCKroasQtIFeReTrnmwAY0puf8xspnkyO4Uqd8Kg/viewform?embedded=true" width="100%" height="1200" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます...
-
+    .c-btn.c-btn--Style2
+      = link_to "https://docs.google.com/forms/d/1BmEoCKroasQtIFeReTrnmwAY0puf8xspnkyO4Uqd8Kg/viewform", target: "_blank"
+        |お問合せ
 
 
 

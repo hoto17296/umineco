@@ -65,6 +65,10 @@
   }
   .flowList {
     margin-bottom: 50px;
+
+    &__img {
+      display: inline;
+    }
     li {
       @extend %font-18;
       margin-bottom: 5px;
@@ -76,6 +80,13 @@
   }
   .ownerContact {
     text-align: center;
+  }
+  .c-btn {
+    a {
+      width: 250px;
+      margin-top: 20px;
+      padding: 10px 0;
+    }
   }
 }
 
