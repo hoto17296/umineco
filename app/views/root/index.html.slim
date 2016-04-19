@@ -79,17 +79,24 @@ main
               |レビュー0件
 
       section.c-imglistBox
-        .c-imglistBox__header
-          .img
-            =image_tag "common/thumb_comingSoon.jpg", alt:""
+        =link_to '/community/3'
+          .c-imglistBox__header
+            .img
+              =image_tag "article/umineco03/img_main.jpg", alt:""
 
-        .c-imglistBox__footer
-          p.textMap
-            span.icon-icn_map.icn_color-1
-            |-
-          p.textReview
-            span.icon-icn_review.icn_color-1
-            |-
+            .headerInner
+              .fbIcom
+                =image_tag "article/umineco03/thumb_member_01.jpg", alt:""
+              h2.ttl
+                |クルージング・クラブレースを通じてヨット・ボート仲間と交流をしませんか！
+
+          .c-imglistBox__footer
+            p.textMap
+              span.icon-icn_map.icn_color-1
+              |東京都 江東区
+            p.textReview
+              span.icon-icn_review.icn_color-1
+              |レビュー0件
 
       section.c-imglistBox
         .c-imglistBox__header
