@@ -120,6 +120,8 @@
     }
   }
   &__img {
+    height: 200px;
+    overflow: hidden;
     img {
       @include image;
       border-radius: 5px 5px 0 0;
