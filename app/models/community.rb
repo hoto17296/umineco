@@ -17,4 +17,8 @@ class Community < ActiveRecord::Base
     save
   end
 
+  def page
+    YAML.load page_data
+  end
+
 end

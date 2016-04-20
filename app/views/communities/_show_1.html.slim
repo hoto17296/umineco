@@ -1,24 +1,25 @@
+- page = @community.page
+- img_root = "article/#{page['id']}"
 - content_for :ogp do
-  meta property='og:title' content='僕らのヨット遊びをシェアします！初心者歓迎！ | umineco'
-  meta property="og:description" content="私たちDelphinus Clubは、三崎のシーボニアマリーナをベースにクルーザーヨットを共同所有して毎週末セーリングを楽しんでいます。船舶免許を持っていない方や初心者の方も大歓迎です！"
+  meta property='og:title' content="#{page['meta']['title']} | umineco"
+  meta property="og:description" content=page['meta']['description']
   meta property="og:url" content="#{community_url(@community)}"
-  meta property="og:image" content="#{root_url()}images/article/umineco01/img_main.jpg"
+  meta property="og:image" content="#{root_url()}images/#{img_root}/img_main.jpg"
 
 main
   article.l-inner.event
 
     // --------------event header
     .eventHeader
-      h2.eventHeader__ttl
-        |僕らのヨット遊びをシェアします！初心者歓迎！
+      h2.eventHeader__ttl= page['meta']['title']
 
       ul.eventHeader__info
         li
           span.icon-icn_yacht.icn_color-1
-          |Delphinus
+          = page['ship']['name']
         li
           span.icon-icn_map.icn_color-1
-          |神奈川県 三浦市 三崎町
+          = page['marina']['location']
         li
           a href="#reviewArea"
             span.icon-icn_review.icn_color-1
@@ -31,11 +32,11 @@ main
         #photoGallary
           .mainBox
             ul.main.isTransition
-              - (1..24).each do |n|
+              - page['images'].each do |image|
                 li.mainItem
-                  =image_tag "article/umineco01/img_slider_#{n}.jpg", alt:""
+                  = image_tag "#{img_root}/#{image}", alt:""
             span.prev
-              a. href="#"
+              a href="#"
                 span.icon-keyboard_arrow_left
             span.next
               a href="#"
@@ -43,9 +44,9 @@ main
 
           .thumbnailsBox
             ul.thumbnails.isTransition
-              - (1..24).each do |n|
+              - page['images'].each do |image|
                 li.thumbnailsItem
-                  .inner style="background-image: url(/images/article/umineco01/img_slider_#{n}.jpg)"
+                  .inner style="background-image: url(#{image_path "#{img_root}/#{image}"})"
             span.prev
               a href="#"
                 span.icon-keyboard_arrow_left
@@ -56,39 +57,22 @@ main
         // --------------遊び方
         section.c-box
           h3.c-title-1
-            =image_tag "community/ttl_community_1.png", alt:"遊び方"
+            = image_tag "community/ttl_community_1.png", alt:"遊び方"
 
-          // ポイント1
-          .c-box
-            h4.c-title-2
-              =image_tag "community/ttl_point_1.png", alt:"Point1"
-              |初心者の方も自分で舵を握って運転してみよう
-            .imgbox
-              <iframe width="640" height="425" src="https://www.youtube.com/embed/2YJ81w_zXjA?rel=0" frameborder="0" allowfullscreen></iframe>
-            p.text
-              |実際に舵を握って操船の体験をしてもらいます。
-              br
-              |丁寧な指導をしてから操船してもらうので、初心者の方も安心して操船していただけます！
+          - page['points'].each.with_index(1) do |point, i|
+            .c-box
+              h4.c-title-2
+                = image_tag "community/ttl_point_#{i}.png", alt:"Point#{i}"
+                = point['title']
+              - if point.key? 'image'
+                .imgbox
+                  = image_tag "#{img_root}/#{point['image']}", alt:""
+              - if point.key? 'youtube'
+                .imgbox
+                  iframe width="640" height="425" src="https://www.youtube.com/embed/#{point['youtube']}?rel=0" frameborder="0" allowfullscreen=true
+              p.text
+                = simple_format point['description']
 
-          // ポイント2
-          .c-box
-            h4.c-title-2
-              =image_tag "community/ttl_point_2.png", alt:"Point2"
-              |新鮮な魚でランチ
-            .imgbox
-              =image_tag "article/umineco01/img_community_02.jpg", alt:""
-            p.text
-              |朝採れたばかりの新鮮な魚でランチをします。ヨットから釣った魚を食べることもできるかも！
-
-          // ポイント3
-          .c-box
-            h4.c-title-2
-              =image_tag "community/ttl_point_3.png", alt:"Point3"
-              |ヨットから飛び込んで海水浴
-            .imgbox
-              =image_tag "article/umineco01/img_community_03.jpg", alt:""
-            p.text
-              |海に入れる夏はだれもいないプライベートな海で海水浴を楽しもう！
 
 
         // --------------一日の流れ
@@ -96,78 +80,15 @@ main
           h3.c-title-1
             =image_tag "community/ttl_community_7.png", alt:"一日の流れ"
           ul.oneDayFlow
-            li
-              .oneDayFlow__img
-                =image_tag "article/umineco01/thumb_flow1.jpg", alt:""
-              .oneDayFlow__ttl
-                span
-                  |9:00
-                |駅集合
-              .oneDayFlow__text
-                |京急三崎口改札横の売店前集合！
-            li
-              .oneDayFlow__img
-                =image_tag "article/umineco01/thumb_flow2.jpg", alt:""
-              .oneDayFlow__ttl
-                span
-                  |9:15
-                |食材買う
-              .oneDayFlow__text
-                |地元の市場でヨットの上で食べるランチの食材を購入！
-            li
-              .oneDayFlow__img
-                =image_tag "article/umineco01/thumb_flow3.jpg", alt:""
-              .oneDayFlow__ttl
-                span
-                  |9:30
-                |マリーナ到着
-              .oneDayFlow__text
-                |タクシーでシーボニアマリーナへ移動！
-            li
-              .oneDayFlow__img
-                =image_tag "article/umineco01/thumb_flow4.jpg", alt:""
-              .oneDayFlow__ttl
-                span
-                  |10:00
-                |セーリング
-              .oneDayFlow__text
-                |出航準備をしてセーリング開始！
-            li
-              .oneDayFlow__img
-                =image_tag "article/umineco01/thumb_flow5.jpg", alt:""
-              .oneDayFlow__ttl
-                span
-                  |12:00
-                |ランチ
-              .oneDayFlow__text
-                |湾の中に入ってランチ！ヨットの中のキッチンで料理！
-            li
-              .oneDayFlow__img
-                =image_tag "article/umineco01/thumb_flow6.jpg", alt:""
-              .oneDayFlow__ttl
-                span
-                  |13:00
-                |海水浴
-              .oneDayFlow__text
-                |夏はシュノーケリングなどで海水浴！
-            li
-              .oneDayFlow__img
-                =image_tag "article/umineco01/thumb_flow7.jpg", alt:""
-              .oneDayFlow__ttl
-                span
-                  |15:00
-                |お風呂
-              .oneDayFlow__text
-                |セーリングのあとはマリーナにあるお風呂で一日の疲れを癒やそう！
-            li
-              .oneDayFlow__img
-                =image_tag "article/umineco01/thumb_flow8.jpg", alt:""
-              .oneDayFlow__ttl
-                span
-                  |17:00
-                |地元の居酒屋で宴会
-              .oneDayFlow__text
-                |ここでしか食べれない新鮮地魚を食べよう！
+            - page['schedules'].each do |schedule|
+              li
+                .oneDayFlow__img
+                  =image_tag "#{img_root}/#{schedule['image']}", alt:""
+                .oneDayFlow__ttl
+                  span= schedule['time']
+                  = schedule['title']
+                .oneDayFlow__text= schedule['description']
+
 
 
         // --------------私たちについて
@@ -177,25 +98,18 @@ main
 
           .c-box
             .imgbox
-              =image_tag "article/umineco01/img_community_06.jpg", alt:""
-            p.text
-              |私たちDelphinus Clubは、三崎のシーボニアマリーナをベースにクルーザーヨットを共同所有して毎週末セーリングを楽しんでいます。
-            p.text
-              |メンバーは約12名で構成されていますが、メンバーの連れてくる家族や友達にもセーリングを楽しんでいただくことをテーマに様々なイベントを開催したりしています。
-            p.text
-              |船舶免許を持っていない方や初心者の方も大歓迎のクラブです！
+              = image_tag "#{img_root}/#{page['about']['image']}", alt:""
+            .text= simple_format page['about']['description']
 
           .c-box
             h4.c-title-5
               .c-title-5__image
-                =image_tag "article/umineco01/thumb_member_01.jpg", alt:""
+                = image_tag "#{img_root}/#{page['about']['captain']['image']}", alt:""
               .c-title-5__name
-                span
-                  |代  表
-                |拓海 広志（海洋・海事ライター）
-
-            p.text
-              |海と人の関係性を多面的に探求することをライフワークとしており、長年にわたって日本及び世界各地の海と島、港町と漁村を訪ねてきました。仕事以外の趣味は、ヨット、ボート、カヤック、ダイビング、遠泳、ビーチバレーなどマリンスポーツ全般と山歩き、そして読書と音楽です。
+                span 代  表
+                = page['about']['captain']['name']
+                = "（#{page['about']['captain']['title']}）"
+            .text= page['about']['captain']['introduction']
 
           // --------------ヨット情報
           .c-box
@@ -204,51 +118,31 @@ main
 
             table.c-table
               tr
-                th
-                  |メーカー名
-                td colspan="3"
-                  |ニュージャパンヨット社製
+                th メーカー名
+                td colspan="3"= page['ship']['maker']
               tr
-                th
-                  |メーカー種類
-                td colspan="3"
-                  |パサトーレバカンス
+                th メーカー種類
+                td colspan="3"= page['ship']['product']
               tr
-                th
-                  |全長
-                td
-                  |28ft
-                th
-                  |定員
-                td
-                  |12名
+                th 全長
+                td= page['ship']['length']
+                th 定員
+                td= page['ship']['capacity']
               tr
-                th
-                  |出力
-                td
-                  |8.0hp
-                th
-                  |推進力形式
-                td
-                  |船内機
+                th 出力
+                td= page['ship']['power']
+                th 推進力形式
+                td= page['ship']['thrust']
               tr
-                th
-                  |保管方法
-                td
-                  |陸置
-                th
-                  |エンジン（モデル）
-                td
-                  |YANMAR
+                th 保管方法
+                td= page['ship']['custody']
+                th エンジン（モデル）
+                td= page['ship']['engine']
               tr
-                th
-                  |免許種別
-                td
-                  |2級
-                th
-                  |燃料種別
-                td
-                  |軽油
+                th 免許種別
+                td= page['ship']['license']
+                th 燃料種別
+                td= page['ship']['fuel']
 
         // --------------連絡事項
         section.c-box
@@ -260,64 +154,39 @@ main
 
           table.c-table
             tr
-              th
-                |料金
-              td
-                |5,000円/人（食事代を除く）
+              th 料金
+              td= page['notice']['payment']['price']
             tr
-              th
-                |お支払い方法
-              td
-                |現地、現金支払い
+              th お支払い方法
+              td= page['notice']['payment']['method']
             tr
-              th
-                |キャンセル期日
-              td
-                |2日前の17:00まで
+              th キャンセル期日
+              td= page['notice']['payment']['cancel']
 
           h4.c-title-3
             |集合場所について
 
           table.c-table
             tr
-              th
-                |集合時間
-              td
-                |9時
+              th 集合時間
+              td= page['notice']['gathering']['time']
             tr
-              th
-                |集合場所
+              th 集合場所
               td
-                |京急三崎口駅前
+                = page['notice']['gathering']['place']
                 .c-btn.c-btn--Style4
-                  a href="https://www.google.co.jp/maps/place/%E4%BA%AC%E6%B5%9C%E6%80%A5%E8%A1%8C%E9%9B%BB%E9%89%84%EF%BC%88%E6%A0%AA%EF%BC%89+%E4%B8%89%E5%B4%8E%E5%8F%A3%E9%A7%85/@35.1775153,139.6310193,17z/data=!3m1!4b1!4m2!3m1!1s0x60183c3c25da307b:0x3369fbefd391c3bf" target="_blink"
-                    |MAP
+                  a href=page['notice']['gathering']['map'] target="_blank" MAP
 
           .c-box
             h4.c-title-4
               |持ち物ついて
-            p
-              |・動きやすく、濡れてもよい服
-              br
-              |・デッキシューズもしくはスニーカー
-              br
-              |・サングラス
-              br
-              |・日焼け止め
-              br
-              |・タオル・雨合羽＆防寒着
-              br
-              |・泳ぐ方は水着、水中メガネ、フィン
-              br
-              |・船酔する方は酔い止め薬
-              br
-              |・入浴後の着替え
+            ul
+              - page['notice']['needs'].each do |need|
+                li= need
 
           .c-box
-            h4.c-title-4
-              |備考
-            p
-              |なし
+            h4.c-title-4 備考
+            p= simple_format page['notice']['note']
 
         // --------------レビュー
         section.c-box#reviewArea
@@ -334,7 +203,7 @@ main
           .reviewBox
             .reviewBox__header
               .left
-                =image_tag "article/umineco01/thumb_review_05.jpg", alt:""
+                =image_tag "article/delphinus/thumb_review_05.jpg", alt:""
               .right
                 .starSmall
                   =image_tag "community/icn_star_5.png", alt:"星5"
@@ -356,7 +225,7 @@ main
           .reviewBox
             .reviewBox__header
               .left
-                =image_tag "article/umineco01/thumb_review_03.jpg", alt:""
+                =image_tag "article/delphinus/thumb_review_03.jpg", alt:""
               .right
                 .starSmall
                   =image_tag "community/icn_star_5.png", alt:"星5"
@@ -374,7 +243,7 @@ main
           .reviewBox
             .reviewBox__header
               .left
-                =image_tag "article/umineco01/thumb_review_04.jpg", alt:""
+                =image_tag "article/delphinus/thumb_review_04.jpg", alt:""
               .right
                 .starSmall
                   =image_tag "community/icn_star_4.png", alt:"星4"
@@ -534,7 +403,7 @@ main
     .reviewBox
       .reviewBox__header
         .left
-          =image_tag "article/umineco01/thumb_review_05.jpg", alt:""
+          =image_tag "article/delphinus/thumb_review_05.jpg", alt:""
         .right
           .starSmall
             =image_tag "community/icn_star_5.png", alt:"星5"
@@ -556,7 +425,7 @@ main
     .reviewBox
       .reviewBox__header
         .left
-          =image_tag "article/umineco01/thumb_review_03.jpg", alt:""
+          =image_tag "article/delphinus/thumb_review_03.jpg", alt:""
         .right
           .starSmall
             =image_tag "community/icn_star_5.png", alt:"星5"
@@ -574,7 +443,7 @@ main
     .reviewBox
       .reviewBox__header
         .left
-          =image_tag "article/umineco01/thumb_review_04.jpg", alt:""
+          =image_tag "article/delphinus/thumb_review_04.jpg", alt:""
         .right
           .starSmall
             =image_tag "community/icn_star_4.png", alt:"星4"
@@ -597,7 +466,7 @@ main
     .reviewBox
       .reviewBox__header
         .left
-          =image_tag "article/umineco01/thumb_review_02.jpg", alt:""
+          =image_tag "article/delphinus/thumb_review_02.jpg", alt:""
         .right
           .starSmall
             =image_tag "community/icn_star_5.png", alt:"星5"
@@ -621,7 +490,7 @@ main
     .reviewBox
       .reviewBox__header
         .left
-          =image_tag "article/umineco01/thumb_review_01.jpg", alt:""
+          =image_tag "article/delphinus/thumb_review_01.jpg", alt:""
         .right
           .starSmall
             =image_tag "community/icn_star_5.png", alt:"星5"
