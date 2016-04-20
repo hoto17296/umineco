@@ -1,5 +1,10 @@
+- content_for :ogp do
+  meta property='og:title' content='uminecoとは | umineco'
+  meta property="og:description" content="uminecoとはヨットのオーナーとヨットに乗りたい人をマッチングするサービスです。"
+  meta property="og:url" content="#{about_url()}"
+
 .aboutMainImage
-  =image_tag "about/img_main.jpg", alt:"uminecoはヨットのシェアリングエコノミーサービスです。より多くの人が、気軽に、安く、ヨットを楽しめる世の中を作ります。"
+  =image_tag "about/img_main.jpg", alt:"20代30代の若い世代もヨットを楽しめる世の中に"
 
 main
   .l-inner
@@ -83,8 +88,6 @@ main
 
       .ownerImage
         =image_tag "about/thumb3.jpg", alt:"サイト利用のイメージ", width: "948"
-
-
 
     .aboutBtn
       .aboutBtn__left
