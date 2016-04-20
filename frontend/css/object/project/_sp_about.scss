@@ -35,6 +35,60 @@
   text-align: center;
 }
 
+.aboutPlayList {
+  @extend %clearfix;
+  margin-top: 20px;
+
+  li {
+    width: 100%;
+    margin-bottom: 30px;
+
+  }
+  &__img {
+    img {
+      @include image;
+    }
+  }
+  &__ttl {
+    @extend %font-20;
+    margin: 10px 0 5px 0;
+    color: #3c679f;
+    text-align: center;
+  }
+  &__txt {
+  }
+}
+
+.aboutBtn {
+  margin-bottom: 50px;
+
+  a {
+    width: 250px;
+    margin-top: 10px;
+    padding: 10px 0;
+  }
+  .text {
+    @extend %font-20;
+    text-align: center;
+  }
+}
+
+
+// 数字の連番リスト
+.flowList {
+  margin-bottom: 30px;
+
+  &__img {
+    width: 25px;
+    margin-right: 5px;
+    float: left;
+  }
+  li {
+    @extend %clearfix;
+    margin-bottom: 10px;
+  }
+}
+
 // オーナーページ
 .ownerMainImage {
   width: 100%;
@@ -45,7 +99,12 @@
     height: auto;
   }
 }
-
+.aboutImage {
+  margin-bottom: 10px;
+  img {
+    @include image;
+  }
+}
 .owner {
   p {
     margin-bottom: 10px;
@@ -56,19 +115,6 @@
     margin-bottom: 10px;
     img {
       @include image;
-    }
-  }
-  .flowList {
-    margin-bottom: 30px;
-
-    &__img {
-      width: 25px;
-      margin-right: 5px;
-      float: left;
-    }
-    li {
-      @extend %clearfix;
-      margin-bottom: 10px;
     }
   }
   .attention {
