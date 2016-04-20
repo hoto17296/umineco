@@ -2,7 +2,7 @@
 
 .aboutMainImage {
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 
   img {
     width: 100%;
@@ -41,6 +41,52 @@
   margin: 50px auto;
   text-align: center;
 }
+.aboutPlayList {
+  @extend %clearfix;
+  margin-top: 20px;
+
+  li {
+    float: left;
+    width: 310px;
+    margin: 0 10px 30px 0;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+  &__img {
+  }
+  &__ttl {
+    @extend %font-20;
+    margin: 10px 0 5px 0;
+    color: #3c679f;
+    text-align: center;
+  }
+  &__txt {
+  }
+}
+.aboutBtn {
+  display: table;
+  width: 100%;
+
+  a {
+    width: 250px;
+    margin-top: 20px;
+    padding: 10px 0;
+  }
+  .text {
+    @extend %font-24;
+  }
+  &__left {
+    display: table-cell;
+    text-align: center;
+  }
+  &__right {
+    display: table-cell;
+    text-align: center;
+  }
+}
+
 
 // オーナーページ
 .ownerMainImage {
@@ -63,18 +109,6 @@
   .ownerImage {
     margin-bottom: 20px;
   }
-  .flowList {
-    margin-bottom: 50px;
-
-    &__img {
-      display: inline;
-      padding-right: 5px;
-    }
-    li {
-      @extend %font-18;
-      margin-bottom: 5px;
-    }
-  }
   .attention {
     margin-top: 10px;
     font-weight: bold;
@@ -91,6 +125,19 @@
   }
 }
 
+// 数字の連番リスト
+.flowList {
+  margin-bottom: 50px;
+
+  &__img {
+    display: inline;
+    padding-right: 5px;
+  }
+  li {
+    @extend %font-18;
+    margin-bottom: 5px;
+  }
+}
 .ownerConcept {
   @extend %clearfix;
 
@@ -162,8 +209,6 @@
     line-height: 1.8;
   }
 }
-
-
 
 
 
