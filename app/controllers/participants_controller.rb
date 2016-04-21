@@ -43,7 +43,7 @@ class ParticipantsController < ApplicationController
 
       # Slack に通知
       Slack.chat_postMessage(
-        text: "#{current_user.name} さんが仮予約しました",
+        text: "#{current_user.name} さんが仮予約しました\n#{community_url(@sailing.community)}",
         username: "umineco app",
         channel: ENV['SLACK_NOTIFICATION_CHANNEL']
       )

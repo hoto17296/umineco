@@ -74,7 +74,7 @@ class CommunitiesController < ApplicationController
     })
 
     Slack.chat_postMessage(
-      text: "#{current_user.name} さんが興味があると言っています\nメッセージ： #{feed_params[:body]}",
+      text: "#{current_user.name} さんが興味があると言っています\n#{community_url(@community)}\nメッセージ： #{feed_params[:body]}",
       username: "umineco app",
       channel: ENV['SLACK_NOTIFICATION_CHANNEL']
     )
