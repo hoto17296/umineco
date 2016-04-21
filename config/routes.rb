@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  constraints subdomain: 'admin' do
+    namespace :admin, path: '/' do
+      root 'root#index'
+    end
+  end
+
   get 'user/signin'
 
   root 'root#index'
