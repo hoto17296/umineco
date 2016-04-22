@@ -13,6 +13,9 @@
     "tests"
   ],
   "dependencies": {
-    "codemirror": "^5.14.2"
+    "codemirror": "^5.14.2",
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.3",
+    "jquery-ujs": "^1.2.1"
   }
 }
