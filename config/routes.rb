@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   constraints subdomain: 'admin' do
     namespace :admin, path: '/' do
       root 'root#index'
+      resources :community, as: :communities, controller: :communities
     end
   end
 

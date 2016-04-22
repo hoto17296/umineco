@@ -13,13 +13,10 @@ html
   body
     nav
       h1 umineco admin
-      ul
-        li
-          a href='#' menu
-        li
-          a href='#' menu
-        li
-          a href='#' menu
+      dl
+        dt= link_to 'コミュニティ一覧', admin_communities_path
+        - Community.all.each do |community|
+          dd= link_to community.name, admin_community_path(community)
     main
       = render "layouts/alert"
 

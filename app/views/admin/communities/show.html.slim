@@ -1,0 +1,37 @@
+h2= @community.name
+
+= link_to 'ページを見る', community_url(@community, { subdomain: :www }), class: 'btn btn-primary', target: '_blank'
+
+h3 セーリング一覧
+table.table.table-striped.table-bordered
+  tr
+    th セーリング名
+    th 日程
+    th 人数
+    th レビュー
+  - @community.sailings.from_now.each do |sailing|
+    tr
+      td= link_to sailing.name, '#'
+      td= tsrange2str(sailing.duration)[:date]
+      td
+        = sailing.participants.length
+        | /
+        = sailing.capacity
+        | 人
+      td
+        = sailing.comments.length
+        | 件
+
+h3 レビュー一覧
+table.table.table-striped.table-bordered
+  tr
+    th ユーザー
+    th style='width: 50%' 内容
+    th
+    th
+  - @community.comments.each do |comment|
+    tr
+      td= comment.user.name
+      td= simple_format comment.body
+      td
+      td

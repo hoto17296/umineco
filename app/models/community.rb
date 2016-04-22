@@ -21,4 +21,9 @@ class Community < ActiveRecord::Base
     YAML.load page_data
   end
 
+  def comments
+    sailing_ids = sailings.collect {|s| s.id }
+    Comment.where(sailing_id: sailing_ids).order(created_at: :desc)
+  end
+
 end
