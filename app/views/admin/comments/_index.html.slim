@@ -1,0 +1,12 @@
+table.table.table-striped.table-bordered
+  tr
+    th ユーザー
+    th style='width: 50%' 内容
+    th
+    th 投稿日時
+  - comments.each do |comment|
+    tr
+      td= comment.user.name
+      td= simple_format comment.body
+      td
+      td= comment.created_at

@@ -1,0 +1,30 @@
+ol.breadcrumb
+  li= link_to @sailing.community.name, @sailing.community
+  li.active= @sailing.name
+
+h2
+  = @sailing.name
+  small= render 'admin/sailings/status', sailing: @sailing
+  br
+  small
+    - duration = tsrange2str(@sailing.duration)
+    = duration[:date]
+    = duration[:begin]
+    | 〜
+    = duration[:end]
+
+= link_to '編集する', edit_admin_sailing_path(@sailing), class: 'btn btn-primary'
+
+h3
+  | 参加者
+  small
+    | (#{@sailing.participants.length}/#{@sailing.capacity})
+ul.list-group
+  - @sailing.participants.each do |participants|
+    - user = participants.user
+    li.list-group-item
+      = image_tag user.picture, style: 'width: 2em; margin-right: .5em;'
+      = user.name
+
+h3 レビュー
+= render 'admin/comments/index', comments: @sailing.comments

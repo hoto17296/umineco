@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     namespace :admin, path: '/' do
       root 'root#index'
       resources :community, as: :communities, controller: :communities
+      resources :sailing, as: :sailings, controller: :sailings
     end
   end
 
@@ -26,7 +27,6 @@ Rails.application.routes.draw do
     get 'signout', to: 'devise/sessions#destroy', as: :destroy_user_session
   end
 
-  resources :sailing, as: :sailings, controller: :sailings
   resources :participant, as: :participants, path: 'sailing/:sailing_id/participants', controller: :participants
   resources :community, as: :communities, controller: :communities do
     member do
