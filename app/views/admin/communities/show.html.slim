@@ -4,6 +4,14 @@ h2= @community.name
 = link_to '編集', edit_admin_community_path(@community), class: 'btn btn-success'
 /= link_to '削除', admin_community_path(@community), data: { confirm: '本当に削除しますか？' }, method: :delete, class: 'btn btn-danger'
 
+h3 詳細
+div style='border: 1px #ccc solid'
+  textarea#community_page_data readonly=true
+    = @community.page_data
+script defer=true
+  | var textarea = document.getElementById('community_page_data');
+  | CodeMirror.fromTextArea(textarea, { mode: 'yaml', readOnly: true });
+
 h3 セーリング一覧
 table.table.table-striped.table-bordered
   tr

@@ -19,3 +19,5 @@
 /node_modules
 /public/pc.js*
 /public/sp.js*
+
+/public/bower_components

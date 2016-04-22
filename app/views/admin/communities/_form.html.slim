@@ -14,5 +14,14 @@
     .col-sm-10= f.text_field :name, class: 'form-control'
 
   .form-group
+    = f.label :page_data, '詳細', class: 'col-sm-2 control-label'
+    .col-sm-10
+      div style='border: 1px #ccc solid'
+        = f.text_area :page_data, id: 'community_page_data'
+      script defer=true
+        | var textarea = document.getElementById('community_page_data');
+        | CodeMirror.fromTextArea(textarea, { mode: 'yaml' });
+
+  .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit '保存', class: 'btn btn-primary'
