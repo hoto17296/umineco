@@ -23,4 +23,10 @@ class Sailing < ActiveRecord::Base
     users.where.not(id: commented_user_ids)
   end
 
+  # 参加していないユーザー一覧
+  def not_participate_users
+    participate_user_ids = users.map {|u| u.id }
+    User.where.not(id: participate_user_ids)
+  end
+
 end

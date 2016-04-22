@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       resources :community, as: :communities, controller: :communities
       resources :sailing, as: :sailings, controller: :sailings, only: [:create, :new], path: 'community/:community_id/sailing'
       resources :sailing, as: :sailings, controller: :sailings, only: [:show, :edit, :update, :destroy]
+      resources :participant, as: :participants, controller: :participants, only: [:create], path: 'sailing/:sailing_id/participant'
+      resources :participant, as: :participants, controller: :participants, only: [:destroy]
       resources :comment, as: :comments, controller: :comments, only: [:create, :new], path: 'sailing/:sailing_id/comment'
       resources :comment, as: :comments, controller: :comments, only: [:edit, :update, :destroy]
     end
