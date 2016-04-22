@@ -1,6 +1,8 @@
 h2= @community.name
 
 = link_to 'ページを見る', community_url(@community, { subdomain: :www }), class: 'btn btn-primary', target: '_blank'
+= link_to '編集', edit_admin_community_path(@community), class: 'btn btn-success'
+/= link_to '削除', admin_community_path(@community), data: { confirm: '本当に削除しますか？' }, method: :delete, class: 'btn btn-danger'
 
 h3 セーリング一覧
 table.table.table-striped.table-bordered

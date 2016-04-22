@@ -1,0 +1,18 @@
+- form_opts = { html: { class: 'form-horizontal' } }
+- if @community.new_record?
+  - form_opts[:url] = admin_communities_path(@community)
+- else
+  - form_opts[:url] = admin_community_path(@community)
+  - form_opts[:html][:method] = 'patch'
+
+= form_for @community, form_opts do |f|
+  - if @community.errors.any?
+    = render 'admin/layout/form_error', errors: @community.errors
+
+  .form-group
+    = f.label :name, 'コミュニティ名', class: 'col-sm-2 control-label'
+    .col-sm-10= f.text_field :name, class: 'form-control'
+
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit '保存', class: 'btn btn-primary'

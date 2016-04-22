@@ -28,7 +28,7 @@ class Admin::CommunitiesController < Admin::ApplicationController
 
     respond_to do |format|
       if @community.save
-        format.html { redirect_to @community, notice: 'Community was successfully created.' }
+        format.html { redirect_to admin_community_path(@community), notice: 'コミュニティを作成しました' }
         format.json { render :show, status: :created, location: @community }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class Admin::CommunitiesController < Admin::ApplicationController
   def update
     respond_to do |format|
       if @community.update(community_params)
-        format.html { redirect_to @community, notice: 'Community was successfully updated.' }
+        format.html { redirect_to admin_community_path(@community), notice: '変更を保存しました' }
         format.json { render :show, status: :ok, location: @community }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class Admin::CommunitiesController < Admin::ApplicationController
   def destroy
     @community.destroy
     respond_to do |format|
-      format.html { redirect_to communities_url, notice: 'Community was successfully destroyed.' }
+      format.html { redirect_to admin_communities_path, notice: 'コミュニティを削除しました' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class Admin::CommunitiesController < Admin::ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def community_params
-      params.require(:community).permit(:name)
+      params.require(:community).permit(:name, :page_data)
     end
 end

@@ -1,0 +1,7 @@
+ol.breadcrumb
+  li= link_to @community.name, admin_community_path(@community)
+  li.active コミュニティを編集
+
+h2 コミュニティを編集
+
+== render 'form'
