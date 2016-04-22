@@ -20,11 +20,12 @@ h3
   small
     | (#{@sailing.participants.length}/#{@sailing.capacity})
 ul.list-group
-  - @sailing.participants.each do |participants|
-    - user = participants.user
+  - @sailing.participants.each do |participant|
     li.list-group-item
-      = image_tag user.picture, style: 'width: 2em; margin-right: .5em;'
-      = user.name
+      = image_tag participant.user.picture, style: 'width: 2em; margin-right: .5em;'
+      = participant.user.name
+      = link_to admin_participant_path(participant), data: { confirm: '参加者から外しますか？' }, method: :delete do
+        span.glyphicon.glyphicon-remove
 - if @sailing.participants.empty?
   .alert.alert-warning 参加者はまだいません。
 - form_opts = { url: admin_participants_path(sailing_id: @sailing), html: { class: 'form-inline' } }

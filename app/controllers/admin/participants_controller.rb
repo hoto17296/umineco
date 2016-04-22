@@ -17,7 +17,7 @@ class Admin::ParticipantsController < Admin::ApplicationController
         format.html { redirect_to admin_sailing_path(@sailing), notice: '参加者を追加しました' }
         format.json { render :show, status: :created, location: @participant }
       else
-        format.html { redirect_to admin_sailing_path(@sailing), alert: 'エラーが発生しました。' }
+        format.html { redirect_to admin_sailing_path(@sailing), alert: 'エラーが発生しました' }
         format.json { render json: @participant.errors, status: :unprocessable_entity }
       end
     end
@@ -28,7 +28,7 @@ class Admin::ParticipantsController < Admin::ApplicationController
   def destroy
     @participant.destroy
     respond_to do |format|
-      format.html { redirect_to participants_url, notice: 'Participant was successfully destroyed.' }
+      format.html { redirect_to admin_sailing_path(@participant.sailing), notice: '参加者を外しました' }
       format.json { head :no_content }
     end
   end
