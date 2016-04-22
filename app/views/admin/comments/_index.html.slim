@@ -4,6 +4,7 @@ table.table.table-striped.table-bordered
     th style='width: 50%' 内容
     th 評価
     th 投稿日時
+    th 操作
   - comments.each do |comment|
     tr
       td= comment.user.name
@@ -12,3 +13,5 @@ table.table.table-striped.table-bordered
         - 5.times do |n|
           = if comment.rating < n then '☆' else '★'
       td= comment.created_at
+      td
+        = link_to '編集', edit_admin_comment_path(comment, sailing_id: comment.sailing_id), class: 'btn btn-primary btn-sm'

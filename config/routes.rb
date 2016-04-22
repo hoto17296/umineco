@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       root 'root#index'
       resources :community, as: :communities, controller: :communities
       resources :sailing, as: :sailings, controller: :sailings
+      resources :comment, as: :comments, path: 'sailing/:sailing_id/comment', controller: :comments, only: [:create, :new, :edit, :update]
     end
   end
 

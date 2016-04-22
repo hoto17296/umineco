@@ -13,4 +13,10 @@ class Sailing < ActiveRecord::Base
     participants.inject(false) {|v, p| v || p.user.id == user.id }
   end
 
+  # まだレビューを書いていないユーザー一覧
+  def not_commented_users
+    commented_user_ids = comments.map {|c| c.user_id }
+    users.where.not(id: commented_user_ids)
+  end
+
 end

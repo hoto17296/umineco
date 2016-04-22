@@ -26,5 +26,10 @@ ul.list-group
       = image_tag user.picture, style: 'width: 2em; margin-right: .5em;'
       = user.name
 
-h3 レビュー
+h3
+  | レビュー
+  small
+    | (#{@sailing.comments.length})
 = render 'admin/comments/index', comments: @sailing.comments
+
+= link_to 'レビューを追加する', new_admin_comment_path(sailing_id: @sailing.id), class: 'btn btn-primary'
