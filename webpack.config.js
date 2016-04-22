@@ -6,6 +6,7 @@ var config = {
   entry: {
     pc: './pc.js',
     sp: './sp.js',
+    admin: './admin.js',
   },
   output: {
     path: 'public',
