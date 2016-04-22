@@ -47,7 +47,7 @@ class Admin::CommentsController < Admin::ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to admin_sailing_path(@comment.sailing), notice: 'コメントを削除しました' }
       format.json { head :no_content }
     end
   end

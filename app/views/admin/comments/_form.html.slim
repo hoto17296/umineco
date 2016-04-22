@@ -7,8 +7,8 @@
 
 = form_for @comment, params do |f|
   - if @comment.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@comment.errors.count, "error")} prohibited this comment from being saved:"
+    .alert.alert-danger
+      strong= "#{@comment.errors.count} 件のエラー"
       ul
         - @comment.errors.full_messages.each do |message|
           li = message
