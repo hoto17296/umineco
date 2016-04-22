@@ -1,3 +1,8 @@
-h2 セーリングの編集
+ol.breadcrumb
+  li= link_to @sailing.community.name, admin_community_path(@sailing.community)
+  li= link_to @sailing.name, admin_sailing_path(@sailing)
+  li.active セーリングを編集
+
+h2 セーリングを編集
 
 == render 'form'

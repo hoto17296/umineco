@@ -4,8 +4,10 @@ Rails.application.routes.draw do
     namespace :admin, path: '/' do
       root 'root#index'
       resources :community, as: :communities, controller: :communities
-      resources :sailing, as: :sailings, controller: :sailings
-      resources :comment, as: :comments, path: 'sailing/:sailing_id/comment', controller: :comments, only: [:create, :new, :edit, :update, :destroy]
+      resources :sailing, as: :sailings, controller: :sailings, only: [:create, :new], path: 'community/:community_id/sailing'
+      resources :sailing, as: :sailings, controller: :sailings, only: [:show, :edit, :update, :destroy]
+      resources :comment, as: :comments, controller: :comments, only: [:create, :new], path: 'sailing/:sailing_id/comment'
+      resources :comment, as: :comments, controller: :comments, only: [:edit, :update, :destroy]
     end
   end
 

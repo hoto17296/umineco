@@ -14,5 +14,5 @@ table.table.table-striped.table-bordered
           = if comment.rating < n then '☆' else '★'
       td= comment.created_at
       td
-        = link_to '編集', edit_admin_comment_path(comment, sailing_id: comment.sailing_id), class: 'btn btn-success btn-sm'
-        = link_to '削除', admin_comment_path(comment, sailing_id: comment.sailing_id), data: { confirm: '本当に削除しますか？' }, method: :delete, class: 'btn btn-danger btn-sm'
+        = link_to '編集', edit_admin_comment_path(comment), class: 'btn btn-success btn-sm'
+        = link_to '削除', admin_comment_path(comment), data: { confirm: '本当に削除しますか？' }, method: :delete, class: 'btn btn-danger btn-sm'

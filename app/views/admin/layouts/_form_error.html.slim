@@ -1,0 +1,5 @@
+.alert.alert-danger
+  strong= "#{errors.count} 件のエラー"
+  ul
+    - errors.full_messages.each do |message|
+      li = message

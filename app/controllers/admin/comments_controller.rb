@@ -1,10 +1,11 @@
 class Admin::CommentsController < Admin::ApplicationController
-  before_action :set_sailing
+  before_action :set_sailing, only: [:new, :create]
   before_action :set_comment, only: [:edit, :update, :destroy]
 
   # GET /comments/new
   def new
     @comment = Comment.new
+    @comment.sailing = @sailing
   end
 
   # GET /comments/1/edit
@@ -33,7 +34,7 @@ class Admin::CommentsController < Admin::ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to admin_sailing_path(@sailing), notice: 'コメントを保存しました' }
+        format.html { redirect_to admin_sailing_path(@comment.sailing), notice: 'コメントを保存しました' }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit }

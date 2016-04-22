@@ -5,6 +5,10 @@ class Sailing < ActiveRecord::Base
   has_many :users, through: :participants
   has_many :comments
 
+  validates :name, presence: true
+  validates :capacity, numericality: { greater_than: 0 }
+  validates :duration, presence: true
+
   default_scope lambda { order(duration: :asc) }
   scope :from_now, lambda { select {|sailing| sailing.duration.begin > DateTime.now } }
 

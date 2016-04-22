@@ -1,20 +1,16 @@
 - params = { html: { class: 'form-horizontal' } }
 - if @comment.new_record?
-  - params[:url] = admin_comments_path(sailing_id: @sailing)
+  - params[:url] = admin_comments_path(sailing_id: @comment.sailing)
 - else
-  - params[:url] = admin_comment_path(sailing_id: @sailing)
+  - params[:url] = admin_comment_path(sailing_id: @comment.sailing)
   - params[:html][:method] = 'patch'
 
 = form_for @comment, params do |f|
   - if @comment.errors.any?
-    .alert.alert-danger
-      strong= "#{@comment.errors.count} 件のエラー"
-      ul
-        - @comment.errors.full_messages.each do |message|
-          li = message
+    = render 'admin/layout/form_error', errors: @comment.errors
 
   .form-group
-    - users = @sailing.not_commented_users
+    - users = @comment.sailing.not_commented_users
     - users << @comment.user unless @comment.user.blank? or users.include? @comment.user
     = f.label :user_id, '投稿ユーザー', class: 'col-sm-2 control-label'
     .col-sm-10= f.collection_select :user_id, users, :id, :name, { include_blank: true }, class: 'form-control'
