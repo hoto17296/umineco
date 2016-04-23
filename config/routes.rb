@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   end
 
   resources :participant, as: :participants, path: 'sailing/:sailing_id/participants', controller: :participants
-  resources :community, as: :communities, controller: :communities do
+  resources :community, as: :communities, controller: :communities, only: [:show] do
     member do
       post :interest
       post :another_time
