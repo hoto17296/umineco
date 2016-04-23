@@ -1,0 +1,44 @@
+ol.breadcrumb
+  li= link_to @sailing.community.name, admin_community_path(@sailing.community)
+  li.active= @sailing.name
+
+h2
+  = @sailing.name
+  small= render 'admin/sailings/status', sailing: @sailing
+  br
+  small
+    - duration = tsrange2str(@sailing.duration)
+    = duration[:date]
+    = duration[:begin]
+    | 〜
+    = duration[:end]
+
+= link_to '編集する', edit_admin_sailing_path(@sailing), class: 'btn btn-primary'
+
+h3
+  | 参加者
+  small
+    | (#{@sailing.participants.length}/#{@sailing.capacity})
+ul.list-group
+  - @sailing.participants.each do |participant|
+    li.list-group-item
+      = image_tag participant.user.picture, style: 'width: 2em; margin-right: .5em;'
+      = participant.user.name
+      = link_to admin_participant_path(participant), data: { confirm: '参加者から外しますか？' }, method: :delete do
+        span.glyphicon.glyphicon-remove
+- if @sailing.participants.empty?
+  .alert.alert-warning 参加者はまだいません。
+- form_opts = { url: admin_participants_path(sailing_id: @sailing), html: { class: 'form-inline' } }
+= form_for Participant.new, form_opts do |f|
+  .form-group
+    = f.label :user_id, '参加者を追加'
+    = f.collection_select :user_id, @sailing.not_participate_users, :id, :name, { include_blank: true }, class: 'form-control', style: 'margin: 0 1em'
+    = f.submit '追加', class: 'btn btn-primary'
+
+h3
+  | レビュー
+  small
+    | (#{@sailing.comments.length})
+= render 'admin/comments/index', comments: @sailing.comments
+
+= link_to 'レビューを追加する', new_admin_comment_path(sailing_id: @sailing.id), class: 'btn btn-primary'

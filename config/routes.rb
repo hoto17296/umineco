@@ -3,6 +3,13 @@ Rails.application.routes.draw do
   constraints subdomain: 'admin' do
     namespace :admin, path: '/' do
       root 'root#index'
+      resources :community, as: :communities, controller: :communities
+      resources :sailing, as: :sailings, controller: :sailings, only: [:create, :new], path: 'community/:community_id/sailing'
+      resources :sailing, as: :sailings, controller: :sailings, only: [:show, :edit, :update, :destroy]
+      resources :participant, as: :participants, controller: :participants, only: [:create], path: 'sailing/:sailing_id/participant'
+      resources :participant, as: :participants, controller: :participants, only: [:destroy]
+      resources :comment, as: :comments, controller: :comments, only: [:create, :new], path: 'sailing/:sailing_id/comment'
+      resources :comment, as: :comments, controller: :comments, only: [:edit, :update, :destroy]
     end
   end
 
@@ -25,9 +32,8 @@ Rails.application.routes.draw do
     get 'signout', to: 'devise/sessions#destroy', as: :destroy_user_session
   end
 
-  resources :sailing, as: :sailings, controller: :sailings
   resources :participant, as: :participants, path: 'sailing/:sailing_id/participants', controller: :participants
-  resources :community, as: :communities, controller: :communities do
+  resources :community, as: :communities, controller: :communities, only: [:show] do
     member do
       post :interest
       post :another_time

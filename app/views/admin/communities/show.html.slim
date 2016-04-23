@@ -1,0 +1,44 @@
+h2= @community.name
+
+= link_to 'ページを見る', community_url(@community, { subdomain: :www }), class: 'btn btn-primary', target: '_blank'
+= link_to '編集', edit_admin_community_path(@community), class: 'btn btn-success'
+/= link_to '削除', admin_community_path(@community), data: { confirm: '本当に削除しますか？' }, method: :delete, class: 'btn btn-danger'
+
+h3 詳細
+div style='border: 1px #ccc solid'
+  textarea#community_page_data readonly=true
+    = @community.page_data
+script defer=true
+  | var textarea = document.getElementById('community_page_data');
+  | CodeMirror.fromTextArea(textarea, { mode: 'yaml', readOnly: true });
+
+h3 セーリング一覧
+table.table.table-striped.table-bordered
+  tr
+    th セーリング名
+    th
+    th 日程
+    th 人数
+    th レビュー
+    th 操作
+  - @community.sailings.reorder(duration: :desc).each do |sailing|
+    tr
+      td= link_to sailing.name, admin_sailing_path(sailing)
+      td= render 'admin/sailings/status', sailing: sailing
+      td= tsrange2str(sailing.duration)[:date]
+      td
+        = sailing.participants.length
+        | /
+        = sailing.capacity
+        | 人
+      td
+        = sailing.comments.length
+        | 件
+      td
+        = link_to '詳細', admin_sailing_path(sailing), class: 'btn btn-primary btn-sm'
+        = link_to '編集', edit_admin_sailing_path(sailing), class: 'btn btn-success btn-sm'
+        = link_to '削除', admin_sailing_path(sailing), data: { confirm: '本当に削除しますか？' }, method: :delete, class: 'btn btn-danger btn-sm'
+= link_to 'セーリングを追加', new_admin_sailing_path(community_id: @community.id), class: 'btn btn-primary btn-sm'
+
+h3 レビュー一覧
+= render 'admin/comments/index', comments: @community.comments

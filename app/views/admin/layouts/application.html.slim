@@ -2,7 +2,12 @@ doctype html
 html
   head
     title umineco admin
-    link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"
+    link rel="stylesheet" href="/bower_components/codemirror/lib/codemirror.css"
+    script src="/bower_components/jquery/dist/jquery.min.js"
+    script src="/bower_components/jquery-ujs/src/rails.js"
+    script src="/bower_components/codemirror/lib/codemirror.js"
+    script src="/bower_components/codemirror/mode/yaml/yaml.js"
     - if Rails.env.development?
       - webpack_host = 'http://localhost:' + ( ENV['WEBPACK_DEV_SERVER_PORT'] || '8080' )
       script src="#{webpack_host}/webpack-dev-server.js"
@@ -13,11 +18,11 @@ html
   body
     nav
       h1 umineco admin
-      ul
-        li menu
-        li menu
-        li menu
+      dl
+        dt= link_to 'コミュニティ一覧', admin_communities_path
+        - Community.all.each do |community|
+          dd= link_to community.name, admin_community_path(community)
     main
-      = render "layouts/alert"
+      = render "admin/layouts/alert"
 
       = yield

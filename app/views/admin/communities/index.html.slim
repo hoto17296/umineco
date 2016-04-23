@@ -1,0 +1,7 @@
+h2 コミュニティ一覧
+
+.list-group
+  - @communities.each do |community|
+    = link_to community.name, admin_community_path(community), class: 'list-group-item'
+
+= link_to '新規作成', new_admin_community_path, class: 'btn btn-primary'

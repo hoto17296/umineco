@@ -1,11 +1,6 @@
-class SailingsController < ApplicationController
-  before_action :set_sailing, only: [:show, :edit, :update, :destroy, :interest]
-
-  # GET /sailings
-  # GET /sailings.json
-  def index
-    @sailings = Sailing.all
-  end
+class Admin::SailingsController < Admin::ApplicationController
+  before_action :set_community, only: [:create, :new]
+  before_action :set_sailing, only: [:show, :edit, :update, :destroy]
 
   # GET /sailings/1
   # GET /sailings/1.json
@@ -15,6 +10,7 @@ class SailingsController < ApplicationController
   # GET /sailings/new
   def new
     @sailing = Sailing.new
+    @sailing.community = @community
   end
 
   # GET /sailings/1/edit
@@ -25,10 +21,11 @@ class SailingsController < ApplicationController
   # POST /sailings.json
   def create
     @sailing = Sailing.new(sailing_params)
+    @sailing.community = @community
 
     respond_to do |format|
       if @sailing.save
-        format.html { redirect_to @sailing, notice: 'Sailing was successfully created.' }
+        format.html { redirect_to admin_sailing_path(@sailing), notice: 'セーリングを追加しました' }
         format.json { render :show, status: :created, location: @sailing }
       else
         format.html { render :new }
@@ -42,7 +39,7 @@ class SailingsController < ApplicationController
   def update
     respond_to do |format|
       if @sailing.update(sailing_params)
-        format.html { redirect_to @sailing, notice: 'Sailing was successfully updated.' }
+        format.html { redirect_to admin_sailing_path(@sailing), notice: 'セーリングを保存しました' }
         format.json { render :show, status: :ok, location: @sailing }
       else
         format.html { render :edit }
@@ -56,12 +53,16 @@ class SailingsController < ApplicationController
   def destroy
     @sailing.destroy
     respond_to do |format|
-      format.html { redirect_to sailings_url, notice: 'Sailing was successfully destroyed.' }
+      format.html { redirect_to admin_community_path(@sailing.community), notice: 'セーリングを削除しました' }
       format.json { head :no_content }
     end
   end
 
   private
+    def set_community
+      @community = Community.find(params[:community_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_sailing
       @sailing = Sailing.find(params[:id])

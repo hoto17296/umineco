@@ -1,0 +1,20 @@
+table.table.table-striped.table-bordered
+  tr
+    th ユーザー
+    th タイトル
+    th style='width: 30%' 内容
+    th 評価
+    th 投稿日時
+    th 操作
+  - comments.each do |comment|
+    tr
+      td= comment.user.name
+      td= comment.title
+      td= simple_format comment.body
+      td
+        - 5.times do |n|
+          = if comment.rating < n then '☆' else '★'
+      td= comment.created_at
+      td
+        = link_to '編集', edit_admin_comment_path(comment), class: 'btn btn-success btn-sm'
+        = link_to '削除', admin_comment_path(comment), data: { confirm: '本当に削除しますか？' }, method: :delete, class: 'btn btn-danger btn-sm'

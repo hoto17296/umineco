@@ -17,4 +17,19 @@ class Community < ActiveRecord::Base
     save
   end
 
+  def page
+    YAML.load page_data
+  end
+
+  def comments
+    sailing_ids = sailings.collect {|s| s.id }
+    Comment.where(sailing_id: sailing_ids).order(created_at: :desc)
+  end
+
+  def comment_rating_average
+    rating_list = comments.map {|c| c.rating }
+    return 4 if rating_list.empty?
+    rating_list.inject(:+) / rating_list.length
+  end
+
 end

@@ -1,0 +1,8 @@
+ol.breadcrumb
+  li= link_to @comment.sailing.community.name, admin_community_path(@comment.sailing.community)
+  li= link_to @comment.sailing.name, admin_sailing_path(@comment.sailing)
+  li.active レビューを編集
+
+h2 レビューを編集
+
+== render 'form'

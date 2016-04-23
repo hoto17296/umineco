@@ -1,0 +1,35 @@
+- params = { html: { class: 'form-horizontal' } }
+- if @sailing.new_record?
+  - params[:url] = admin_sailings_path(community_id: @sailing.community.id)
+- else
+  - params[:url] = admin_sailing_path(@sailing)
+  - params[:html][:method] = 'patch'
+
+= form_for @sailing, params do |f|
+  - if @sailing.errors.any?
+    = render 'admin/layouts/form_error', errors: @sailing.errors
+
+  .form-group
+    = f.label :name, 'セーリング名', class: 'col-sm-2 control-label'
+    .col-sm-10= f.text_field :name, class: 'form-control'
+  .form-group
+    = f.label :capacity, '最大人数', class: 'col-sm-2 control-label'
+    .col-sm-10= f.text_field :capacity, class: 'form-control'
+  - if @sailing.duration
+    .form-group
+      label.col-sm-2.control-label 開始日時
+      .col-sm-10= datetime_local_field_tag 'sailing[duration_begin]', @sailing.duration.begin.strftime('%Y-%m-%dT%T'), class: 'form-control'
+    .form-group
+      label.col-sm-2.control-label 終了日時
+      .col-sm-10= datetime_local_field_tag 'sailing[duration_end]', @sailing.duration.end.strftime('%Y-%m-%dT%T'), class: 'form-control'
+  - else
+    .form-group
+      label.col-sm-2.control-label 開始日時
+      .col-sm-10= datetime_local_field_tag 'sailing[duration_begin]', DateTime.now.strftime('%Y-%m-%dT%T'), class: 'form-control'
+    .form-group
+      label.col-sm-2.control-label 終了日時
+      .col-sm-10= datetime_local_field_tag 'sailing[duration_end]', DateTime.now.strftime('%Y-%m-%dT%T'), class: 'form-control'
+
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit '保存', class: 'btn btn-primary'

@@ -1,0 +1,6 @@
+- if sailing.duration.begin < DateTime.now
+  span.label.label-default 終了
+- elsif sailing.participants.length >= sailing.capacity
+  span.label.label-danger 満員
+- else
+  span.label.label-success 募集中

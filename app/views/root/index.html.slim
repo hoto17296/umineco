@@ -42,77 +42,38 @@ main
   .l-inner
     // --------------リスト
     .imglistwrapper#communityList
-      section.c-imglistBox
-        =link_to '/community/1'
+      - communities = Community.all
+      - communities.each do |community|
+        - page = community.page
+        - img_root = "article/#{page['id']}"
+        section.c-imglistBox
+          = link_to community_path(community)
+            .c-imglistBox__header
+              .img= image_tag "#{img_root}/img_main.jpg", alt:""
+              .headerInner
+                .fbIcom
+                  = image_tag "#{img_root}/thumb_member_01.jpg", alt:""
+                h2.ttl= page['meta']['title']
+
+            .c-imglistBox__footer
+              p.textMap
+                span.icon-icn_map.icn_color-1
+                = page['marina']['location']
+              p.textReview
+                span.icon-icn_review.icn_color-1
+                | レビュー#{community.comments.length}件
+
+      // 表示するコミュニティが奇数なら Coming Soon を表示する
+      - if communities.length.odd?
+        section.c-imglistBox
           .c-imglistBox__header
             .img
-              =image_tag "article/umineco01/img_main.jpg", alt:""
-
-            .headerInner
-              .fbIcom
-                =image_tag "article/umineco01/thumb_member_01.jpg", alt:""
-              h2.ttl
-                |船舶免許を持っていない方や初心者の方も大歓迎！
+              =image_tag "common/thumb_comingSoon.jpg", alt:""
 
           .c-imglistBox__footer
             p.textMap
               span.icon-icn_map.icn_color-1
-              |神奈川県 三浦市
+              |-
             p.textReview
               span.icon-icn_review.icn_color-1
-              |レビュー5件
-
-      section.c-imglistBox
-        =link_to '/community/2'
-          .c-imglistBox__header
-            .img
-              =image_tag "article/umineco02/img_main.jpg", alt:""
-
-            .headerInner
-              .fbIcom
-                =image_tag "article/umineco02/thumb_member_01.jpg", alt:""
-              h2.ttl
-                |海と風と太陽と、さあ一緒に遊びましょう。
-
-          .c-imglistBox__footer
-            p.textMap
-              span.icon-icn_map.icn_color-1
-              |神奈川県 三浦市
-            p.textReview
-              span.icon-icn_review.icn_color-1
-              |レビュー0件
-
-      section.c-imglistBox
-        =link_to '/community/3'
-          .c-imglistBox__header
-            .img
-              =image_tag "article/umineco03/img_main.jpg", alt:""
-
-            .headerInner
-              .fbIcom
-                =image_tag "article/umineco03/thumb_member_01.jpg", alt:""
-              h2.ttl
-                |クルージング・クラブレースを通じてヨット・ボート仲間と交流をしませんか！
-
-          .c-imglistBox__footer
-            p.textMap
-              span.icon-icn_map.icn_color-1
-              |東京都 江東区
-            p.textReview
-              span.icon-icn_review.icn_color-1
-              |レビュー0件
-
-      section.c-imglistBox
-        .c-imglistBox__header
-          .img
-            =image_tag "common/thumb_comingSoon.jpg", alt:""
-
-        .c-imglistBox__footer
-          p.textMap
-            span.icon-icn_map.icn_color-1
-            |-
-          p.textReview
-            span.icon-icn_review.icn_color-1
-            |-
-
-
+              |-
