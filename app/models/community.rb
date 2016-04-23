@@ -26,4 +26,9 @@ class Community < ActiveRecord::Base
     Comment.where(sailing_id: sailing_ids).order(created_at: :desc)
   end
 
+  def comment_rating_average
+    rating_list = comments.map {|c| c.rating }
+    rating_list.inject(:+) / rating_list.length
+  end
+
 end
