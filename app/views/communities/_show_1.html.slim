@@ -30,7 +30,6 @@ main
             span.icon-icn_review.icn_color-1
             = "レビュー#{@community.comments.length}件"
 
-
     .eventBody
       // --------------event main
       .eventBody__left
@@ -154,8 +153,7 @@ main
           h3.c-title-1
             =image_tag "community/ttl_community_4.png", alt:"連絡事項"
 
-          h4.c-title-3
-            |料金について
+          h4.c-title-3 料金について
 
           table.c-table
             tr
@@ -195,36 +193,37 @@ main
 
         // --------------レビュー
         section.c-box#reviewArea
-          h3.c-title-1
-            =image_tag "community/ttl_community_5.png", alt:"レビュー"
+          .l-inner
+            h3.c-title-1
+              =image_tag "community/ttl_community_5.png", alt:"レビュー"
 
-          .reviewStar
-            span.number= "#{@community.comments.length}件"
-            .starBig
-              - average = @community.comment_rating_average.to_i + 1
-              = image_tag "community/icn_star_#{average}.png", alt:"星#{average}"
+            .reviewStar
+              span.number= "#{@community.comments.length}件"
+              .starBig
+                - average = @community.comment_rating_average.to_i + 1
+                = image_tag "community/icn_star_#{average}.png", alt:"星#{average}"
 
-          - @community.comments.first(3).each do |comment|
-            .reviewBox
-              .reviewBox__header
-                .left
-                  = image_tag comment.user.picture
-                .right
-                  .starSmall
-                    = image_tag "community/icn_star_#{comment.rating + 1}.png", alt:"星#{comment.rating + 1}"
-                  h4.ttl= comment.title
+            - @community.comments.first(3).each do |comment|
+              .reviewBox
+                .reviewBox__header
+                  .left
+                    = image_tag comment.user.picture
+                  .right
+                    .starSmall
+                      = image_tag "community/icn_star_#{comment.rating + 1}.png", alt:"星#{comment.rating + 1}"
+                    h4.ttl= comment.title
 
-              .reviewBox__body
-                p= simple_format comment.body
+                .reviewBox__body
+                  p= simple_format comment.body
 
-              p.reviewBox__info
-                = comment.created_at.strftime("%Y年%m月")
-                | /
-                = comment.user.name
+                p.reviewBox__info
+                  = comment.created_at.strftime("%Y年%m月")
+                  | /
+                  = comment.user.name
 
-          .c-btn.c-btn--Style1
-            a href="#" onClick="Modal.open('reviewList')"
-              |他のレビューを見る
+            .c-btn.c-btn--Style1
+              a href="#" onClick="Modal.open('reviewList')"
+                |他のレビューを見る
 
       // --------------event side
       .eventBody__right
