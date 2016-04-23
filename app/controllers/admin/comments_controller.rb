@@ -65,6 +65,6 @@ class Admin::CommentsController < Admin::ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.fetch(:comment).permit(:user_id, :rating, :body)
+      params.fetch(:comment).permit(:user_id, :rating, :title, :body)
     end
 end

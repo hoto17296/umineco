@@ -1,13 +1,15 @@
 table.table.table-striped.table-bordered
   tr
     th ユーザー
-    th style='width: 50%' 内容
+    th タイトル
+    th style='width: 30%' 内容
     th 評価
     th 投稿日時
     th 操作
   - comments.each do |comment|
     tr
       td= comment.user.name
+      td= comment.title
       td= simple_format comment.body
       td
         - 5.times do |n|
