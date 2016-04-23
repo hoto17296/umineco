@@ -2,8 +2,8 @@
 - img_root = "article/#{page['id']}"
 
 - content_for :title do
-  title 僕らのヨット遊びをシェアします！初心者歓迎！ | umineco
-  meta itemprop="description" content="私たちDelphinus Clubは、三崎のシーボニアマリーナをベースにクルーザーヨットを共同所有して毎週末セーリングを楽しんでいます。船舶免許を持っていない方や初心者の方も大歓迎です！"
+  title= "#{page['meta']['title']} | umineco"
+  meta itemprop="description" content=page['meta']['description']
 
 - content_for :ogp do
   meta property='og:title' content="#{page['meta']['title']} | umineco"
