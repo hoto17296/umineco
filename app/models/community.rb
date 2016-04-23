@@ -28,6 +28,7 @@ class Community < ActiveRecord::Base
 
   def comment_rating_average
     rating_list = comments.map {|c| c.rating }
+    return 4 if rating_list.empty?
     rating_list.inject(:+) / rating_list.length
   end
 
