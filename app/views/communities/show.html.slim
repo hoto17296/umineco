@@ -112,7 +112,8 @@ main
               .c-title-5__name
                 span 代  表
                 = page['about']['captain']['name']
-                = "（#{page['about']['captain']['title']}）"
+                - if page['about']['captain']['title'].present?
+                  = "（#{page['about']['captain']['title']}）"
             .text= page['about']['captain']['introduction']
 
           // --------------ヨット情報
