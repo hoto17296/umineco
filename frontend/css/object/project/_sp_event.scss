@@ -99,6 +99,18 @@
     font-size: 12px;
   }
 }
+// 私たちについてのsnsリンク
+.aboutClubSns {
+  margin-top: 10px;
+
+  &__item {
+    display: inline-block;
+  }
+  .c-btn {
+    text-align: left;
+    margin-right: 10px;
+  }
+}
 
 // 一日の流れ
 .oneDayFlow {

@@ -105,6 +105,15 @@ main
               = image_tag "#{img_root}/#{page['about']['image']}", alt:""
             .text= simple_format page['about']['description']
 
+            // sns link
+            .aboutClubSns
+              - if page['about']['sns']['facebook'].present?
+                .aboutClubSns__item
+                  .c-btn.c-btn--Style1
+                    a href=page['about']['sns']['facebook'] target="_blank"
+                      = page['ship']['name']
+                      | - Facebook
+
           .c-box
             h4.c-title-5
               .c-title-5__image
@@ -115,6 +124,13 @@ main
                 - if page['about']['captain']['title'].present?
                   = "（#{page['about']['captain']['title']}）"
             .text= page['about']['captain']['introduction']
+
+            // sns link
+            - if page['about']['sns']['blog'].present?
+              .aboutClubSns
+                .aboutClubSns__item
+                  .c-btn.c-btn--Style1
+                    a href=page['about']['sns']['blog'] target="_blank" Blog
 
           // --------------ヨット情報
           .c-box
@@ -168,11 +184,11 @@ main
               td= page['notice']['payment']['cancel']
 
           h4.c-title-3
-            |集合場所について
+            |集合時刻・場所について
 
           table.c-table
             tr
-              th 集合時間
+              th 集合時刻
               td= page['notice']['gathering']['time']
             tr
               th 集合場所
@@ -180,6 +196,22 @@ main
                 = page['notice']['gathering']['place']
                 .c-btn.c-btn--Style4
                   a href=page['notice']['gathering']['map'] target="_blank" MAP
+
+
+          - if page['notice']['dissolution'].present?
+            h4.c-title-3
+              |解散時刻・場所について
+
+            table.c-table
+              - if page['notice']['dissolution']['time'].present?
+                tr
+                  th 解散時刻
+                  td= page['notice']['dissolution']['time']
+              - if page['notice']['dissolution']['place'].present?
+                tr
+                  th 解散場所
+                  td
+                    = page['notice']['dissolution']['place']
 
           .c-box
             h4.c-title-4

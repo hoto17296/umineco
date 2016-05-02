@@ -109,6 +109,14 @@ main
                 = image_tag "#{img_root}/#{page['about']['image']}", alt:""
               .text= simple_format page['about']['description']
 
+              // sns link
+              .aboutClubSns
+                - if page['about']['sns']['facebook'].present?
+                  .aboutClubSns__item
+                    .c-btn.c-btn--Style1
+                      a href=page['about']['sns']['facebook'] target="_blank"
+                        = page['ship']['name']
+                        | - Facebook
           .l-inner
             .c-box
               h4.c-title-5
@@ -121,6 +129,13 @@ main
                     = "（#{page['about']['captain']['title']}）"
               .text= page['about']['captain']['introduction']
 
+              // sns link
+              - if page['about']['sns']['blog'].present?
+                .aboutClubSns
+                  .aboutClubSns__item
+                    .c-btn.c-btn--Style1
+                      a href=page['about']['sns']['blog'] target="_blank" Blog
+
           // --------------ヨット情報
           .l-inner
             .c-box
@@ -132,26 +147,30 @@ main
                   th メーカー名
                   td colspan="3"= page['ship']['maker']
                 tr
-                  th メーカー種類
+                  th メーカー<br>種類
                   td colspan="3"= page['ship']['product']
                 tr
                   th 全長
                   td= page['ship']['length']
+                tr
                   th 定員
                   td= page['ship']['capacity']
                 tr
                   th 出力
                   td= page['ship']['power']
+                tr
                   th 推進力形式
                   td= page['ship']['thrust']
                 tr
                   th 保管方法
                   td= page['ship']['custody']
-                  th エンジン（モデル）
+                tr
+                  th エンジン<br>（モデル）
                   td= page['ship']['engine']
                 tr
                   th 免許種別
                   td= page['ship']['license']
+                tr
                   th 燃料種別
                   td= page['ship']['fuel']
 
@@ -228,11 +247,11 @@ main
               td= page['notice']['payment']['cancel']
 
           h4.c-title-3
-            |集合場所について
+            |集合時刻・場所について
 
           table.c-table
             tr
-              th 集合時間
+              th 集合時刻
               td= page['notice']['gathering']['time']
             tr
               th 集合場所
@@ -241,6 +260,18 @@ main
                 .c-btn.c-btn--Style4
                   a href=page['notice']['gathering']['map'] target="_blank" MAP
 
+          - if page['notice']['dissolution']['time'].present?
+            h4.c-title-3
+              |解散時刻・場所について
+
+            table.c-table
+              tr
+                th 解散時刻
+                td= page['notice']['dissolution']['time']
+              tr
+                th 解散場所
+                td
+                  = page['notice']['dissolution']['place']
           .c-box
             h4.c-title-4
               |持ち物ついて
