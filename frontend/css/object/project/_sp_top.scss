@@ -107,7 +107,7 @@
   &__footer {
     position: relative;
     background: $bg-color-gray;
-    height: 45px;
+    min-height: 45px;
 
     .textMap {
       position: absolute;
@@ -119,6 +119,10 @@
       position: absolute;
       top: 10px;
       right: 10px;
+      color: #333333;
+    }
+    .ship {
+      padding: 40px 0 10px 10px;
       color: #333333;
     }
     span {
