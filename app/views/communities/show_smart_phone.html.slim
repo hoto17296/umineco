@@ -109,6 +109,14 @@ main
                 = image_tag "#{img_root}/#{page['about']['image']}", alt:""
               .text= simple_format page['about']['description']
 
+              // sns link
+              .aboutClubSns
+                - if page['about']['sns']['facebook'].present?
+                  .aboutClubSns__item
+                    .c-btn.c-btn--Style1
+                      a href=page['about']['sns']['facebook'] target="_blank"
+                        = page['ship']['name']
+                        | - Facebook
           .l-inner
             .c-box
               h4.c-title-5
@@ -122,16 +130,11 @@ main
               .text= page['about']['captain']['introduction']
 
               // sns link
-              - if page['about']['sns'].present?
+              - if page['about']['sns']['blog'].present?
                 .aboutClubSns
-                  - if page['about']['sns']['facebook'].present?
-                    .aboutClubSns__item
-                      .c-btn.c-btn--Style1
-                        a href=page['about']['sns']['facebook'] target="_blank" Facebook
-                  - if page['about']['sns']['blog'].present?
-                    .aboutClubSns__item
-                      .c-btn.c-btn--Style1
-                        a href=page['about']['sns']['blog'] target="_blank" Blog
+                  .aboutClubSns__item
+                    .c-btn.c-btn--Style1
+                      a href=page['about']['sns']['blog'] target="_blank" Blog
 
           // --------------ヨット情報
           .l-inner
