@@ -121,6 +121,18 @@ main
                     = "（#{page['about']['captain']['title']}）"
               .text= page['about']['captain']['introduction']
 
+              // sns link
+              - if page['about']['sns'].present?
+                .aboutClubSns
+                  - if page['about']['sns']['facebook'].present?
+                    .aboutClubSns__item
+                      .c-btn.c-btn--Style1
+                        a href=page['about']['sns']['facebook'] target="_blank" Facebook
+                  - if page['about']['sns']['blog'].present?
+                    .aboutClubSns__item
+                      .c-btn.c-btn--Style1
+                        a href=page['about']['sns']['blog'] target="_blank" Blog
+
           // --------------ヨット情報
           .l-inner
             .c-box

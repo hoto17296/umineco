@@ -116,6 +116,18 @@ main
                   = "（#{page['about']['captain']['title']}）"
             .text= page['about']['captain']['introduction']
 
+            // sns link
+            - if page['about']['sns'].present?
+              .aboutClubSns
+                - if page['about']['sns']['facebook'].present?
+                  .aboutClubSns__item
+                    .c-btn.c-btn--Style1
+                      a href=page['about']['sns']['facebook'] target="_blank" Facebook
+                - if page['about']['sns']['blog'].present?
+                  .aboutClubSns__item
+                    .c-btn.c-btn--Style1
+                      a href=page['about']['sns']['blog'] target="_blank" Blog
+
           // --------------ヨット情報
           .c-box
             h4.c-title-4
@@ -182,18 +194,20 @@ main
                   a href=page['notice']['gathering']['map'] target="_blank" MAP
 
 
-          - if page['notice']['dissolution']['time'].present?
+          - if page['notice']['dissolution'].present?
             h4.c-title-3
               |解散時刻・場所について
 
             table.c-table
-              tr
-                th 解散時刻
-                td= page['notice']['dissolution']['time']
-              tr
-                th 解散場所
-                td
-                  = page['notice']['dissolution']['place']
+              - if page['notice']['dissolution']['time'].present?
+                tr
+                  th 解散時刻
+                  td= page['notice']['dissolution']['time']
+              - if page['notice']['dissolution']['place'].present?
+                tr
+                  th 解散場所
+                  td
+                    = page['notice']['dissolution']['place']
 
           .c-box
             h4.c-title-4
