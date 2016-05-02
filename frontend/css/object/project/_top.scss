@@ -122,17 +122,17 @@
     height: 45px;
     border-radius: 0 0 5px 5px;
 
-    .textMap {
-      position: absolute;
-      top: 10px;
-      left: 10px;
+    li {
+      display: inline-block;
+      margin:  10px;
       color: #333333;
     }
-    .textReview {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      color: #333333;
+    .ship {
+      max-width: 120px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      vertical-align: middle;
     }
     span {
       @extend %font-18;
