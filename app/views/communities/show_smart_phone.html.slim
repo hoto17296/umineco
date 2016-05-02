@@ -228,11 +228,11 @@ main
               td= page['notice']['payment']['cancel']
 
           h4.c-title-3
-            |集合場所について
+            |集合時刻・場所について
 
           table.c-table
             tr
-              th 集合時間
+              th 集合時刻
               td= page['notice']['gathering']['time']
             tr
               th 集合場所
@@ -241,6 +241,18 @@ main
                 .c-btn.c-btn--Style4
                   a href=page['notice']['gathering']['map'] target="_blank" MAP
 
+          - if page['notice']['dissolution']['time'].present?
+            h4.c-title-3
+              |解散時刻・場所について
+
+            table.c-table
+              tr
+                th 解散時刻
+                td= page['notice']['dissolution']['time']
+              tr
+                th 解散場所
+                td
+                  = page['notice']['dissolution']['place']
           .c-box
             h4.c-title-4
               |持ち物ついて
