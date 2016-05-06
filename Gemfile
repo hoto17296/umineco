@@ -20,6 +20,7 @@ gem 'koala'
 gem 'jpmobile'
 
 gem 'slack-api'
+gem 'newrelic_rpm'
 
 # Passing Data to JavaScript
 gem 'gon'
