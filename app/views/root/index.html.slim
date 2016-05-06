@@ -38,7 +38,6 @@ main
       .c-btn.c-btn--Style2
         = link_to "/about"
           |uminecoとは
-
   .l-inner
     // --------------リスト
     .imglistwrapper#communityList
@@ -56,12 +55,16 @@ main
                 h2.ttl= page['meta']['title']
 
             .c-imglistBox__footer
-              p.textMap
-                span.icon-icn_map.icn_color-1
-                = page['marina']['location']
-              p.textReview
-                span.icon-icn_review.icn_color-1
-                | レビュー#{community.comments.length}件
+              ul
+                li.ship
+                  span.icon-icn_yacht.icn_color-1
+                  = page['ship']['name']
+                li.textMap
+                  span.icon-icn_map.icn_color-1
+                  = page['marina']['location']
+                li.textReview
+                  span.icon-icn_review.icn_color-1
+                  | レビュー#{community.comments.length}件
 
       // 表示するコミュニティが奇数なら Coming Soon を表示する
       - if communities.length.odd?
@@ -71,9 +74,13 @@ main
               =image_tag "common/thumb_comingSoon.jpg", alt:""
 
           .c-imglistBox__footer
-            p.textMap
-              span.icon-icn_map.icn_color-1
-              |-
-            p.textReview
-              span.icon-icn_review.icn_color-1
-              |-
+            ul
+              li.ship
+                span.icon-icn_yacht.icn_color-1
+                |-
+              li
+                span.icon-icn_map.icn_color-1
+                |-
+              li
+                span.icon-icn_review.icn_color-1
+                |-
