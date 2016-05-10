@@ -319,13 +319,14 @@ main
     div id="reservationForm-#{sailing.id}" data-title="#{duration[:date]}に仮予約"
       p.message
         |送信ボタンを押していただくと、仮予約が完了します。
-      p.messageSmall
+      //p.messageSmall
         |セーリングに参加することをあなたの友達にも知らせよう！
       = form_for :participant, url: participants_path(sailing_id: sailing.id) do |f|
-        label.messageSmall
+        = f.hidden_field :share, value: 0
+        //label.messageSmall
           = f.check_box :share, checked: true, class: :reservation_with_share
           | Facebookでシェアする
-        = f.text_area :share_body, value: "#{duration[:date]}のセーリングに参加します！"
+        //= f.text_area :share_body, value: "#{duration[:date]}のセーリングに参加します！"
 
         .c-btn.c-btn--Style2
           button type='submit' 送信
