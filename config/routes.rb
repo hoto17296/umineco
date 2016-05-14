@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :images
+
   get 'user/signin'
 
   root 'root#index'
