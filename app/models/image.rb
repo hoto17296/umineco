@@ -34,4 +34,8 @@ class Image < ActiveRecord::Base
     self
   end
 
+  def url
+    ENV['IMAGE_HOST_URL'] + id
+  end
+
 end
