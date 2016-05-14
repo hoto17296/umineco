@@ -10,10 +10,9 @@ Rails.application.routes.draw do
       resources :participant, as: :participants, controller: :participants, only: [:destroy]
       resources :comment, as: :comments, controller: :comments, only: [:create, :new], path: 'sailing/:sailing_id/comment'
       resources :comment, as: :comments, controller: :comments, only: [:edit, :update, :destroy]
+      resources :images
     end
   end
-
-  resources :images
 
   get 'user/signin'
 

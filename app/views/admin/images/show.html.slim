@@ -1,0 +1,6 @@
+h1= @image.filename
+
+= link_to @image.url, class: :thumbnail, target: :_blank do
+  = image_tag @image.url
+
+= link_to '編集する', edit_admin_image_path(@image), class: 'btn btn-primary'

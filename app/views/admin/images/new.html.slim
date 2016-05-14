@@ -1,0 +1,16 @@
+h1 画像をアップロード
+
+- form_opts = { html: { class: 'form-horizontal' }, url: admin_images_path(@image) }
+= form_for @image, form_opts do |f|
+  - if @image.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@image.errors.count, "error")} prohibited this image from being saved:"
+      ul
+        - @image.errors.full_messages.each do |message|
+          li = message
+
+  .form-group
+    = f.file_field :file, class: 'form-control'
+
+  .form-group
+    = f.submit 'アップロード', class: 'btn btn-primary'

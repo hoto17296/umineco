@@ -22,6 +22,7 @@ html
         dt= link_to 'コミュニティ一覧', admin_communities_path
         - Community.all.each do |community|
           dd= link_to community.name, admin_community_path(community)
+        dt= link_to '画像一覧', admin_images_path
     main
       = render "admin/layouts/alert"
 

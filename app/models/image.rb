@@ -11,7 +11,7 @@ class Image < ActiveRecord::Base
   before_destroy :destroy_file
 
   validates :user, presence: true
-  validates :file, presence: true
+  validates :file, presence: true, on: :create
 
   def s3_bucket
     s3_client = Aws::S3::Client.new region: ENV['S3_REGION']

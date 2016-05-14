@@ -1,0 +1,17 @@
+h1 画像を編集
+
+- form_opts = { html: { class: 'form-horizontal', method: 'patch' }, url: admin_image_path(@image) }
+= form_for @image, form_opts do |f|
+  - if @image.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@image.errors.count, "error")} prohibited this image from being saved:"
+      ul
+        - @image.errors.full_messages.each do |message|
+          li = message
+
+  .form-group
+    = f.label :filename, 'ファイル名'
+    = f.text_field :filename, class: 'form-control'
+
+  .form-group
+    = f.submit '保存', class: 'btn btn-primary'
