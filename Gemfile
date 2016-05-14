@@ -25,6 +25,8 @@ gem 'newrelic_rpm'
 # Passing Data to JavaScript
 gem 'gon'
 
+gem 'aws-sdk', '~> 2.0'
+
 gem 'rails_12factor', group: :production
 
 group :development, :test do
