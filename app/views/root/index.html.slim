@@ -44,14 +44,13 @@ main
       - communities = Community.all
       - communities.each do |community|
         - page = community.page
-        - img_root = "article/#{page['id']}"
         section.c-imglistBox
           = link_to community_path(community)
             .c-imglistBox__header
-              .img= image_tag "#{img_root}/img_main.jpg", alt:""
+              .img= image_tag page['meta']['image'], alt:""
               .headerInner
                 .fbIcom
-                  = image_tag "#{img_root}/thumb_member_01.jpg", alt:""
+                  = image_tag page['about']['captain']['image'], alt:""
                 h2.ttl= page['meta']['title']
 
             .c-imglistBox__footer

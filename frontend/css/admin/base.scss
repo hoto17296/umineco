@@ -64,3 +64,12 @@ main {
     margin: 1em 0;
   }
 }
+
+.cropedImage {
+  display: inline-block;
+  width: 8em;
+  height: 8em;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

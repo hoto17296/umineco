@@ -1,8 +1,12 @@
 h1 画像一覧
 = link_to 'アップロード', new_admin_image_path, class: 'btn btn-primary'
 
-.row
+ul.media-list style='margin-top: 1em'
   - @images.order(created_at: :desc).each do |image|
-    .col-xs-6.col-md-3
-      = link_to admin_image_path(image), class: :thumbnail do
-        = image_tag image.url
+    li.media
+      .media-left
+        = link_to '', admin_image_path(image), class: 'cropedImage', style: "background-image: url(#{image.url})"
+      .media-body
+        h4.media-heading= link_to image.filename, admin_image_path(image)
+        p= image.description
+        input.form-control type='text' value=image.url readonly=true

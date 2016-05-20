@@ -24,18 +24,19 @@ class Admin::ImagesController < Admin::ApplicationController
   # POST /images
   # POST /images.json
   def create
-    @image = Image.new(image_params)
-    @image.user = current_user
+    images = image_params
+    images[:files] = [ images[:file] ] if images[:file]
 
-    respond_to do |format|
-      if @image.save
-        format.html { redirect_to admin_image_path(@image), notice: 'Image was successfully created.' }
-        format.json { render :show, status: :created, location: @image }
-      else
-        format.html { render :new }
-        format.json { render json: @image.errors, status: :unprocessable_entity }
-      end
+    images[:files].each do |file|
+      image = Image.new({
+        file: file,
+        user: current_user,
+        description: images[:description]
+      })
+      raise unless image.save
     end
+
+    redirect_to admin_images_path, notice: 'Image was successfully created.'
   end
 
   # PATCH/PUT /images/1
@@ -43,7 +44,7 @@ class Admin::ImagesController < Admin::ApplicationController
   def update
     respond_to do |format|
       if @image.update(image_params)
-        format.html { redirect_to admin_image_path(@image), notice: 'Image was successfully updated.' }
+        format.html { redirect_to admin_image_path(@image), notice: '画像をアップロードしました' }
         format.json { render :show, status: :ok, location: @image }
       else
         format.html { render :edit }
@@ -57,7 +58,7 @@ class Admin::ImagesController < Admin::ApplicationController
   def destroy
     @image.destroy
     respond_to do |format|
-      format.html { redirect_to admin_images_path, notice: 'Image was successfully destroyed.' }
+      format.html { redirect_to admin_images_path, notice: '画像を削除しました' }
       format.json { head :no_content }
     end
   end
@@ -70,6 +71,6 @@ class Admin::ImagesController < Admin::ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def image_params
-      params.require(:image).permit(:file, :filename, :description)
+      params.require(:image).permit(:file, :filename, :description, files: [])
     end
 end
