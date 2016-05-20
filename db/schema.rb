@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160423064029) do
+ActiveRecord::Schema.define(version: 20160520043510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
 
   create_table "comments", force: :cascade do |t|
     t.text     "body",       null: false
@@ -47,6 +48,18 @@ ActiveRecord::Schema.define(version: 20160423064029) do
 
   add_index "feeds", ["community_id"], name: "index_feeds_on_community_id", using: :btree
   add_index "feeds", ["user_id"], name: "index_feeds_on_user_id", using: :btree
+
+  create_table "images", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.integer  "user_id",     null: false
+    t.string   "filename"
+    t.string   "filetype"
+    t.integer  "filesize"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "description"
+  end
+
+  add_index "images", ["user_id"], name: "index_images_on_user_id", using: :btree
 
   create_table "marinas", force: :cascade do |t|
     t.string   "name",       null: false
@@ -131,6 +144,7 @@ ActiveRecord::Schema.define(version: 20160423064029) do
   add_foreign_key "comments", "users"
   add_foreign_key "feeds", "communities"
   add_foreign_key "feeds", "users"
+  add_foreign_key "images", "users"
   add_foreign_key "members", "communities"
   add_foreign_key "members", "users"
   add_foreign_key "participants", "sailings"

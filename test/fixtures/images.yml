@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uuid: MyString
+  filename: MyString
+  filesize: 1
+  filetype: MyString
+
+two:
+  uuid: MyString
+  filename: MyString
+  filesize: 1
+  filetype: MyString

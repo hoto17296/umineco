@@ -1,0 +1,18 @@
+- form_opts = { html: { class: 'form-horizontal' } }
+- if @image.new_record?
+  - form_opts[:url] = admin_images_path(@image)
+- else
+  - form_opts[:url] = admin_image_path(@image)
+  - form_opts[:html][:method] = 'patch'
+
+= form_for @image, form_opts do |f|
+  - if @image.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@image.errors.count, "error")} prohibited this image from being saved:"
+      ul
+        - @image.errors.full_messages.each do |message|
+          li = message
+
+  = f.file_field :file
+
+  .actions = f.submit
