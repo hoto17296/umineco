@@ -3,4 +3,5 @@ h1= @image.filename
 = link_to @image.url, class: :thumbnail, target: :_blank do
   = image_tag @image.url
 
-= link_to '編集する', edit_admin_image_path(@image), class: 'btn btn-primary'
+= link_to '編集', edit_admin_image_path(@image), class: 'btn btn-success'
+= link_to '削除', admin_image_path(@image), data: { confirm: '本当に削除しますか？' }, method: :delete, class: 'btn btn-danger'

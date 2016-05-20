@@ -13,11 +13,6 @@ class Image < ActiveRecord::Base
   validates :user, presence: true
   validates :file, presence: true, on: :create
 
-  def s3_bucket
-    s3_client = Aws::S3::Client.new region: ENV['S3_REGION']
-    Aws::S3::Bucket.new ENV['S3_BUCKET_NAME'], client: s3_client
-  end
-
   def save_file_info
     self.filetype = file.content_type
     self.filename = file.original_filename
@@ -31,11 +26,24 @@ class Image < ActiveRecord::Base
   end
 
   def destroy_file
+    obj = s3_bucket.object(self.id)
+    return false unless obj
+    deleted_object = s3_bucket.object "deleted/#{self.id}"
+    obj.move_to deleted_object
     self
   end
 
   def url
     ENV['IMAGE_HOST_URL'] + id
   end
+
+  private
+    def s3_bucket
+      unless @_s3_bucket
+        s3_client = Aws::S3::Client.new region: ENV['S3_REGION']
+        @_s3_bucket = Aws::S3::Bucket.new ENV['S3_BUCKET_NAME'], client: s3_client
+      end
+      @_s3_bucket
+    end
 
 end
