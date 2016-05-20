@@ -9,7 +9,7 @@
   meta property='og:title' content="#{page['meta']['title']} | umineco"
   meta property="og:description" content=page['meta']['description']
   meta property="og:url" content="#{community_url(@community)}"
-  meta property="og:image" content="#{root_url()}images/#{img_root}/img_main.jpg"
+  meta property="og:image" content=page['meta']['image']
 
 main
   article.event
@@ -38,7 +38,7 @@ main
             ul.main.isTransition
               - page['images'].each do |image|
                 li.mainItem
-                  = image_tag "#{img_root}/#{image}", alt:""
+                  = image_tag image, alt:""
             span.prev
               a. href="#"
                 span.icon-keyboard_arrow_left
@@ -50,7 +50,7 @@ main
             ul.thumbnails.isTransition
               - page['images'].each do |image|
                 li.thumbnailsItem
-                  .inner style="background-image: url(#{image_path "#{img_root}/#{image}"})"
+                  .inner style="background-image: url(#{image})"
             span.prev
               a href="#"
                 span.icon-keyboard_arrow_left
@@ -75,7 +75,7 @@ main
                   = point['title']
                 - if point.key? 'image'
                   .imgbox
-                    = image_tag "#{img_root}/#{point['image']}", alt:""
+                    = image_tag point['image'], alt:""
                 - if point.key? 'youtube'
                   .imgbox
                     .video
@@ -92,7 +92,7 @@ main
               - page['schedules'].each do |schedule|
                 li
                   .oneDayFlow__img
-                    =image_tag "#{img_root}/#{schedule['image']}", alt:""
+                    =image_tag schedule['image'], alt:""
                   .oneDayFlow__ttl
                     span= schedule['time']
                     = schedule['title']
@@ -106,7 +106,7 @@ main
           .l-inner
             .c-box
               .imgbox
-                = image_tag "#{img_root}/#{page['about']['image']}", alt:""
+                = image_tag page['about']['image'], alt:""
               .text= simple_format page['about']['description']
 
               // sns link
@@ -121,7 +121,7 @@ main
             .c-box
               h4.c-title-5
                 .c-title-5__image
-                  = image_tag "#{img_root}/#{page['about']['captain']['image']}", alt:""
+                  = image_tag page['about']['captain']['image'], alt:""
                 .c-title-5__name
                   span 代  表
                   = page['about']['captain']['name']
