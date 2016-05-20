@@ -10,7 +10,7 @@ h1 画像をアップロード
           li = message
 
   .form-group
-    = f.file_field :file, class: 'form-control'
+    = f.file_field :files, class: 'form-control', accept: 'image/*', multiple: true
 
   .form-group
     = f.text_area :description, class: 'form-control', placeholder: '補足説明など'
