@@ -14,4 +14,7 @@ h1 画像を編集
     = f.text_field :filename, class: 'form-control'
 
   .form-group
+    = f.text_area :description, class: 'form-control', placeholder: '補足説明など'
+
+  .form-group
     = f.submit '保存', class: 'btn btn-primary'

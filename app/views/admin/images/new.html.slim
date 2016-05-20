@@ -13,4 +13,7 @@ h1 画像をアップロード
     = f.file_field :file, class: 'form-control'
 
   .form-group
+    = f.text_area :description, class: 'form-control', placeholder: '補足説明など'
+
+  .form-group
     = f.submit 'アップロード', class: 'btn btn-primary'

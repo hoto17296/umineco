@@ -1,4 +1,5 @@
 h1= @image.filename
+p= simple_format @image.description
 
 = link_to @image.url, class: :thumbnail, target: :_blank do
   = image_tag @image.url
