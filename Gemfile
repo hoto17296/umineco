@@ -22,6 +22,8 @@ gem 'jpmobile'
 gem 'slack-api'
 gem 'newrelic_rpm'
 
+gem 'redis-rails'
+
 # Passing Data to JavaScript
 gem 'gon'
 
