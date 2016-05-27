@@ -15,6 +15,7 @@
 /vendor/bundle
 
 /.env
+/dump.rdb
 
 /node_modules
 /public/pc.js*

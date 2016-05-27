@@ -1,3 +1,2 @@
-# Be sure to restart your server when you modify this file.
-
-Rails.application.config.session_store :cookie_store, key: 'umineco_session', domain: :all
+REDIS_URL = ENV['REDIS_URL'] || 'redis://localhost:6379'
+Rails.application.config.session_store :redis_store, servers: REDIS_URL
